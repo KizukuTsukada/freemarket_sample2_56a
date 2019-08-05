@@ -6,12 +6,11 @@ Rails.application.routes.draw do
   get "public/index" => "public#index"
   
   get "users" => "users#index", as: :mypage
-  get "users/:id" => "users#show"
-  get "users/:id/edit" => "users#edit"
+  resources :users, only:[:index, :edit, :show]
   
-  get "categories/index" => "categories#index"
-  get "brands/index" => "brands#index"
-  get "trade/id" => "trade#show"
+  resources :categories, only: [:index]
+  resources :brands, only: [:index]
+  resources :trade, only: [:show]
   resources :items do
     resources :comments, only: [:index, :create]
   end

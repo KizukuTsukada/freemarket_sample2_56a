@@ -14,12 +14,13 @@
 |deliver_fee|integer||
 |saler|integer||
 |buyer|integer||
-|photo_id|references||
-|brand_id|references||
-|category_id|references||
+|photo_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
 ### Association
-- has many :comments
+- has_many :comments
+- has_many :users, through: :trades
 - belongs_to :photo
 - belongs_to :brand
 - belongs_to :category
@@ -35,6 +36,7 @@
 |credit_id|references|foreign_key: true|
 
 ### Association
+- has_many :items, through: :trades
 - belongs_to :credit
 - belongs_to :profile
 
@@ -49,12 +51,12 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-|postal_code|integer|null: false|
+|postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
 |address1|string|null: false|
 |address2|string||
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 
 ### Association
 - belongs_to :user
@@ -79,6 +81,7 @@
 
 ### Association
 - belongs_to :item
+- belongs_to :user
 
 ## photosテーブル
 |Column|Type|Options|
@@ -102,7 +105,17 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references||
 
 ### Association
+- has_many :items
+- has_ancestry
+
+## tradesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
+
+### Association
+- belongs_to :user
 - belongs_to :item
