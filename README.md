@@ -98,7 +98,7 @@
 
 ## categoriesテーブル
 |name|string|null: false|
-|item_id|references|
+|item_id|references||
 
 ### Association
 - has many :items
