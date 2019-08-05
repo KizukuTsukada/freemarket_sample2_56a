@@ -49,12 +49,12 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birth_year|integer|null: false|
-|birth_month|integer|null: false|
-|birth_day|integer|null: false|
+|birth_month|integer|null: false|                 
+|birth_day|integer|null: false| 
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
-|address1|string|null: false|
+|address1|string|null: false|               
 |address2|string||
 |phone_number|string|null: false|
 
