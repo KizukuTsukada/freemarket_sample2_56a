@@ -51,12 +51,12 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|                 
 |birth_day|integer|null: false| 
-|postal_code|integer|null: false|
+|postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
 |address1|string|null: false|               
 |address2|string||
-|phone_number|integer|null: false|
+|phone_number|string|null: false|
 
 ### Association
 - belongs_to :user
