@@ -1,24 +1,104 @@
-# README
+## itemsテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|price|integer|null: false|
+|size|string||
+|status|string|null: false|
+|pay_way|integer||
+|deliver_way|integer||
+|deliver_data|integer||
+|deliver_fee|integer||
+|saler|integer||
+|buyer|integer||
+|phot_id|references||
+|brand_id|references||
+|category_id|references||
 
-Things you may want to cover:
+### Association
+- has many :comments
+- belongs_to :photos
+- belongs_to :brands
+- belongs_to :categories
 
-* Ruby version
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|gender|integer|null: false|
+|introduction|text|
+|email|string|null: false, unique: true|
+|profile_id|references|foreign_key: true|
+|credit_id|references|foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :credit
+- belongs_to :profiles
 
-* Configuration
+## profilesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|family_name_kanji|string|null: false|
+|first_name_kanji|string|null: false|
+|family_name_kana|string|null: false|
+|first_name_kana|string|null: false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|                  
+|birth_day|integer|null: false| 
+|postal_code|integer|null: false|
+|prefectures|string|null: false|
+|city|string|null: false|
+|address1|string|null: false|               
+|address2|string||
+|phone_number|integer|null: false|
 
-* Database creation
+### Association
+- belongs_to :user
 
-* Database initialization
+## creditテーブル
+|Column|Type|Options|
+|------|----|-------|
+|card_no|integer|null: false, unique: true|
+|validity_year|integer|null: false|
+|validity_month|integer|null: false|
+|security_no|integer|null: false|
 
-* How to run the test suite
+### Association
+- belongs_to :user
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|comment|text|null: false|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 
-* Deployment instructions
+### Association
+- belongs_to :item
 
- ...
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string||
+|item_id|references|foreign_key: true|
+
+### Association
+- has many :items
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|unique: true|
+|item_id|references|foreign_key: true|
+
+### Association
+- has many :items
+
+## categoriesテーブル
+|name|string|null: false|
+|item_id|references|
+
+### Association
+- has many :items
