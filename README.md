@@ -12,15 +12,15 @@
 |deliver_fee|integer||
 |saler|integer||
 |buyer|integer||
-|phot_id|references||
+|photo_id|references||
 |brand_id|references||
 |category_id|references||
 
 ### Association
 - has many :comments
-- belongs_to :photos
-- belongs_to :brands
-- belongs_to :categories
+- belongs_to :photo
+- belongs_to :brand
+- belongs_to :categorie
 
 ## usersテーブル
 |Column|Type|Options|
@@ -34,7 +34,7 @@
 
 ### Association
 - belongs_to :credit
-- belongs_to :profiles
+- belongs_to :profile
 
 ## profilesテーブル
 |Column|Type|Options|
@@ -97,6 +97,8 @@
 - has many :items
 
 ## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 |item_id|references||
 
