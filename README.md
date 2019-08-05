@@ -20,6 +20,7 @@
 
 ### Association
 - has many :comments
+- has_many :users, through: :trades
 - belongs_to :photo
 - belongs_to :brand
 - belongs_to :category
@@ -35,6 +36,7 @@
 |credit_id|references|foreign_key: true|
 
 ### Association
+- has_many :items, through: :trades
 - belongs_to :credit
 - belongs_to :profile
 
@@ -47,7 +49,7 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birth_year|integer|null: false|
-|birth_month|integer|null: false|                  
+|birth_month|integer|null: false|                 
 |birth_day|integer|null: false| 
 |postal_code|integer|null: false|
 |prefectures|string|null: false|
@@ -106,3 +108,14 @@
 
 ### Association
 - belongs_to :item
+- has_ancestry
+
+## tradesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references||
+|item_id|references||
+
+### Association
+- belongs_to :user_id
+- belongs_to :item_id
