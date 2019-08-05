@@ -14,9 +14,9 @@
 |deliver_fee|integer||
 |saler|integer||
 |buyer|integer||
-|photo_id|references||
-|brand_id|references||
-|category_id|references||
+|photo_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
 ### Association
 - has_many :comments
@@ -105,18 +105,17 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references||
 
 ### Association
-- belongs_to :item
+- has_many :items
 - has_ancestry
 
 ## tradesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references||
-|item_id|references||
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :user_id
-- belongs_to :item_id
+- belongs_to :user
+- belongs_to :item
