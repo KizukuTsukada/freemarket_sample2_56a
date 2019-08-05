@@ -20,7 +20,7 @@
 - has many :comments
 - belongs_to :photo
 - belongs_to :brand
-- belongs_to :categorie
+- belongs_to :category
 
 ## usersテーブル
 |Column|Type|Options|
@@ -85,7 +85,7 @@
 |item_id|references|foreign_key: true|
 
 ### Association
-- has many :items
+- belongs_to :item
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -94,7 +94,7 @@
 |item_id|references|foreign_key: true|
 
 ### Association
-- has many :items
+- belongs_to :item
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -103,4 +103,4 @@
 |item_id|references||
 
 ### Association
-- has many :items
+- belongs_to :item
