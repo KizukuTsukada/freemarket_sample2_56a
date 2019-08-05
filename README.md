@@ -19,7 +19,7 @@
 |category_id|references||
 
 ### Association
-- has many :comments
+- has_many :comments
 - has_many :users, through: :trades
 - belongs_to :photo
 - belongs_to :brand
@@ -81,6 +81,7 @@
 
 ### Association
 - belongs_to :item
+- belongs_to :user
 
 ## photosテーブル
 |Column|Type|Options|
