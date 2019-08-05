@@ -7,7 +7,7 @@
 |name|string||
 |price|integer|null: false|
 |size|string||
-|status|string|null: false|
+|status|integer|null: false|
 |pay_way|integer||
 |deliver_way|integer||
 |deliver_data|integer||
