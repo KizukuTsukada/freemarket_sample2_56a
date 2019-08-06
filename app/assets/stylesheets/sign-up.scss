@@ -4,6 +4,7 @@
   padding: 0 0 250px;
 }
 
+
 // wrap white-box(forms) 
 .single-main{
   .l-single-container{
@@ -20,7 +21,7 @@
     font-weight: bold;
   }
 
-  .regisrtation{
+  .registration{
     font-size: 22px;
     padding: 32px;
     &__form {
@@ -57,6 +58,7 @@
   }
 
   .btn-mail {
+    position: relative;
     background-color: #ea352d;
     a{
       color: #fff;
@@ -79,4 +81,24 @@
     border: #979797 solid 1px;
     color: #333;
   }
+
+  // Font Awesome icons
+  .icon{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    color: #fff;
+    margin-right: 20px;
+    transform: translate(0, -50%);
+  }
+
+  .icon-mail{
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .icon-facebook{
+    font-size: 26px;
+  }
 }
+
