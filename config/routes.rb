@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
  # deviseのカスタマイズコントローラ用ルーティン。新規登録時にしよう。
-  devise_for :users, controllers:{
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'
-}
+  devise_for :users, 
+  controllers: {
+    registrations: "users/registrations",
+    sessions: "users/sessions"
+  }
+
 resources :users, only:[:index, :show] do
   collection do
     get 'sms_confirmation'
