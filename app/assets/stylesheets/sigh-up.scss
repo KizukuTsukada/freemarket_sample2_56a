@@ -1,0 +1,81 @@
+
+.single-container{
+  padding: 0 0 250px;
+}
+
+.single-main{
+  .l-single-container{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+  }
+
+  .l-single-head {
+    padding: 24px 8px;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .regisrtation{
+    font-size: 22px;
+    padding: 32px;
+    &__form {
+      padding: 24px 16px 40px;
+    }
+  }
+
+  .l-single-inner {
+    border-top: 1px solid #f5f5f5;
+    padding: 40px;
+  }
+
+  .registration-form {
+
+  }
+
+  .l-single-content {
+    max-width: 343px;
+    margin: 0 auto;
+  }
+
+
+  // btns
+
+  .btn-default {
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .btn-mail {
+    background-color: #ea352d;
+    a{
+      color: #fff;
+    }
+  }
+
+  .btn-sns {
+    position: relative;
+  }
+
+  .btn-sns-facebook {
+    margin: 16px 0 0;
+    background: #385185;
+    color: #fff;
+  }
+
+  .btn-sns-google {
+    margin: 16px 0 0;
+    background: #fff;
+    border: #979797 solid 1px;
+    color: #333;
+  }
+}

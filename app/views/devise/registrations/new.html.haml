@@ -1,21 +1,36 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+
+%body
+  .single-container
+    %header.single-header
+      %h1
+        =link_to root_path do
+          =image_tag "header-logo.svg"
+
+
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration
+          新規会員登録
+        .l-single-inner.registration-form
+          .l-single-content
+            .btn-default.btn-mail
+              =link_to "メールアドレスで登録する"
+            %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+              %i.icon-facebook
+              Facebookで登録する
+            %button#google-login.btn-default.btn-sns-google
+              Googleで登録する
+
+              
+    %footer.single-footer
+      %ul.clearfix
+        %li
+          = link_to "プライバシーポリシー"
+        %li
+          = link_to "メルカリ利用規約"
+        %li
+          = link_to "特定商取引に関する表記"
+      = link_to "", class: "single-footer__logo" do
+        = image_tag "footer-logo.svg"
+      %p
+        %small @ 2019 Mercari
