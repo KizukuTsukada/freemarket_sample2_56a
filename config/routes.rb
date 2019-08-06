@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+
+ # deviseのカスタマイズコントローラ用ルーティン。新規登録時にしよう。
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'
+}
+resources :users, :only => [:index, :show] do
+  collection do
+    get 'sms_confirmation'
+  end
+end
+
   root "home#index"
   
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
