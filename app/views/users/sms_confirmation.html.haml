@@ -1,3 +1,37 @@
-hello.
+%body
+  .single-container
+    %header.single-header
+      %h1
+        =link_to root_path do
+          =image_tag "header-logo.svg"
+    %main.single-main
+      %section.l-single-container
+        %h2.l-chapter-head.registration
+          電話番号の確認
+        %form.l-single-inner.registration-form
+          .l-single-content
+            .form-group
+              %label 携帯電話の番号
+              %input.input-default{:placeholder => "携帯電話の番号を入力"}
+              %p.form-group-comment
+                本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              %submit.btn-default.btn-red
+                SMSを送信する
+              %p.form-group-comment
+                ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
 
--#  馬場さんのコードはこちらへ。
+            .form-group.text-right
+              電話番号の確認が必要な理由
+          
+      %footer.single-footer
+        %ul.clearfix
+          %li
+            = link_to "プライバシーポリシー"
+          %li
+            = link_to "メルカリ利用規約"
+          %li
+            = link_to "特定商取引に関する表記"
+        = link_to "", class: "single-footer__logo" do
+          = image_tag "footer-logo.svg"
+        %p
+          %small @ 2019 Mercari

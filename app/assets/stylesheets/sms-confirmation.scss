@@ -1,0 +1,42 @@
+.l-chapter-head{
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid #f5f5f5;
+}
+.form-group .input-default {
+  width: 100%;
+  margin: 8px 0 0;
+  
+}
+.form-group label{
+  font-weight: 600;
+}
+.input-default{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+.l-single-inner.registration-form .btn-red {
+  margin: 24px 0 0;
+}
+.btn-red{
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+.form-group.text-right{
+  color: #0099e8;
+  margin-top: 10px;
+}
+.text-right{
+  text-align: right;
+}
+.form-group-comment{
+  margin-top: 10px;
+}
