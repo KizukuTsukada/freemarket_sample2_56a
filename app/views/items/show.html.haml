@@ -1,1 +1,23 @@
-items#show
+%body
+  .default-container
+    %header.sp-header.visible-sp.with-shadow
+      .sp-header-inner
+        %h1.logo
+          = link_to image_tag("header-logo.svg"), root_path
+        .sp-header-user-nav.clearfix
+          .sp-header-user-icon
+            %figure
+              %i.icon-bell
+            %figcaption
+              99+
+          %a.sp-header-user-icon
+            %figure
+              %i.icon-check
+          %a.sp-header-user-icon.sp-header-user-profile
+            -# =link_to image_tag(current_user.image), mypage_path
+            あ
+            -# ↑後々ログインユーザーの画像になる
+            %figure
+              %div
+                %img{:alt => "", :src => "//static.mercdn.net/thumb/members/276802392.jpg?1472975768", :width => "32"}/
+
