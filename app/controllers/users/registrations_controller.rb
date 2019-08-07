@@ -62,4 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def sms_confirmation
   end
 
+  def delivery_address
+  end
+
 end
