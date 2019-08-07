@@ -1,28 +1,138 @@
 %body
-  .default-container
-    %header.sp-header.visible-sp.with-shadow
-      .sp-header-inner
-        %h1.logo
-          = link_to image_tag("header-logo.svg"), root_path
-        .sp-header-user-nav.clearfix
-          .sp-header-user-icon
-            %figure
-              %i.icon-bell
-            %figcaption
-              99+
-          %a.sp-header-user-icon
-            %figure
-              %i.icon-check
-          %a.sp-header-user-icon.sp-header-user-profile
-            -# =link_to image_tag(current_user.image), mypage_path
-            あ
-            -# ↑後々ログインユーザーの画像になる
-            %figure
-              %div
-                %img{:alt => "", :src => "//static.mercdn.net/thumb/members/276802392.jpg?1472975768", :width => "32"}/
-      .search-bar
-        %form.sp-header-form{:action => "https://www.mercari.com/jp/search/"}
-          %input.sp-header-search.input-default{:name => "keyword", :placeholder => "何をお探しですか？", :type => "search", :value => ""}/
-          %i.icon-search
+  %div.default-container
+    %header.pc-header.visible-pc
+      %div.pc-header-inner
+        %div.pc-header-top
+          %h1.pc-header-image
+            =link_to root_path do
+              =image_tag "main-logo.svg"
+          %form.pc-header-form
+            %input.pc-header-form.input-default{placeholder: "何をお探しですか？"}
+            %i.icon-search
+              = fa_icon 'search', class: 'icon icon-search'
+        %div.pc-header-nav-box.clearfix
+          %nav.l-left
+            %ul.pc-header-nav
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'envelope-o', class: 'icon icon-mail'
+                    %span
+                      カテゴリーから探す
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'envelope-o', class: 'icon icon-mail'
+                    %span
+                      ブランドから探す
+          .l-right
+            .sp-header-user-nav.clearfix
+              %span お知らせ
+              %span やることリスト
+              %span
+              
+              
 
+.default-container
+  .sp-header.visible-sp.with-shadow
+    .sp-header-inner
+  .pc-header.visible-pc.with-shadow
 
+  .item-box-container.l-single-container
+    %h1.item-name
+      アイテム名
+    .item-main-content.clearfix
+      .item-photo
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{style: "left: 0px; width: 1800px;"}
+              .owl-item.active{style: "width: 360px;"}
+                .owl-item-inner
+                  %img.owl-lazy{alt: "商品名", "data-src" => "/", src: "", :style => "opacity: 1;"}/
+              .owl-item{style: "width: 280px;"}
+                %img.owl-lazy{:alt => "商品名", "data-src" => "/"}/
+          .owl-nav.disabled
+            .owl-prev
+            .owl-next
+          .owl-dots
+            .owl-dot.active
+              %span
+              .owl-dot-inner
+                %img{src: ""}/
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img{src: ""}/
+            .owl-dot
+              %span
+              .owl-dot-inner
+                %img{src: ""}/
+      %table.item-detail-table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+
+              = link_to("Smile", {})
+              -# のちのちcurrent_user.nameを入れる
+          
+                %div
+                  .item-user-ratings
+                    評価アイコン
+          %tr
+            %th カテゴリー
+            %td
+              = link_to("メンズ", {})
+              -# メンズorレディース一覧のurl入れる
+              .item-detail-table-sub-category
+                %i.icon-arrow-right
+                  = link_to("トップス", {})
+                  -# 該当カテゴリー一覧のurl入れる
+          %tr
+            %th 商品のサイズ
+            %td S
+          %tr
+            %th 商品の状態
+            %td 目立った傷や汚れなし
+          %tr
+            %th 配送料の負担
+            %td 送料込み(出品者負担)
+          %tr
+            %th 配送の方法
+            %td 未定
+          %tr
+            %th 配送元地域
+            %td
+              福岡県
+          %tr
+            %th 発送日の目安
+            %td 2~3日で発送
+
+    .item-price-box.text-center
+      %span.item-price.bold ¥ 5,555
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    = link_to "購入画面に進む", root_path, class: "item-buy-btn f18-24"
+    .item-btn-float-area
+      %div{"data-client": "visible"}
+        購入画面に進む
+    .item-description.f14
+      %p.item-description-inner
+        【商品詳細】
+        Bohemians YOKOO BEATLES S/S TEE 【MADE IN JAPAN】です。
+        MADE IN JAPAN
+        Bohemians × Tadanori Yokooのコラボアイテム 
+        BEATLESオマージュです！
+        メンバーが持っている心臓がラメになっております！
+
+        【SIZE】
+        S
+
+        【採寸】
+        肩幅:約45.5cm
+        身幅:約50cm
+        着丈:約65cm
+        袖丈:約19cm
+    .item-button-container.clearfix
