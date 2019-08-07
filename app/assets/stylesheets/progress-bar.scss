@@ -25,9 +25,8 @@
     margin: 0 9% 0 0;
     font-size: 12px;
     color: #888;
-
   }
-  li.last{
+  .last{
     margin: 0,
   }
 
@@ -37,42 +36,42 @@
     margin: 8px auto 0;
     background: #ccc;
     border-radius: 50%;
-  }
-  .progress-status.last{
-    margin: 8px auto 0;
+    .last{
+      margin: 8px auto 0;
+    }
+    &:before{
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      right: 50%;
+    }
+    &:after {
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+      left: 50%;
+    }
   }
 
-  // progress-status擬似要素
-  .progress-status:before{
-    position: absolute;
-    bottom: 5px;
-    z-index: -1;
-    display: block;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #ccc;
-    right: 50%;
-  }
   .progress-status.first:before{
     content: none;
   }
 
-  .progress-status:after {
-    position: absolute;
-    bottom: 5px;
-    z-index: -1;
-    display: block;
-    content: '';
-    width: 100%;
-    height: 2px;
-    background: #ccc;
-    left: 50%;
-  }
   .progress-status.last:after{
     content: none;
   }
 }
+
 
 
 //ページごとにhamlを変更する必要あり。応急処置。
@@ -80,10 +79,9 @@
 .progress-bar li.active {
   font-weight: 600;
   color: #ea352d;
-}
-
-.progress-bar li.active .progress-status {
+  .progress-status {
   background: #ea352d;
+  }
 }
 
 .progress-bar li.active > div:before {
@@ -92,16 +90,13 @@
 
 .progress-bar li.done{
   color: #ea352d;
-}
-
-.progress-bar li.done > div {
-  background: #ea352d;
-}
-
-.progress-bar li.done > div:before{
-  background: #ea352d;
-}
-
-.progress-bar li.done > div:after{
-  background: #ea352d;
+  > div {
+    background: #ea352d;
+  }
+  > div:before{
+    background: #ea352d;
+  }
+  > div:after{
+    background: #ea352d;
+  }
 }
