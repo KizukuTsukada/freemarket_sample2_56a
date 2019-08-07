@@ -1,12 +1,22 @@
 
-@import "font-awesome";
 @import "reset";
 @import "mixins/mixin";
+
+//全体に適応
 @import "to-all";
-@import "progress-bar";
-@import "users-index";
+
+//ヘッダーとフッター
 @import "single-header-footer";
-@import "items";
+@import "progress-bar";
+
+//新規登録ページ
+@import "users-index";
 @import "users-signup";
 @import "sms-confirmation";
 @import "delivery-address";
+
+//商品ページ
+@import "items";
+
+//その他
+@import "font-awesome";
