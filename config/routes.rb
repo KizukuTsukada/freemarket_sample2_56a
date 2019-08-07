@@ -23,7 +23,5 @@ end
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:show]
-  resources :items do
-    resources :comments, only: [:index, :create]
-  end
+  resources :items
 end
