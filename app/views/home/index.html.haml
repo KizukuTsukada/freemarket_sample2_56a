@@ -1,8 +1,8 @@
 %body
-  %div.default-container
+  .default-container
     %header.pc-header.visible-pc
-      %div.pc-header-inner
-        %div.pc-header-top
+      .pc-header-inner
+        .pc-header-top
           %h1.pc-header-image
             =link_to root_path do
               =image_tag "main-logo.svg"
@@ -10,7 +10,7 @@
             %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
             %i.icon-search2
               = fa_icon 'search', class: 'icon-search2__icon'
-        %div.pc-header-nav-box.clearfix
+        .pc-header-nav-box.clearfix
           %nav.l-left
             %ul.pc-header-nav
               %li
@@ -27,7 +27,7 @@
                     = fa_icon 'tag', class: 'main-icon'
                     %span.catebrastyle
                       ブランドから探す
-          %div.l-right
+          .l-right
             %ul.pc-header-login-nav
               %li.pc-header-login-nav.btn-red2
                 =link_to " 新規会員登録","",class: 'new-btn'
@@ -35,8 +35,8 @@
                 =link_to "ログイン","",class: 'login-btn'
     %main
       %section.owl-carousel.top-carousel
-        %div.owl-stage-outer
-          %div.owl-item.cloned
+        .owl-stage-outer
+          .owl-item.cloned
             =image_tag "mainimage.png", class: 'imagestyle-mein'
       %section.pickup-container
         %h2.pickup-head
@@ -44,8 +44,8 @@
         %section.items-box-container.clearfix
           %h3.text-center
             =link_to "レディース 新着アイテム", class: 'textstyle'
-          %div.items-box-contenter
-            %div.items-box-content.clearfix
+          .items-box-contenter
+            .items-box-content.clearfix
               %section.items-box
                 =image_tag "ladies.png", class: 'itemstyle'
               %section.items-box
@@ -54,13 +54,13 @@
                 =image_tag "ladies.png", class: 'itemstyle'
               %section.items-box
                 =image_tag "ladies.png", class: 'itemstyle'
-            %div.view-all
+            .view-all
               =link_to "全ての商品を見る","",class: 'allitem'
         %section.items-box-container.clearfix
           %h3.text-center
             =link_to " メンズ 新着アイテム", class: 'textstyle'
-          %div.items-box-contenter
-            %div.items-box-content.clearfix
+          .items-box-contenter
+            .items-box-content.clearfix
               %section.items-box
                 =image_tag "mens.png", class: 'itemstyle'
               %section.items-box
@@ -69,7 +69,7 @@
                 =image_tag "mens.png", class: 'itemstyle'
               %section.items-box
                 =image_tag "mens.png", class: 'itemstyle'
-            %div.view-all
+            .view-all
               =link_to "全ての商品を見る","",class: 'allitem'
     %footer.footer-item
       =link_to root_path do
