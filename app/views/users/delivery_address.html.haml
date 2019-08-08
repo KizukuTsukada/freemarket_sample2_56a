@@ -37,146 +37,111 @@
               %div
                 -# = form_for [@???] do |f|
                 %label 郵便番号
-                -# = f.label :nickname, "郵便番号"
+                -# = f.label :postal_code, "郵便番号"
                 %span.form-must 必須
-              %textarea{name: "nickname", class: "text-default"} 例）123-4567
-              -# = f.text_field :nickname, class: "input-default"
-
-            .each-forms
-              %div
-                -# = form_for [@???] do |f|
-                %label メールアドレス
-                -# = f.label :email, "メールアドレス"
-                %span.form-must 必須
-              %textarea{name: "email", class: "text-default"} PC・携帯どちらでも可
-              -# = f.text_field :email, class: "input-default"
-              
-            .each-forms
-              %div
-                -# = form_for [@???] do |f|
-                %label パスワード
-                -# = f.label :password, "パスワード"
-                %span.form-must 必須
-              %textarea{name: "password", class: "text-default"} 7文字以上
-              -# = f.text_field :password, class: "input-default"
-
-            .each-forms
-              %div
-                -# = form_for [@???] do |f|
-                %label パスワード(確認)
-                -# = f.label :password, "パスワード(確認)"
-                %span.form-must 必須
-              %textarea{name: "password2", class: "text-default"} 7文字以上
-              -# = f.text_field :password2, class: "input-default"
-
-            .each-forms
-              %h3.text-left.l-chapter-sub-head 本人確認
-              %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-
-            .each-forms
-              %div
-                -# = form_for [@???] do |f|
-                %label お名前(全角)
-                -# = f.label :password, "お名前(全角)"
-                %span.form-must 必須
-              %textarea{name: "family_name_kanji", class: "text-default half"} 例）山田
-              -# = f.text_field :family_name_kanji, class: "input-default half"
-              %textarea{name: "first_name_kanji", class: "text-default half"} 例）彩
-              -# = f.text_field :first_name_kanji, class: "input-default half"
-
-            .each-forms
-              %div
-                -# = form_for [@???] do |f|
-                %label お名前カナ(全角)
-                -# = f.label :password, "お名前カナ(全角)"
-                %span.form-must 必須
-              %textarea{name: "family_name_kana", class: "text-default half"} 例）ヤマダ
-              -# = f.text_field :family_name_kana, class: "input-default half"
-              %textarea{name: "first_name_kana", class: "text-default half"} 例）アヤ
-              -# = f.text_field :first_name_kana, class: "input-default half"
+              %textarea{name: "postal_code", class: "text-default"} 例）123-4567
+              -# = f.text_field :postal_code, class: "input-default"
 
             .each-forms
               -# = form_for [@???] do |f|
-              %label 生年月日
-              -# = f.label :birthday, "生年月日"
+              %label 都道府県
+              -# = f.label :prefectures, "都道府県"
               %span.form-must 必須
               %br/
-              .birthday_wrap
+              .prefectures_wrap
                 .select-form-wrap
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :prefectures, class: "input-default")
                   %i.icon-arrow-bottom
-                  %select.select-default{name: "birth_year", class: "select-text-default"}
+                  %select.select-default{name: "prefectures", class: "text-default"}
                     %option{value: ""} ---
-                    %option{value: "1"} 2019
-                    %option{value: "2"} 2018
-                    %option{value: "3"} 2017
-                  %span 年
+                    %option{value: "1"} 北海道
+                    %option{value: "2"} 青森県
+                    %option{value: "3"} 岩手県
+                    %option{value: "4"} 宮城県
+                    %option{value: "5"} 秋田県
+                    %option{value: "6"} 山形県
+                    %option{value: "7"} 福島県
+                    %option{value: "8"} 茨城県
+                    %option{value: "9"} 栃木県
+                    %option{value: "10"} 群馬県
+                    %option{value: "11"} 埼玉県
+                    %option{value: "12"} 千葉県
+                    %option{value: "13"} 東京都
+                    %option{value: "14"} 神奈川県
+                    %option{value: "15"} 新潟県
+                    %option{value: "16"} 富山県
+                    %option{value: "17"} 石川県
+                    %option{value: "18"} 福井県
+                    %option{value: "19"} 山梨県
+                    %option{value: "20"} 長野県
+                    %option{value: "21"} 岐阜県
+                    %option{value: "22"} 静岡県
+                    %option{value: "23"} 愛知県
+                    %option{value: "24"} 三重県
+                    %option{value: "25"} 滋賀県
+                    %option{value: "26"} 京都府
+                    %option{value: "27"} 大阪府
+                    %option{value: "28"} 兵庫県
+                    %option{value: "29"} 奈良県
+                    %option{value: "30"} 和歌山県
+                    %option{value: "31"} 鳥取県
+                    %option{value: "32"} 島根県
+                    %option{value: "33"} 岡山県
+                    %option{value: "34"} 広島県
+                    %option{value: "35"} 山口県
+                    %option{value: "36"} 徳島県
+                    %option{value: "37"} 香川県
+                    %option{value: "38"} 愛媛県
+                    %option{value: "39"} 高知県
+                    %option{value: "40"} 福岡県
+                    %option{value: "41"} 佐賀県
+                    %option{value: "42"} 長崎県
+                    %option{value: "43"} 熊本県
+                    %option{value: "44"} 大分県
+                    %option{value: "45"} 宮崎県
+                    %option{value: "46"} 鹿児島県
+                    %option{value: "47"} 沖縄県
 
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "input-default")
-                  %i.icon-arrow-bottom
-                  %select.select-default{name: "birth_month", class: "select-text-default"}
-                    %option{value: ""} ---
-                    %option{value: "1"} 1
-                    %option{value: "2"} 2
-                    %option{value: "3"} 3
-                    %option{value: "4"} 4
-                    %option{value: "5"} 5
-                    %option{value: "6"} 6
-                    %option{value: "7"} 7
-                    %option{value: "8"} 8
-                    %option{value: "9"} 9
-                    %option{value: "10"} 10
-                    %option{value: "11"} 11
-                    %option{value: "12"} 12
-                  %span 月
-
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_day, class: "input-default")
-                  %i.icon-arrow-bottom
-                  %select.select-default{name: "birth_day", class: "select-text-default"}
-                    %option{value: ""} ---
-                    %option{value: "1"} 1
-                    %option{value: "2"} 2
-                    %option{value: "3"} 3
-                    %option{value: "4"} 4
-                    %option{value: "5"} 5
-                    %option{value: "6"} 6
-                    %option{value: "7"} 7
-                    %option{value: "8"} 8
-                    %option{value: "9"} 9
-                    %option{value: "10"} 10
-                    %option{value: "11"} 11
-                    %option{value: "12"} 12
-                    %option{value: "13"} 13
-                    %option{value: "14"} 14
-                    %option{value: "15"} 15
-                    %option{value: "16"} 16
-                    %option{value: "17"} 17
-                    %option{value: "18"} 18
-                    %option{value: "19"} 19
-                    %option{value: "21"} 21
-                    %option{value: "22"} 22
-                    %option{value: "23"} 23
-                    %option{value: "24"} 24
-                    %option{value: "25"} 25
-                    %option{value: "26"} 26
-                    %option{value: "27"} 27
-                    %option{value: "28"} 28
-                    %option{value: "29"} 29
-                    %option{value: "30"} 30
-                    %option{value: "31"} 31
-                  %span 日
-
-              .clearfix
-              %p.form-into-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-
-          .l-single-content
             .each-forms
-              %p.l-single-text.text-center
-                「次へ進む」のボタンを押すことにより、
-                %a 利用規約
-                に同意したものとみなします
-              %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 次へ進む
-              -# = f.submit '次へ進む', class: 'btn-default btn-red'
+              %div
+                -# = form_for [@???] do |f|
+                %label 市区町村
+                -# = f.label :city, "市区町村"
+                %span.form-must 必須
+              %textarea{name: "city", class: "text-default"} 例）横浜市緑区
+              -# = f.text_field :city, class: "input-default"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label 番地
+                -# = f.label :address1, "番地"
+                %span.form-must 必須
+              %textarea{name: "address1", class: "text-default"} 例）青山1-1-1
+              -# = f.text_field :address1, class: "input-default"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label 建物名
+                -# = f.label :address2, "建物名"
+                %span.form-not-haveto 任意
+              %textarea{name: "address2", class: "text-default"} 例）柳ビル103
+              -# = f.text_field :address2, class: "input-default"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label 電話番号
+                -# = f.label :phone_number, "電話番号"
+                %span.form-not-haveto 任意
+              %textarea{name: "phone_number", class: "text-default"} 例）09012345678
+              -# = f.text_field :phone_number, class: "input-default"
+
+            .emptybox.delivery_address
+            = button_to "次へ進む", "", class: "btn-default btn-red text-default__submit"
+            -# = f.submit '次へ進む', class: 'btn-default btn-red'
+
 
 
 
