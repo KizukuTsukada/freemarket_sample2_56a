@@ -19,7 +19,6 @@
 |category_id|references|foreign_key: true|
 
 ### Association
-- has_many :comments
 - has_many :users, through: :trades
 - belongs_to :photo
 - belongs_to :brand
@@ -76,19 +75,6 @@
 |security_no|integer|null: false|
 
 ### Association
-- belongs_to :user
-
-
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|comment|text|null: false|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
-
-### Association
-- belongs_to :item
 - belongs_to :user
 
 
