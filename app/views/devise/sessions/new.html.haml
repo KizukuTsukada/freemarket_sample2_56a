@@ -14,16 +14,27 @@
           =link_to '新規会員登録', "", class: 'sinki'
         
         .login-form-inner
-          #facebook-login
-          =link_to 'Facebookでログイン', "", class:"btn-default-btn-sns-btn-sns-facebook"
-          #google-login
-          =link_to 'Googleでログイン', "", class: "btn-default-btn-sns-btn-sns-google"
-            
+          %button#facebook-login.btn-sns-facebook
+            = fa_icon 'facebook-square', class: 'icon-facebook'
+            =link_to "Facebookでログイン"
+          %button#google-login.btn-sns-google
+            = image_tag "google-logo.svg",class:'icon-google'
+            =link_to "Googleでログイン"
+          = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .field
+              
+              %br/
+              = f.email_field :email, autofocus: true, autocomplete: "email",class:'email'
+            .field
+          
+              %br/
+              = f.password_field :password, autocomplete: "current-password",class:"password"
+
         
-          %input.login-input-text-input-default
-          %input.login-input-text-input-default
-          =link_to'ログイン',"", class: 'login-sumit'
-          =link_to'パスワードをお忘れの方',"", class: 'ps'
+              =link_to'ログイン',"", class: 'login-sumit'
+              =link_to'パスワードをお忘れの方',"", class: 'ps'
+  
+            
 
 
 
