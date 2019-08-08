@@ -6,6 +6,26 @@
           =image_tag "header-logo.svg"
 
 
+      -# ヘッダー左上の進捗管理バー
+      %nav.progress-bar
+        %ol.clearfix
+          %li.done
+            会員情報
+            %div.progress-status.first
+          %li.done
+            電話番号認証
+            %div.progress-status
+          %li.done
+            お届け先住所入力
+            %div.progress-status
+          %li.done
+            支払い方法
+            %div.progress-status
+          %li.last.active
+            完了
+            %div.progress-status.last
+
+
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration
