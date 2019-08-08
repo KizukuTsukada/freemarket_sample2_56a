@@ -2,30 +2,30 @@
   .default-container
     %header.pc-header.visible-pc
       .pc-header-inner
-        %div.pc-header-top
+        .pc-header-top
           %h1.pc-header-image
             =link_to root_path do
               =image_tag "main-logo.svg"
-          %form.pc-header-form
-            %input.pc-header-form.input-default{placeholder: "何をお探しですか？"}
-            %i.icon-search
-              = fa_icon 'search', class: 'search-icon'
-        .header-nav-box.clearfix
+          %form.pc-header-form2
+            %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
+            %i.icon-search2
+              = fa_icon 'search', class: 'icon-search2__icon'
+        .pc-header-nav-box.clearfix
           %nav.l-left
             %ul.pc-header-nav
               %li
                 %h2
                   =link_to "","", class: 'pc-header-nav-root list-parent'
                   %i.icon-list
-                    = fa_icon 'envelope-o', class: 'icon icon-mail'
-                    %span
+                    = fa_icon 'list', class: 'main-icon'
+                    %span.catebrastyle
                       カテゴリーから探す
               %li
                 %h2
                   =link_to "","", class: 'pc-header-nav-root list-parent'
                   %i.icon-list
-                    = fa_icon 'envelope-o', class: 'icon icon-mail'
-                    %span
+                    = fa_icon 'tag', class: 'main-icon'
+                    %span.catebrastyle
                       ブランドから探す
           .l-right
             .sp-header-user-nav.clearfix
