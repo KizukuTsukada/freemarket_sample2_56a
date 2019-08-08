@@ -1,1 +1,63 @@
-%trade#index
+%body
+  .single-container
+    %header.single-header
+      %h1
+        =link_to root_path do
+          =image_tag "header-logo.svg"
+    %main.single-main
+      %section.l-single-container.buy-item-container
+        %h2.l-single-head 購入内容の確認
+        %section.buy-content.buy-item
+          %div.buy-content-inner
+            %h3.buy-item-image
+              =link_to root_path do
+                =image_tag "footer-logo.svg"
+            %p.buy-item-name.bold メルカリ
+            %form.buy-form
+              %p.buy-price-ja.bold 
+                @item.price
+                %span.item-shipping-fee.f14.bold 送料込み
+              %ul.buy-accordion.not-have
+                %li.accordion-parent
+                  %div.accordion-toggle ポイントはありません
+              %ul.buy-price-table
+                %li.buy-price-row.buy-you-pay.bold
+                  %div.buy-price-cell 支払い金額
+                  %div.buy-price-cell
+                    %span ¥ 1,000
+              %submit.btn-default.btn-red.bold 購入する
+        %section.buy-content.buy-user-info
+          %div.buy-content-inner
+            %h3 配送先
+            %address.buy-user-info-text
+            〒340-0011
+            %br
+            東京都 渋谷区
+            神南坂3-1-11
+            フレーム神南坂401
+            %br
+            テック タロウ
+            %p.buy-user-info-text
+            %a.buy-user-info-fix
+              %span 変更する
+        %section.buy-content.buy-user-info
+          %div.buy-content-inner
+            %h3 支払い方法
+            %p.buy-user-info-text
+            ************0000
+            %br
+            08 / 20
+            %a.buy-user-info-fix
+              %span 変更する
+    %footer.single-footer
+      %ul.clearfix
+        %li
+          = link_to "プライバシーポリシー"
+        %li
+          = link_to "メルカリ利用規約"
+        %li
+          = link_to "特定商取引に関する表記"
+      = link_to "", class: "single-footer__logo" do
+        = image_tag "footer-logo.svg"
+      %p
+        %small @ 2019 Mercari
