@@ -1,7 +1,6 @@
 # README
 
 ## itemsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |name|string||
@@ -14,6 +13,7 @@
 |deliver_fee|integer||
 |saler|integer||
 |buyer|integer||
+|detail|text|null: false|
 |photo_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
@@ -24,6 +24,8 @@
 - belongs_to :photo
 - belongs_to :brand
 - belongs_to :category
+
+
 
 ## usersテーブル
 |Column|Type|Options|
@@ -39,6 +41,8 @@
 - has_many :items, through: :trades
 - belongs_to :credit
 - belongs_to :profile
+
+
 
 ## profilesテーブル
 |Column|Type|Options|
@@ -61,6 +65,8 @@
 ### Association
 - belongs_to :user
 
+
+
 ## creditテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -71,6 +77,8 @@
 
 ### Association
 - belongs_to :user
+
+
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -83,6 +91,8 @@
 - belongs_to :item
 - belongs_to :user
 
+
+
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -91,6 +101,8 @@
 
 ### Association
 - belongs_to :item
+
+
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -101,6 +113,8 @@
 ### Association
 - belongs_to :item
 
+
+
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -109,6 +123,8 @@
 ### Association
 - has_many :items
 - has_ancestry
+
+
 
 ## tradesテーブル
 |Column|Type|Options|
