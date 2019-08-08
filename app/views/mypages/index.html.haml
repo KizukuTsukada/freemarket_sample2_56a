@@ -1,6 +1,4 @@
 
-
-
 %main.l-container.clearfix
   .l-content
     %section.mypage-user-icon
@@ -72,7 +70,7 @@
         %ul#mypage-tab-todo.mypage-item-list.tab-pane
           %li.mypage-item-not-found.bold 現在、やることリストはありません
 
-    %aside.modal{"data-close" => "modal", "data-modal" => "banner"}
+    %aside.modal{"data-close": "modal", "data-modal": "banner"}
       .modal-inner.modal-banner
         .modal-banner-eye-catch
     
@@ -120,20 +118,14 @@
           -# プロフィールページ作ったらパス変更
           = link_to "プロフィール", mypage_path, class: "mypage-nav-list-item"
         %li
-          %a.mypage-nav-list-item{:href => "/jp/mypage/deliver_address/"}
-            発送元・お届け先住所変更
+          %a.mypage-nav-list-item 発送元・お届け先住所変更            
         %li
-          %a.mypage-nav-list-item{:href => "/jp/mypage/card/"}
-            支払い方法
+          %a.mypage-nav-list-item 支払い方法           
         %li
-          %a.mypage-nav-list-item{:href => "/jp/mypage/email_password/"}
-            メール/パスワード
+          %a.mypage-nav-list-item メール/パスワード        
         %li
-          %a.mypage-nav-list-item{:href => "/jp/mypage/identification/"}
-            本人情報
+          %a.mypage-nav-list-item 本人情報           
         %li
-          %a.mypage-nav-list-item{:href => "/jp/mypage/sms_confirmation/"}
-            電話番号の確認
+          %a.mypage-nav-list-item 電話番号の確認
         %li
-          %a.mypage-nav-list-item{:href => "/jp/logout/"}
-            ログアウト
+          %a.mypage-nav-list-item ログアウト
