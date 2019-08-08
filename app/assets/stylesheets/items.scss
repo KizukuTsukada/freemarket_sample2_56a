@@ -688,3 +688,8 @@ i[class^='icon-'], i[class*='icon-'] {
   margin-left: 10px;
   font-size: 14px;
 }
+
+.sp-header-user-nav.clearfix{
+  display: flex;
+  @include: 
+}
