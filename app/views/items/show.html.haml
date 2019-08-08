@@ -9,7 +9,7 @@
           %form.pc-header-form
             %input.pc-header-form.input-default{placeholder: "何をお探しですか？"}
             %i.icon-search
-              = fa_icon 'search', class: 'icon icon-search'
+              = fa_icon 'search', class: 'search-icon'
         %div.pc-header-nav-box.clearfix
           %nav.l-left
             %ul.pc-header-nav
@@ -31,7 +31,11 @@
             .sp-header-user-nav.clearfix
               %span お知らせ
               %span やることリスト
-              %span
+              .pc-header-user-icon.pc-header-menu-link
+                %figure
+                  %div
+                    = image_tag("")
+                %span マイページ
               
               
 
@@ -121,6 +125,7 @@
     .item-description.f14
       %p.item-description-inner
         【商品詳細】
+        items.detail
         Bohemians YOKOO BEATLES S/S TEE 【MADE IN JAPAN】です。
         MADE IN JAPAN
         Bohemians × Tadanori Yokooのコラボアイテム 
