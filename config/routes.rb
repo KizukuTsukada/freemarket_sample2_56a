@@ -21,7 +21,7 @@ end
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
   get "public/index" => "public#index"
 
-  get "users" => "users#index", as: :mypage
+  get "mypage" => "mypage#index", as: :mypage
   resources :users, only:[:edit, :show]  
   resources :categories, only: [:index]
   resources :brands, only: [:index]
