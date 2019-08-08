@@ -72,6 +72,7 @@
             %div.view-all
               =link_to "全ての商品を見る","",class: 'allitem'
     %footer.footer-item
-      %div.footer-sell-btn
-        =link_to root_path, class: 'footer-sell-btn' do
+      =link_to root_path do
+        .footer-sell-btn
+          %span.footer-sell-btn__sell  出品
           = fa_icon 'camera', class: 'camera-icon' 
