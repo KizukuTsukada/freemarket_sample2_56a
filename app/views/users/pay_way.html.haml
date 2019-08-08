@@ -1,0 +1,194 @@
+%body
+  .single-container
+    %header.single-header
+      %h1
+        =link_to root_path do
+          =image_tag "header-logo.svg"
+
+      -# ヘッダー左上の進捗管理バー
+      %nav.progress-bar
+        %ol.clearfix
+          %li.active
+            会員情報
+            %div.progress-status.first
+          %li
+            電話番号認証
+            %div.progress-status
+          %li
+            お届け先住所入力
+            %div.progress-status
+          %li
+            支払い方法
+            %div.progress-status
+          %li.last
+            完了
+            %div.progress-status.last
+
+
+
+    %main.single-main
+      %section.l-single-container
+        %h2.l-single-head.registration
+          会員情報入力
+        .l-single-inner.registration-form1
+          .l-single-content
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label ニックネーム
+                -# = f.label :nickname, "ニックネーム"
+                %span.form-must 必須
+              %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
+              -# = f.text_field :nickname, class: "input-default"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label メールアドレス
+                -# = f.label :email, "メールアドレス"
+                %span.form-must 必須
+              %textarea{name: "email", class: "text-default", placeholder: "PC・携帯どちらでも可"}
+              -# = f.text_field :email, class: "input-default"
+              
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label パスワード
+                -# = f.label :password, "パスワード"
+                %span.form-must 必須
+              %textarea{name: "password", class: "text-default", placeholder: "7文字以上"}
+              -# = f.text_field :password, class: "input-default"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label パスワード(確認)
+                -# = f.label :password, "パスワード(確認)"
+                %span.form-must 必須
+              %textarea{name: "password2", class: "text-default", placeholder: "7文字以上"}
+              -# = f.text_field :password2, class: "input-default"
+
+            .each-forms
+              %h3.text-left.l-chapter-sub-head 本人確認
+              %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label お名前(全角)
+                -# = f.label :password, "お名前(全角)"
+                %span.form-must 必須
+              %textarea{name: "family_name_kanji", class: "text-default half", placeholder: "例）山田"}
+              -# = f.text_field :family_name_kanji, class: "input-default half"
+              %textarea{name: "first_name_kanji", class: "text-default half", placeholder: "例）彩"}
+              -# = f.text_field :first_name_kanji, class: "input-default half"
+
+            .each-forms
+              %div
+                -# = form_for [@???] do |f|
+                %label お名前カナ(全角)
+                -# = f.label :password, "お名前カナ(全角)"
+                %span.form-must 必須
+              %textarea{name: "family_name_kana", class: "text-default half", placeholder: "例）ヤマダ"}
+              -# = f.text_field :family_name_kana, class: "input-default half"
+              %textarea{name: "first_name_kana", class: "text-default half", placeholder: "例）アヤ"}
+              -# = f.text_field :first_name_kana, class: "input-default half"
+
+            .each-forms
+              -# = form_for [@???] do |f|
+              %label 生年月日
+              -# = f.label :birthday, "生年月日"
+              %span.form-must 必須
+              %br/
+              .birthday_wrap
+                .select-form-wrap
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "input-default")
+                  %i.icon-arrow-bottom
+                  %select.select-default{name: "birth_year", class: "select-text-default"}
+                    %option{value: ""} ---
+                    %option{value: "1"} 2019
+                    %option{value: "2"} 2018
+                    %option{value: "3"} 2017
+                  %span 年
+
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "input-default")
+                  %i.icon-arrow-bottom
+                  %select.select-default{name: "birth_month", class: "select-text-default"}
+                    %option{value: ""} ---
+                    %option{value: "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                  %span 月
+
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_day, class: "input-default")
+                  %i.icon-arrow-bottom
+                  %select.select-default{name: "birth_day", class: "select-text-default"}
+                    %option{value: ""} ---
+                    %option{value: "1"} 1
+                    %option{value: "2"} 2
+                    %option{value: "3"} 3
+                    %option{value: "4"} 4
+                    %option{value: "5"} 5
+                    %option{value: "6"} 6
+                    %option{value: "7"} 7
+                    %option{value: "8"} 8
+                    %option{value: "9"} 9
+                    %option{value: "10"} 10
+                    %option{value: "11"} 11
+                    %option{value: "12"} 12
+                    %option{value: "13"} 13
+                    %option{value: "14"} 14
+                    %option{value: "15"} 15
+                    %option{value: "16"} 16
+                    %option{value: "17"} 17
+                    %option{value: "18"} 18
+                    %option{value: "19"} 19
+                    %option{value: "21"} 21
+                    %option{value: "22"} 22
+                    %option{value: "23"} 23
+                    %option{value: "24"} 24
+                    %option{value: "25"} 25
+                    %option{value: "26"} 26
+                    %option{value: "27"} 27
+                    %option{value: "28"} 28
+                    %option{value: "29"} 29
+                    %option{value: "30"} 30
+                    %option{value: "31"} 31
+                  %span 日
+
+              .clearfix
+              %p.form-into-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+          .l-single-content
+            .each-forms
+              %p.l-single-text.text-center
+                「次へ進む」のボタンを押すことにより、
+                %a 利用規約
+                に同意したものとみなします
+              %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 次へ進む
+              -# = f.submit '次へ進む', class: 'btn-default btn-red'
+
+
+
+    %footer.single-footer
+      %ul.clearfix
+        %li
+          = link_to "プライバシーポリシー"
+        %li
+          = link_to "メルカリ利用規約"
+        %li
+          = link_to "特定商取引に関する表記"
+      = link_to "", class: "single-footer__logo" do
+        = image_tag "footer-logo.svg"
+      %p
+        %small @ 2019 Mercari
