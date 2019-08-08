@@ -40,7 +40,7 @@
                 -# = f.label :nickname, "ニックネーム"
                 %span.form-must 必須
               %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
-              -# = f.text_field :nickname, class: "input-default"
+              -# = f.text_field :nickname, class: "text-default"
 
             .each-forms
               %div
@@ -49,7 +49,7 @@
                 -# = f.label :email, "メールアドレス"
                 %span.form-must 必須
               %textarea{name: "email", class: "text-default", placeholder: "PC・携帯どちらでも可"}
-              -# = f.text_field :email, class: "input-default"
+              -# = f.text_field :email, class: "text-default"
               
             .each-forms
               %div
@@ -58,7 +58,7 @@
                 -# = f.label :password, "パスワード"
                 %span.form-must 必須
               %textarea{name: "password", class: "text-default", placeholder: "7文字以上"}
-              -# = f.text_field :password, class: "input-default"
+              -# = f.text_field :password, class: "text-default"
 
             .each-forms
               %div
@@ -67,7 +67,7 @@
                 -# = f.label :password, "パスワード(確認)"
                 %span.form-must 必須
               %textarea{name: "password2", class: "text-default", placeholder: "7文字以上"}
-              -# = f.text_field :password2, class: "input-default"
+              -# = f.text_field :password2, class: "text-default"
 
             .each-forms
               %h3.text-left.l-chapter-sub-head 本人確認
@@ -80,9 +80,9 @@
                 -# = f.label :password, "お名前(全角)"
                 %span.form-must 必須
               %textarea{name: "family_name_kanji", class: "text-default half", placeholder: "例）山田"}
-              -# = f.text_field :family_name_kanji, class: "input-default half"
+              -# = f.text_field :family_name_kanji, class: "text-default half"
               %textarea{name: "first_name_kanji", class: "text-default half", placeholder: "例）彩"}
-              -# = f.text_field :first_name_kanji, class: "input-default half"
+              -# = f.text_field :first_name_kanji, class: "text-default half"
 
             .each-forms
               %div
@@ -91,9 +91,9 @@
                 -# = f.label :password, "お名前カナ(全角)"
                 %span.form-must 必須
               %textarea{name: "family_name_kana", class: "text-default half", placeholder: "例）ヤマダ"}
-              -# = f.text_field :family_name_kana, class: "input-default half"
+              -# = f.text_field :family_name_kana, class: "text-default half"
               %textarea{name: "first_name_kana", class: "text-default half", placeholder: "例）アヤ"}
-              -# = f.text_field :first_name_kana, class: "input-default half"
+              -# = f.text_field :first_name_kana, class: "text-default half"
 
             .each-forms
               -# = form_for [@???] do |f|
@@ -103,7 +103,7 @@
               %br/
               .birthday_wrap
                 .select-form-wrap
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "select-text-default")
                   %i.icon-arrow-bottom
                   %select.select-default{name: "birth_year", class: "select-text-default"}
                     %option{value: ""} ---
@@ -112,7 +112,7 @@
                     %option{value: "3"} 2017
                   %span 年
 
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "select-text-default")
                   %i.icon-arrow-bottom
                   %select.select-default{name: "birth_month", class: "select-text-default"}
                     %option{value: ""} ---
@@ -130,7 +130,7 @@
                     %option{value: "12"} 12
                   %span 月
 
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_day, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_day, class: "select-text-default")
                   %i.icon-arrow-bottom
                   %select.select-default{name: "birth_day", class: "select-text-default"}
                     %option{value: ""} ---
@@ -175,7 +175,7 @@
                 「次へ進む」のボタンを押すことにより、
                 %a 利用規約
                 に同意したものとみなします
-              %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 次へ進む
+              %button.btn-default.btn-red{type: "submit", class: "text-default__submit"} 次へ進む
               -# = f.submit '次へ進む', class: 'btn-default btn-red'
     %footer.single-footer
       %ul.clearfix

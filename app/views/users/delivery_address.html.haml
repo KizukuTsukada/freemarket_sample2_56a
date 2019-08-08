@@ -40,7 +40,7 @@
                 -# = f.label :postal_code, "郵便番号"
                 %span.form-must 必須
               %textarea{name: "postal_code", class: "text-default", placeholder: "例）123-4567"} 
-              -# = f.text_field :postal_code, class: "input-default"
+              -# = f.text_field :postal_code, class: "text-default"
 
             .each-forms
               -# = form_for [@???] do |f|
@@ -50,7 +50,7 @@
               %br/
               .prefectures_wrap
                 .select-form-wrap
-                  -# = f.collection_select (:job_id, @jobs, :id, :prefectures, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :prefectures, class: "text-default")
                   %i.icon-arrow-bottom
                   %select.select-default{name: "prefectures", class: "text-default"}
                     %option{value: ""} ---
@@ -109,7 +109,7 @@
                 -# = f.label :city, "市区町村"
                 %span.form-must 必須
               %textarea{name: "city", class: "text-default", placeholder: "例）横浜市緑区"}
-              -# = f.text_field :city, class: "input-default"
+              -# = f.text_field :city, class: "text-default"
 
             .each-forms
               %div
@@ -118,7 +118,7 @@
                 -# = f.label :address1, "番地"
                 %span.form-must 必須
               %textarea{name: "address1", class: "text-default", placeholder: "例）青山1-1-1"}
-              -# = f.text_field :address1, class: "input-default"
+              -# = f.text_field :address1, class: "text-default"
 
             .each-forms
               %div
@@ -127,7 +127,7 @@
                 -# = f.label :address2, "建物名"
                 %span.form-not-haveto 任意
               %textarea{name: "address2", class: "text-default", placeholder: "例）柳ビル103"}
-              -# = f.text_field :address2, class: "input-default"
+              -# = f.text_field :address2, class: "text-default"
 
             .each-forms
               %div
@@ -136,7 +136,7 @@
                 -# = f.label :phone_number, "電話番号"
                 %span.form-not-haveto 任意
               %textarea{name: "phone_number", class: "text-default", placeholder: "例）09012345678"}
-              -# = f.text_field :phone_number, class: "input-default"
+              -# = f.text_field :phone_number, class: "text-default"
 
             .emptybox.delivery_address
             = button_to "次へ進む", "", class: "btn-default btn-red text-default__submit"

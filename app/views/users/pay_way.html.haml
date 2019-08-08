@@ -41,14 +41,14 @@
                 -# = f.label :card_no, "カード番号"
                 %span.form-must 必須
               %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
-              -# = f.text_field :card_no, class: "input-default"
-              = image_tag "visa.svg", class: 'iconn'
-              = image_tag "master-card.svg", class: 'iconn'
-              = image_tag "saison-card.svg", class: 'iconn'
-              = image_tag "jcb.svg", class: 'iconn'
-              = image_tag "american_express.svg", class: 'iconn'
-              = image_tag "dinersclub.svg", class: 'iconn'
-              = image_tag "discover.svg", class: 'iconn'
+              -# = f.text_field :card_no, class: "text-default"
+              = image_tag "visa.svg"
+              = image_tag "master-card.svg"
+              = image_tag "saison-card.svg"
+              = image_tag "jcb.svg"
+              = image_tag "american_express.svg"
+              = image_tag "dinersclub.svg"
+              = image_tag "discover.svg"
 
             .each-forms
               -# = form_for [@???] do |f|
@@ -58,7 +58,7 @@
               %br/
               .creditcard_wrap
                 .select-form-wrap
-                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "input-default")
+                  -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "select-text-default")
                   %i.icon-arrow-bottom
                   %select.select-default.creditcard{name: "birth_year", class: "select-text-default"}
                     %option{value: ""} ---
@@ -76,7 +76,7 @@
                     %option{value: "12"} 12
                   %span 月
 
-                -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "input-default")
+                -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "select-text-default")
                 %i.icon-arrow-bottom
                 %select.select-default.creditcard{name: "birth_month", class: "select-text-default"}
                   %option{value: ""} ---
@@ -94,7 +94,7 @@
                 -# = f.label :card_no, "セキュリティコード"
                 %span.form-must 必須
               %textarea{name: "nickname", class: "text-default", placeholder: "カードの背面4桁もしくは3桁の番号"}
-              -# = f.text_field :card_no, class: "input-default"
+              -# = f.text_field :card_no, class: "text-default"
 
               %p.security_no_detail
                 = fa_icon 'question-circle', class: 'icon icon-question-circle'
@@ -102,7 +102,7 @@
               
               .emptybox-payway
               %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 次へ進む
-              -# = f.submit '次へ進む', class: 'btn-default btn-red'
+              -# = f.submit '次へ進む', class: 'btn-default btn-red text-default__submit'
 
 
 
