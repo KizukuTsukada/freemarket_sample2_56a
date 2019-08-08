@@ -691,4 +691,7 @@ i[class^='icon-'], i[class*='icon-'] {
 
 .sp-header-user-nav.clearfix{
   display: flex;
+  span{
+    margin-left: 5px;
+  }
 }

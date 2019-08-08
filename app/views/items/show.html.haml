@@ -30,15 +30,19 @@
           .l-right
             .sp-header-user-nav.clearfix
               %i.icon-like-border
-                = fa_icon ''
+                = fa_icon 'heart'
                 %span いいね！一覧
+              %i.icon-like-border
+                = fa_icon 'bell'
                 %span お知らせ
+              %i.icon-like-border
+                = fa_icon 'check'
                 %span やることリスト
-                .pc-header-user-icon.pc-header-menu-link
-                  %figure
-                    %div
-                      = image_tag("")
-                %span マイページ
+              .pc-header-user-icon.pc-header-menu-link
+                %figure
+                  %div
+                    = image_tag("")
+              %span マイページ
               
               
 
