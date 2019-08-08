@@ -645,8 +645,20 @@ i[class^='icon-'], i[class*='icon-'] {
   cursor: pointer;
 }
 
-.login-header-form .icon-search {
+.search__icon3{
+  
+}
+
+.login-header-form .icon-search3 {
   position: absolute;
+  display: flex;
+}
+
+.login-header-nav-box.clearfix{
+  padding-top: 8px;
+}
+
+.login-header-nav{
   display: flex;
 }
 
@@ -658,6 +670,7 @@ i[class^='icon-'], i[class*='icon-'] {
 .sp-header-user-nav.clearfix{
   height: 30px;
   display: flex;
+  float: right;
 }
 
 .sp-header-user-nav.clearfix span{
@@ -671,4 +684,12 @@ i[class^='icon-'], i[class*='icon-'] {
 .l-light2{
   float: right;
   padding-top: 10px;
+}
+
+.tagicon{
+  margin-left: 15px;
+}
+
+.redicon{
+  color: red;
 }
