@@ -65,4 +65,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def delivery_address
   end
 
+  def pay_way
+  end
+
+  def complete_signup
+  end
+
 end

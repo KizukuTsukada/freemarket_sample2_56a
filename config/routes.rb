@@ -11,6 +11,8 @@ resources :users, only:[:index, :show] do
   collection do
     get 'sms_confirmation'
     get 'delivery_address'
+    get 'pay_way'
+    get 'complete_signup'
   end
 end
 
