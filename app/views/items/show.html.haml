@@ -1,33 +1,35 @@
 %body
   .default-container
-    %header.pc-header.visible-pc 
-      .pc-header-inner
-        .pc-header-top
-          %h1.pc-header-image
+    %header.login-header 
+      .login-header-inner
+        .login-header-top
+          %h1
             =link_to root_path do
               =image_tag "main-logo.svg"
-          %form.pc-header-form2
-            %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
-            %i.icon-search2
-              = fa_icon 'search', class: 'icon-search2__icon'
-        .pc-header-nav-box.clearfix
+          %form.login-header-form
+            %input.input-default{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}/
+            %i.icon-search3
+              = fa_icon 'search', class: 'search__icon'
+              
+              
+        .login-header-nav-box.clearfix
           %nav.l-left
-            %ul.pc-header-nav
+            %ul.login-header-nav
               %li
                 %h2
-                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  =link_to "","", class: 'login-header-nav-root list-parent'
                   %i.icon-list
                     = fa_icon 'list', class: 'main-icon'
                     %span.catebrastyle
                       カテゴリーから探す
               %li
                 %h2
-                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  =link_to "","", class: 'login-header-nav-root list-parent'
                   %i.icon-list
                     = fa_icon 'tag', class: 'main-icon'
                     %span.catebrastyle
                       ブランドから探す
-          .l-right
+          .l-right2
             .sp-header-user-nav.clearfix
               %i.icon-like
                 = fa_icon 'heart'
@@ -38,7 +40,7 @@
               %i.icon-like
                 = fa_icon 'check'
                 %span やることリスト
-              .pc-header-user-icon.pc-header-menu-link
+              .login-header-user-icon.login-header-menu-link
                 %figure
                   %div
                     = image_tag("")
@@ -49,7 +51,7 @@
 .default-container
   .sp-header.visible-sp.with-shadow
     .sp-header-inner
-  .pc-header.visible-pc.with-shadow
+  .login-header.visible-pc.with-shadow
 
   .item-box-container.l-single-container
     %h1.item-name
