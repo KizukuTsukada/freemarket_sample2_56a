@@ -28,13 +28,11 @@
 .catebrastyle{
   font-weight: bold;
 }
-.search-icon{
-  font-size: 16px;
-}
 .new-btn{
   font-size: 1rem;
   color: white;
 }
+
 .login-btn{
   font-size: 1rem;
   color: #0099e8;
@@ -88,8 +86,12 @@
     width: 40px;
     height: 40px;
     cursor: pointer;
+    &__icon{
+      font-size: 16px;
+      margin-right: 80px;
     }
   }
+}
   .pc-header-nav-box{
     margin: 8px 0 0;
   }
