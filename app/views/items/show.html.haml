@@ -1,7 +1,7 @@
 %body
-  %div.default-container
+  .default-container
     %header.pc-header.visible-pc
-      %div.pc-header-inner
+      .pc-header-inner
         %div.pc-header-top
           %h1.pc-header-image
             =link_to root_path do
@@ -10,7 +10,7 @@
             %input.pc-header-form.input-default{placeholder: "何をお探しですか？"}
             %i.icon-search
               = fa_icon 'search', class: 'search-icon'
-        %div.pc-header-nav-box.clearfix
+        .header-nav-box.clearfix
           %nav.l-left
             %ul.pc-header-nav
               %li
@@ -29,13 +29,13 @@
                       ブランドから探す
           .l-right
             .sp-header-user-nav.clearfix
-              %i.icon-like-border
+              %i.icon-like
                 = fa_icon 'heart'
                 %span いいね！一覧
-              %i.icon-like-border
+              %i.icon-like
                 = fa_icon 'bell'
                 %span お知らせ
-              %i.icon-like-border
+              %i.icon-like
                 = fa_icon 'check'
                 %span やることリスト
               .pc-header-user-icon.pc-header-menu-link

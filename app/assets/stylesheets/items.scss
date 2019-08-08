@@ -690,8 +690,14 @@ i[class^='icon-'], i[class*='icon-'] {
 }
 
 .sp-header-user-nav.clearfix{
+  height: 30px;
   display: flex;
-  span{
-    margin-left: 5px;
-  }
+}
+
+.sp-header-user-nav.clearfix span{
+  margin-left: 0 7px;
+}
+
+.icon-like{
+  margin-left: 5px;
 }
