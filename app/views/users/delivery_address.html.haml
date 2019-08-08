@@ -8,13 +8,13 @@
       -# ヘッダー左上の進捗管理バー
       %nav.progress-bar
         %ol.clearfix
-          %li.active
+          %li.done
             会員情報
             %div.progress-status.first
-          %li
+          %li.done
             電話番号認証
             %div.progress-status
-          %li
+          %li.active
             お届け先住所入力
             %div.progress-status
           %li
@@ -29,17 +29,17 @@
     %main.single-main
       %section.l-single-container
         %h2.l-single-head.registration
-          会員情報入力
+          お届け先住所入力
         .l-single-inner.registration-form1
           .l-single-content
 
             .each-forms
               %div
                 -# = form_for [@???] do |f|
-                %label ニックネーム
-                -# = f.label :nickname, "ニックネーム"
+                %label 郵便番号
+                -# = f.label :nickname, "郵便番号"
                 %span.form-must 必須
-              %textarea{name: "nickname", class: "text-default"} 例）メルカリ太郎
+              %textarea{name: "nickname", class: "text-default"} 例）123-4567
               -# = f.text_field :nickname, class: "input-default"
 
             .each-forms
