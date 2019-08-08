@@ -39,7 +39,7 @@
                 %label ニックネーム
                 -# = f.label :nickname, "ニックネーム"
                 %span.form-must 必須
-              %textarea{name: "nickname", class: "text-default"} 例）メルカリ太郎
+              %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
               -# = f.text_field :nickname, class: "input-default"
 
             .each-forms
@@ -48,7 +48,7 @@
                 %label メールアドレス
                 -# = f.label :email, "メールアドレス"
                 %span.form-must 必須
-              %textarea{name: "email", class: "text-default"} PC・携帯どちらでも可
+              %textarea{name: "email", class: "text-default", placeholder: "PC・携帯どちらでも可"}
               -# = f.text_field :email, class: "input-default"
               
             .each-forms
@@ -57,7 +57,7 @@
                 %label パスワード
                 -# = f.label :password, "パスワード"
                 %span.form-must 必須
-              %textarea{name: "password", class: "text-default"} 7文字以上
+              %textarea{name: "password", class: "text-default", placeholder: "7文字以上"}
               -# = f.text_field :password, class: "input-default"
 
             .each-forms
@@ -66,7 +66,7 @@
                 %label パスワード(確認)
                 -# = f.label :password, "パスワード(確認)"
                 %span.form-must 必須
-              %textarea{name: "password2", class: "text-default"} 7文字以上
+              %textarea{name: "password2", class: "text-default", placeholder: "7文字以上"}
               -# = f.text_field :password2, class: "input-default"
 
             .each-forms
@@ -79,9 +79,9 @@
                 %label お名前(全角)
                 -# = f.label :password, "お名前(全角)"
                 %span.form-must 必須
-              %textarea{name: "family_name_kanji", class: "text-default half"} 例）山田
+              %textarea{name: "family_name_kanji", class: "text-default half", placeholder: "例）山田"}
               -# = f.text_field :family_name_kanji, class: "input-default half"
-              %textarea{name: "first_name_kanji", class: "text-default half"} 例）彩
+              %textarea{name: "first_name_kanji", class: "text-default half", placeholder: "例）彩"}
               -# = f.text_field :first_name_kanji, class: "input-default half"
 
             .each-forms
@@ -90,9 +90,9 @@
                 %label お名前カナ(全角)
                 -# = f.label :password, "お名前カナ(全角)"
                 %span.form-must 必須
-              %textarea{name: "family_name_kana", class: "text-default half"} 例）ヤマダ
+              %textarea{name: "family_name_kana", class: "text-default half", placeholder: "例）ヤマダ"}
               -# = f.text_field :family_name_kana, class: "input-default half"
-              %textarea{name: "first_name_kana", class: "text-default half"} 例）アヤ
+              %textarea{name: "first_name_kana", class: "text-default half", placeholder: "例）アヤ"}
               -# = f.text_field :first_name_kana, class: "input-default half"
 
             .each-forms
