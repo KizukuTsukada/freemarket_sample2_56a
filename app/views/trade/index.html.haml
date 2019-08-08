@@ -8,7 +8,7 @@
       %section.l-single-container.buy-item-container
         %h2.l-single-head 購入内容の確認
         %section.buy-content.buy-item
-          %div.buy-content-inner
+          .buy-content-inner
             %h3.buy-item-image
               =link_to root_path do
                 =image_tag "footer-logo.svg"
@@ -19,15 +19,15 @@
                 %span.item-shipping-fee.f14.bold 送料込み
               %ul.buy-accordion.not-have
                 %li.accordion-parent
-                  %div.accordion-toggle ポイントはありません
+                  .accordion-toggle ポイントはありません
               %ul.buy-price-table
                 %li.buy-price-row.buy-you-pay.bold
-                  %div.buy-price-cell 支払い金額
-                  %div.buy-price-cell
+                  .buy-price-cell 支払い金額
+                  .buy-price-cell
                     %span ¥ 1,000
               %submit.btn-default.btn-red.bold 購入する
         %section.buy-content.buy-user-info
-          %div.buy-content-inner
+          .buy-content-inner
             %h3 配送先
             %address.buy-user-info-text
             〒340-0011
@@ -41,7 +41,7 @@
             %a.buy-user-info-fix
               %span 変更する
         %section.buy-content.buy-user-info
-          %div.buy-content-inner
+          .buy-content-inner
             %h3 支払い方法
             %p.buy-user-info-text
             ************0000
