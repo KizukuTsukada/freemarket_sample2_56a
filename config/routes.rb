@@ -25,6 +25,6 @@ end
   resources :users, only:[:edit, :show]  
   resources :categories, only: [:index]
   resources :brands, only: [:index]
-  resources :trade, only: [:show]
+  resources :trade, only: [:index, :show]
   resources :items
 end
