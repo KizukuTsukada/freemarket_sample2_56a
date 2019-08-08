@@ -33,6 +33,20 @@
         
               =link_to'ログイン',"", class: 'login-sumit'
               =link_to'パスワードをお忘れの方',"", class: 'ps'
+
+
+    %footer.single-footer
+      %ul.clearfix
+        %li
+          = link_to "プライバシーポリシー"
+        %li
+          = link_to "メルカリ利用規約"
+        %li
+          = link_to "特定商取引に関する表記"
+      = link_to "", class: "single-footer__logo" do
+        = image_tag "footer-logo.svg"
+      %p
+        %small @ 2019 Mercari
   
             
 
