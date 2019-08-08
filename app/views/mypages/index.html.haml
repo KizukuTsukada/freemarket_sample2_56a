@@ -1,0 +1,36 @@
+
+
+
+%main.l-container.clearfix
+  .l-content
+    %section.mypage-user-icon
+      %figure
+        = link_to image_tag("discover.svg", width: '60'), mypage_path
+        %h2.bold ユーザーネーム
+        .mypage-number
+          %div 評価 2
+          %div 出品数 2
+    %section.mypage-tab-container-notification-todo
+      %ul.mypage-tabs
+        %li.active
+          %h3
+            = link_to "お知らせ", mypage_path
+        %li
+          %h3 やることリスト
+      .tab-content
+        %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %li
+            .mypage-item-link
+              = image_tag "jcb.svg", size: "30x30", alt: ""
+          %li
+            .mypage-item-link
+              = image_tag "jcb.svg", size: "30x30", alt: ""
+          %li
+            .mypage-item-link
+              = image_tag "jcb.svg", size: "30x30", alt: ""
+          %li
+            .mypage-item-link
+              = image_tag "jcb.svg", size: "30x30", alt: ""
+          %li
+            .mypage-item-link
+              = image_tag "jcb.svg", size: "30x30", alt: ""
