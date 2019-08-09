@@ -9,8 +9,6 @@ class MypagesController < ApplicationController
   def show
   end
 
-
-end
   def logout
   end
 
