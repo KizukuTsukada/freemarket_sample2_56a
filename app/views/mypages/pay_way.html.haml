@@ -3,15 +3,18 @@
 
     -# マイページ右側
     .l-content
+    
       -# 編集はここから
       .l-chapter-container
-        .l-mypage-logout-inner
-          .mypage-logout-content
-            %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} ログアウト
-            .emptybox-mypage-payway
-
-    
-    -# ここまで
+        .l-chapter-head 支払い方法
+        .l-single-inner.mypage-payway
+          .mypage-payway-list 
+            %p クレジットカード一覧
+            %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} クレジットカードを追加する
+          .emptybox-mypage-payway
+          .mypage-payway-next-link
+            %p 支払い方法について ＞
+      -# ここまで
 
 
     -# マイページ左側

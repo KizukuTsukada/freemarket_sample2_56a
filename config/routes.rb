@@ -26,6 +26,7 @@ end
   resources :mypages, only:[:index, :show] do
     collection do
       get 'logout'
+      get 'pay_way'
     end
   end
 

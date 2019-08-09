@@ -5,9 +5,6 @@
 //全体に適応
 @import "to-all";
 
-//ヘッダーとフッター
-@import "single-header-footer";
-@import "progress-bar";
 
 //トップページ
 @import "main";
@@ -16,6 +13,11 @@
 // マイページ
 @import "mypage";
 @import "mypage-logout";
+@import "mypage-payway";
+
+//新規登録ページヘッダーとフッター
+@import "single-header-footer";
+@import "progress-bar";
 
 //新規登録ページ
 @import "users-index";
