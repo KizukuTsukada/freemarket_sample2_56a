@@ -1,16 +1,15 @@
-
 .l-content {
   float: right;
   width: 700px;
-}
+ }
 
-.l-container {
+ .l-container {
   margin: 40px 76px 0;
   width: 1020px;
   padding: 20px 150px;
-}
+ }
 
-.mypage-user-icon {
+ .mypage-user-icon {
   position: relative;
   height: 155px;
   padding: 20px;
@@ -22,14 +21,14 @@
     margin: 8px 0 0;
     font-size: 14px;
   }
-}
+ }
 
-.mypage-number{
+ .mypage-number{
   font-size: 15px;
   padding-top: 10px;
-}
+ }
 
-.mypage-user-icon a {
+ .mypage-user-icon a {
   display: block;
   position: absolute;
   top: 40%;
@@ -38,32 +37,32 @@
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   color: #333;
-}
+ }
 
-.mypage-user-icon figure {
+ .mypage-user-icon figure {
   overflow: hidden;
   width: 60px;
   height: 60px;
   margin: 0 auto;
   border-radius: 50%;
   margin-top: 28px;
-}
+ }
 
-.mypage-user-icon h2 {
+ .mypage-user-icon h2 {
   margin: 16px 0 0;
   font-size: 16px;
-}
+ }
 
-.mypage-user-icon img{
+ .mypage-user-icon img{
   height: 60px;
   width: 60px;
-}
+ }
 
-.mypage-tabs li {
+ .mypage-tabs li {
   width: 50%;
-}
+ }
 
-.mypage-item-link {
+ .mypage-item-link {
   display: block;
   min-height: 50px;
   padding: 16px;
@@ -73,17 +72,17 @@
   i{
     text-align: right;
   }
-}
+ }
 
-.mypage-item-link figure {
+ .mypage-item-link figure {
   position: relative;
   overflow: hidden;
   float: left;
   width: 48px;
   height: 48px;
-}
+ }
 
-.mypage-item-list img {
+ .mypage-item-list img {
   position: absolute;
   top: 0;
   right: 0;
@@ -92,22 +91,22 @@
   z-index: 1;
   width: 48px;
   height: 48px;
-}
+ }
 
-.mypage-item-body {
+ .mypage-item-body {
   margin: 0 40px 0 10px;
   text-align: left
-}
+ }
 
-.mypage-tabs a, .listing-tabs a, .review-history-tabs a {
+ .mypage-tabs a, .listing-tabs a, .review-history-tabs a {
   position: relative;
   display: block;
   color: #333;
   font-size: 16px;
   line-height: 72px;
-}
+ }
 
-.mypage-item-text {
+ .mypage-item-text {
   overflow: hidden;
   display: block;
   display: -webkit-box;
@@ -117,32 +116,32 @@
   text-overflow: ellipsis;
   line-height: 1.5;
   text-align: left;
-}
+ }
 
-.mypage-item-link time {
+ .mypage-item-link time {
   display: inline-block;
   color: #888;
-}
+ }
 
-.mypage-item-link .icon-time {
+ .mypage-item-link .icon-time {
   margin: 0 8px 0 0;
-}
+ }
 
-.mypage-item-link time span {
+ .mypage-item-link time span {
   vertical-align: middle;
-}
+ }
 
-.mypage-go-list {
+ .mypage-go-list {
   padding: 16px;
   background: #fff
-}
+ }
 
-.mypage-item-list li {
+ .mypage-item-list li {
   position: relative;
   border-bottom: 1px solid #eee;
-}
+ }
 
-.mypage-go-list a {
+ .mypage-go-list a {
   display: block;
   height: 56px;
   margin: 0 auto;
@@ -150,9 +149,9 @@
   color: #333;
   line-height: 56px;
   text-align: center;
-}
+ }
 
-.mypage-tab-container{
+ .mypage-tab-container{
   background-image: url(images/buyitem.png);
   position: relative;
   height: 155px;
@@ -160,40 +159,38 @@
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-}
+ }
 
-
-
-.mypage-item-list li.mypage-item-not-found {
+ .mypage-item-list li.mypage-item-not-found {
   border: 0;
-}
+ }
 
-.mypage-tab-container {
+ .mypage-tab-container {
   margin: 40px 0 0;
   background: #fff;
-}
+ }
 
-.mypage-tab-container-notification-todo{
+ .mypage-tab-container-notification-todo{
   text-align: center;
-}
+ }
 
-.mypage-tab-head {
+ .mypage-tab-head {
   padding: 0 4%;
   background: #fafafa;
   font-size: 16px;
   line-height: 70px;
   font-size: 22px;
-}
+ }
 
-.list-top{
+ .list-top{
   background: #eee
-}
+ }
 
-.mypage-tabs{
+ .mypage-tabs{
   height: 70px;
-}
+ }
 
-.active-info{
+ .active-info{
   float: left;
   width: 100%;
   background: #fff;
@@ -205,50 +202,47 @@
       font-size: 22px;
     }
   }
-}
+ }
 
-.mypage-info{
+ .mypage-info{
   float: right;
   line-height: 72px;
-}
+ }
 
-.mypage-tabs, .listing-tabs, .review-history-tabs {
+ .mypage-tabs, .listing-tabs, .review-history-tabs {
   border: 0;
   background: #eee;
   font-size: 0;
-}
+ }
 
-.mypage-tabs li.active-info, .listing-tabs li.active-info, .review-history-tabs li.active-info {
+ .mypage-tabs li.active-info, .listing-tabs li.active-info, .review-history-tabs li.active-info {
   background: #fff;
-}
+ }
 
 
-// 左のコンテンツ
-
-.l-side {
+ // 左のコンテンツ
+ .l-side {
   float: left;
   width: 280px;
   margin: 0 40px 0 0;
-}
+ }
 
-.mypage-nav-list li {
+ .mypage-nav-list li {
   display: flex;
   border-top: 1px solid #eee;
   background: #fff;
   height: 50px;
-}
+ }
 
-
-.mypage-nav-list-item.active-info {
-.mypage-nav-list-item.active-info-inner {
+ .mypage-nav-list-item.active-info-inner {
   font-size: 14px;
   background: #eee;
   font-weight: 600;
   color: black;
   width: 244px;
-}
+ }
 
-.mypage-nav-list-item {
+ .mypage-nav-list-item {
   width: 90%;
   position: relative;
   display: block;
@@ -256,55 +250,47 @@
   color: #333;
   cursor: pointer;
   padding: 18px;
-}
+ }
 
-.mypage-nav-list li:hover{
+ .mypage-nav-list li:hover{
   background: #eee;
-}
+ }
 
-.mypage-nav-list.angle-right:hover{
+ .mypage-nav-list.angle-right:hover{
   color: black;
-}
+ }
 
-.mypage-nav-list
-
-.mypage-nav-head {
+ .mypage-nav-list
+ .mypage-nav-head {
   margin: 40px 0 0;
-}
+ }
 
-.mypage-nav h3{
+ .mypage-nav h3{
   margin-top: 40px;
   font-size: 16px;
  }
-
-
-h3 {
+ 
+ h3 {
   font-size: 22px;
-}
+ }
 
-.default-container{
-
-}
-
-.mypage-nav-head+.mypage-nav-list {
+ .mypage-nav-head+.mypage-nav-list {
   margin: 8px 0 0;
-}
+ }
 
-.angle-right{
+ .angle-right{
   width: 10%;
   padding: 12px 0;
   text-align: center;
   font-size: 28px;
   color: #ccc;
   font-weight: 500;
-}
+ }
 
-.footer-design{
-  width: 100%  
-}
-}
+ .footer-design{
+  width: 100%
+ }
 
-.mypage-btn{
+ .mypage-btn{
   background: #eee;
-  
-}
+ }
