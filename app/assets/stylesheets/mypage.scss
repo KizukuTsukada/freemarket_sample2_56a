@@ -200,6 +200,7 @@ padding: 20px 150px;
   float: left;
   a{
     font-size: 22px;
+    border-top: 2px solid #ea352d;
   }
 }
 
@@ -228,6 +229,7 @@ padding: 20px 150px;
 }
 
 .mypage-nav-list li {
+  display: flex;
   border-top: 1px solid #eee;
   background: #fff;
   height: 50px;
@@ -241,6 +243,7 @@ padding: 20px 150px;
 }
 
 .mypage-nav-list-item {
+  width: 90%;
   position: relative;
   display: block;
   font-size: 14px;
@@ -250,8 +253,14 @@ padding: 20px 150px;
 }
 
 .mypage-nav-list li:hover{
-  background: #eee
+  background: #eee;
 }
+
+.mypage-nav-list.angle-right:hover{
+  color: black;
+}
+
+.mypage-nav-list
 
 .mypage-nav-head {
   margin: 40px 0 0;
@@ -259,4 +268,13 @@ padding: 20px 150px;
 
 .mypage-nav-head+.mypage-nav-list {
   margin: 8px 0 0;
+}
+
+.angle-right{
+  width: 10%;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 28px;
+  color: #ccc;
+  font-weight: 500;
 }
