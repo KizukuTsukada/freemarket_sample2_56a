@@ -13,7 +13,7 @@
 //トップページ
 @import "main";
 
-// マイページ
+//マイページ
 @import "mypage";
 @import "mypage-logout";
 @import "mypage-payway";
@@ -33,8 +33,10 @@
 @import "complete_signup";
 
 //商品ページ
-@import "items";
+@import "items-new";
+@import "items-show";
 @import "log-in";
 @import "trade";
+
 //その他
 @import "font-awesome";
