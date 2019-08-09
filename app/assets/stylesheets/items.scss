@@ -532,25 +532,17 @@ i[class^='icon-'], i[class*='icon-'] {
   color: red;
 } 
 
+//その他のアイテム
 .items-in-user-profile{
   width: 700px;
   margin: 0 auto;
 }
-.items-box-head{
+.items-box-head2{
   font-size: 18px;
   margin: 24px 4% 8px;
   line-height: 1.4;
 }
-.items-box-contenter2 {
-  margin: 5px auto 0;
-  padding: 5px 60px 55px 60px;
-}
-.items-box2{
-  margin: 20px 50px 20px 30px;
-  width: calc(25% - 20px);
-  display: inline-block;
-}
-.link-item-textstyle{
-  padding-top: 20px;
-  font-size: 22px;
+.items-box-content2{
+  width: 92%;
+  margin: 0 auto;
 }

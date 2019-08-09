@@ -154,17 +154,14 @@
         着丈:約65cm
         袖丈:約19cm
 
-  .items-in-user-profile
-    %section.items-box-container.clearfix
-      %h2.items-box-head
-      %h3.link-item-textstyle
-        =link_to "しもんさんのその他の出品", class: 'textstyle'
-    .item-button-container.clearfix
-      .items-box-contenter
-        .items-box-contenter.clearfix
-          %section.items-box2
-            =image_tag "mens.png", class: 'itemstyle'
-          %section.items-box2
-            =image_tag "mens.png", class: 'itemstyle'
-          %section.items-box2
-            =image_tag "mens.png", class: 'itemstyle'
+  %section.items-box-container.clearfix
+    %h3.text-center
+      =link_to "レディース 新着アイテム", class: 'textstyle'
+    .items-box-contenter
+      .items-box-content.clearfix
+        %section.items-box
+          =image_tag "ladies.png", class: 'itemstyle'
+        %section.items-box
+          =image_tag "ladies.png", class: 'itemstyle'
+        %section.items-box
+          =image_tag "ladies.png", class: 'itemstyle'
