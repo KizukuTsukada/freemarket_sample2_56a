@@ -22,7 +22,7 @@ end
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
   get "public/index", to: "public#index"
 
-  get "mypages", to: "mypages#index", as: :mypage
+  get "mypages/edit", to: "mypages#edit"
   resources :mypages, only:[:index, :show]
   resources :categories, only: [:index]
   resources :brands, only: [:index]

@@ -8,13 +8,21 @@
 //ヘッダーとフッター
 @import "single-header-footer";
 @import "progress-bar";
+@import "header-sinki-mypage";
 
 //トップページ
 @import "main";
-@import "main2";
 
 // マイページ
 @import "mypage";
+@import "mypage-logout";
+@import "mypage-payway";
+@import "add_credit";
+@import "profile";
+
+//新規登録ページヘッダーとフッター
+@import "single-header-footer";
+@import "progress-bar";
 
 //新規登録ページ
 @import "users-index";
