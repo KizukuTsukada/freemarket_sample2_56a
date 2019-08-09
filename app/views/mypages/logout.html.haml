@@ -1,78 +1,20 @@
 .default-container 
   %main.l-container.clearfix
 
-    -# ここから
+    -# マイページ右側
     .l-content
-      %section.mypage-user-icon
-        %figure
-          = link_to image_tag("discover.svg"), mypage_path
-        %h2.bold ユーザーネーム
-        .mypage-number
-          %div 評価 2&nbsp; &nbsp;出品数 2
+      -# 編集はここから
+      .l-content-white-wrap
+        .l-mypage-logout-inner
+          .mypage-logout-content
+            %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} ログアウト
+            .emptybox-mypage-logout
 
-      %section.mypage-tab-container-notification-todo
-        %ul.mypage-tabs
-          %li.active-info
-            %h3
-              = link_to "お知らせ", mypage_path
-          %li.mypage-info
-            %h3 やることリスト
-        .tab-content
-          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active-info
-            %li
-              .mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
-                .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 時間前
-
-            %li
-              .mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
-                .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 時間前
-            %li
-              .mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
-                .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 時間前
-            %li
-              .mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
-                .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 時間前
-            %li
-              .mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
-                .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
-                  %time
-                    %i.icon-time
-                    %span 2 時間前
-            %li.mypage-go-list
-              %a 一覧を見る
-
-      %aside.modal{"data-close": "modal", "data-modal": "banner"}
-        .modal-inner.modal-banner
-          .modal-banner-eye-catch
+    
     -# ここまで
 
+
+    -# マイページ左側
     .l-side
       %nav.mypage-nav
         %ul.mypage-nav-list
