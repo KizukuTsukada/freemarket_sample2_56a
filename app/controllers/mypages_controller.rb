@@ -12,4 +12,7 @@ class MypagesController < ApplicationController
   def pay_way
   end
 
+  def identification
+  end
+
 end
