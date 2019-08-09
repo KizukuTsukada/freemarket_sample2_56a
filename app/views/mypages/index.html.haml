@@ -12,13 +12,13 @@
 
       %section.mypage-tab-container-notification-todo
         %ul.mypage-tabs
-          %li.active
+          %li.active-info
             %h3
               = link_to "お知らせ", mypage_path
           %li.mypage-info
             %h3 やることリスト
         .tab-content
-          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
+          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active-info
             %li
               .mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
@@ -77,7 +77,7 @@
       %nav.mypage-nav
         %ul.mypage-nav-list
           %li
-            = link_to "マイページ", mypage_path, class: "mypage-nav-list-item active"
+            = link_to "マイページ", mypage_path, class: "mypage-nav-list-item active-info"
           %li
             %a.mypage-nav-list-item お知らせ
             %i.angle-right
