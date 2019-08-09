@@ -3,25 +3,26 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 |price|integer|null: false|
-|size|string||
+|size|string|null: false|
 |status|integer|null: false|
-|pay_way|integer||
-|deliver_way|integer||
-|deliver_data|integer||
-|deliver_fee|integer||
-|saler|integer||
-|buyer|integer||
+|pay_way|integer|null: false|
+|deliver_way|integer|null: false|
+|deliver_date|integer|null: false|
+|deliver_fee|integer|null: false|
+|saler_id|integer||
+|buyer_id|integer||
 |detail|text|null: false|
 |brand_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 
 ### Association
-- has_many :users, through: :trades
 - has_many :photos
 - belongs_to :brand
 - belongs_to :category
+- belongs_to :saler, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 
 
@@ -36,10 +37,11 @@
 |credit_id|references|foreign_key: true|
 
 ### Association
-- has_many :items, through: :trades
 - belongs_to :credit
 - belongs_to :profile
-
+- has_many :bought_items, foreign_key: "buyer_id", class_name: "Item"
+- has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
+- has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
 
 
 ## profilesテーブル
@@ -110,12 +112,6 @@
 - has_ancestry
 
 
-
-## tradesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|foreign_key: true|
-|item_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
