@@ -23,6 +23,8 @@ end
   # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
   get "public/index", to: "public#index"
 
+  get "mypages/edit", to: "mypages#edit"
+  resources :mypages, only:[:index, :show]
   get "mypages", to: "mypages#index", as: :mypage
   resources :mypages, only:[:index, :show] do
     collection do
