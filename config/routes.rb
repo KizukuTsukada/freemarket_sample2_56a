@@ -14,6 +14,7 @@ resources :users, only:[:index, :show] do
     get 'delivery_address'
     get 'pay_way'
     get 'complete_signup'
+    get 'add_credit'
   end
 end
 
@@ -26,6 +27,7 @@ end
   resources :mypages, only:[:index, :show] do
     collection do
       get 'logout'
+      get 'pay_way'
     end
   end
 

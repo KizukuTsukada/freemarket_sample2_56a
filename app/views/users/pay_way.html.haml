@@ -42,18 +42,19 @@
                 %span.form-must 必須
               %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
               -# = f.text_field :card_no, class: "text-default"
-              = image_tag "visa.svg"
-              = image_tag "master-card.svg"
-              = image_tag "saison-card.svg"
-              = image_tag "jcb.svg"
-              = image_tag "american_express.svg"
-              = image_tag "dinersclub.svg"
-              = image_tag "discover.svg"
+              .card-images
+                = image_tag "visa.svg"
+                = image_tag "master-card.svg"
+                = image_tag "saison-card.svg"
+                = image_tag "jcb.svg"
+                = image_tag "american_express.svg"
+                = image_tag "dinersclub.svg"
+                = image_tag "discover.svg"
 
             .each-forms
               -# = form_for [@???] do |f|
-              %label 半角数字のみ
-              -# = f.label :birthday, "半角数字のみ"
+              %label 有効期限
+              -# = f.label :birthday, "有効期限"
               %span.form-must 必須
               %br/
               .creditcard_wrap

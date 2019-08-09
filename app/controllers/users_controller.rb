@@ -11,5 +11,8 @@ class UsersController < ApplicationController
 
   def update
   end
+
+  def add_credit
+  end
   
 end
