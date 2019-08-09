@@ -28,6 +28,7 @@ end
     collection do
       get 'logout'
       get 'pay_way'
+      get 'identification'
     end
   end
 
