@@ -36,7 +36,7 @@
                     = fa_icon 'heart', class: 'header-icon'
                     %span.catebrastyle
                       いいね!一覧
-              %li
+              %li 
                 %h2
                   =link_to "","", class: 'pc-header-nav-root list-parent'
                   %i.icon-list
@@ -59,6 +59,7 @@
                       マイページ
     %main.l-container.clearfix
 
+
       -# ここから
       .l-content
         %section.mypage-user-icon
@@ -67,7 +68,6 @@
           %h2.bold ユーザーネーム
           .mypage-number
             %div 評価 2&nbsp; &nbsp;出品数 2
-
         %section.mypage-tab-container-notification-todo
           %ul.mypage-tabs
             %li.active-info
@@ -88,7 +88,6 @@
                       %span 20 時間前
                   %i.angle-right
                     = fa_icon 'angle-right'
-
               %li
                 %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                   %figure
@@ -100,7 +99,6 @@
                       %span 20 時間前
                   %i.angle-right
                     = fa_icon 'angle-right'
-
               %li
                 %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                   %figure
@@ -112,7 +110,6 @@
                       %span 20 時間前
                   %i.angle-right
                     = fa_icon 'angle-right'
-
               %li
                 %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                   %figure
@@ -124,7 +121,6 @@
                       %span 20 時間前
                   %i.angle-right
                     = fa_icon 'angle-right'
-
               %li
                 %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
                   %figure
@@ -140,10 +136,9 @@
               %li.mypage-go-list
                 %a 一覧を見る
 
-        -# .mypage-tab-container
+      -# .mypage-tab-container
 
       -# ここまで
-
       .l-side
         %nav.mypage-nav
           %ul.mypage-nav-list
@@ -220,8 +215,8 @@
             %li
               %a.mypage-nav-list-item 発送元・お届け先住所変更
               %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
+                = fa_icon 'angle-right'    
+                %li
               %a.mypage-nav-list-item 支払い方法
               %i.angle-right
                 = fa_icon 'angle-right'           
@@ -241,7 +236,7 @@
               %a.mypage-nav-list-item ログアウト
               %i.angle-right
                 = fa_icon 'angle-right'
-    -# ここからフッターと出品ボタン
+    
     %footer
       = image_tag 'mainfooter.png', class: 'footer-design'
       =link_to root_path do
