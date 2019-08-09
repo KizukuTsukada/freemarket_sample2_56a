@@ -533,16 +533,11 @@ i[class^='icon-'], i[class*='icon-'] {
 } 
 
 //その他のアイテム
-.items-in-user-profile{
-  width: 700px;
+.items-box-container2{
+  width: 100%;
   margin: 0 auto;
 }
-.items-box-head2{
-  font-size: 18px;
-  margin: 24px 4% 8px;
-  line-height: 1.4;
-}
-.items-box-content2{
-  width: 92%;
-  margin: 0 auto;
+.text-item-style{
+  color: #0000ee;
+  font-size: 22px;
 }
