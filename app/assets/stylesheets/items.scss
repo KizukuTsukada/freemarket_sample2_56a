@@ -443,17 +443,7 @@ width: 100%;
 [data-client='visible'] {
   display: none;
 }
-.item-btn-float-area {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  padding: 6px 16px;
-  width: 100%;
-  background-color: #fff;
-  z-index: 3;
-  -webkit-box-shadow: 0 -1px 3px 0 rgba(0,0,0,0.16);
-  box-shadow: 0 -1px 3px 0 rgba(0,0,0,0.16);
-}
+
 .item-detail-table {
   float: right;
   max-width: 300px;
@@ -537,6 +527,7 @@ i[class^='icon-'], i[class*='icon-'] {
   width: 100%;
   margin: 0 auto;
   padding-top: 25px;
+  padding-bottom: 30px;
 }
 .text-item-style2{
   font-size: 24px;

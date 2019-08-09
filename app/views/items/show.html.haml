@@ -160,9 +160,14 @@
     .items-box-contenter
       .items-box-content.clearfix
         %section.items-box2
-          =image_tag "ladies.png", class: 'itemstyle2'
+          =image_tag "imageitem.png", class: 'itemstyle2'
         %section.items-box2
-          =image_tag "ladies.png", class: 'itemstyle3'
+          =image_tag "imageitem2.png", class: 'itemstyle3'
         %section.items-box2
-          =image_tag "ladies.png", class: 'itemstyle4'
-//ここからフッター
+          =image_tag "imageitem3.png", class: 'itemstyle4'
+%footer
+  = image_tag 'mainfooter.png', class: 'footer-design'
+  =link_to root_path do
+    .footer-sell-btn
+      %span.footer-sell-btn__sell  出品
+      = fa_icon 'camera', class: 'camera-icon' 
