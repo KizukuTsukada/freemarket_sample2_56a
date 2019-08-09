@@ -1,0 +1,280 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+img {
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.default-container{
+padding: 20px 150px;
+}
+
+.l-content {
+  float: right;
+  width: 700px;
+}
+
+.l-container {
+  margin: 40px 76px 0;
+  width: 1020px;
+}
+
+.mypage-user-icon {
+  position: relative;
+  height: 155px;
+  padding: 20px;
+  background: url(mypage-back.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  h2 {
+    margin: 8px 0 0;
+    font-size: 14px;
+  }
+}
+
+.mypage-number{
+  font-size: 15px;
+  padding-top: 10px;
+}
+
+.mypage-user-icon a {
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #333;
+}
+
+.mypage-user-icon figure {
+  overflow: hidden;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 28px;
+}
+
+.mypage-user-icon h2 {
+  margin: 16px 0 0;
+  font-size: 16px;
+}
+
+.mypage-user-icon img{
+  height: 60px;
+  width: 60px;
+}
+
+.mypage-tabs li {
+  width: 50%;
+}
+
+.mypage-item-link {
+  display: block;
+  min-height: 80px;
+  padding: 16px;
+  color: #333;
+}
+
+.mypage-item-link figure {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  width: 48px;
+  height: 48px;
+}
+
+.mypage-item-list img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+.mypage-item-body {
+  margin: 0 40px 0 68px;
+}
+
+.mypage-tabs a, .listing-tabs a, .review-history-tabs a {
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+}
+
+.mypage-item-text {
+  overflow: hidden;
+  display: block;
+  display: -webkit-box;
+  max-height: 4.4em;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+}
+
+.mypage-item-link time {
+  display: inline-block;
+  color: #888;
+}
+
+.mypage-item-link .icon-time {
+  margin: 0 8px 0 0;
+}
+
+.mypage-item-link time span {
+  vertical-align: middle;
+}
+
+.mypage-go-list {
+  padding: 16px;
+}
+
+.mypage-item-list li {
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.mypage-go-list a {
+  display: block;
+  height: 56px;
+  margin: 0 auto;
+  background: #eee;
+  color: #333;
+  line-height: 56px;
+  text-align: center;
+}
+
+.mypage-item-list li.mypage-item-not-found {
+  border: 0;
+}
+
+.mypage-tab-container {
+  margin: 40px 0 0;
+  background: #fff;
+}
+
+.mypage-tab-container-notification-todo{
+  text-align: center;
+}
+
+.mypage-tab-head {
+  padding: 0 4%;
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 70px;
+  font-size: 22px;
+}
+
+.list-top{
+  background: #eee
+}
+
+.mypage-tabs{
+  height: 70px;
+}
+
+.active{
+  float: left;
+  a{
+    font-size: 22px;
+    border-top: 2px solid #ea352d;
+  }
+}
+
+.mypage-info{
+  float: right;
+  line-height: 72px;
+}
+
+.mypage-tabs, .listing-tabs, .review-history-tabs {
+  border: 0;
+  background: #eee;
+  font-size: 0;
+}
+
+.mypage-tabs li.active, .listing-tabs li.active, .review-history-tabs li.active {
+  background: #fff;
+}
+
+
+// 左のコンテンツ
+
+.l-side {
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+
+.mypage-nav-list li {
+  display: flex;
+  border-top: 1px solid #eee;
+  background: #fff;
+  height: 50px;
+}
+
+.mypage-nav-list-item.active {
+  background: #eee;
+  font-weight: 600;
+  color: black;
+  width: 244px;
+}
+
+.mypage-nav-list-item {
+  width: 90%;
+  position: relative;
+  display: block;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+}
+
+.mypage-nav-list li:hover{
+  background: #eee;
+}
+
+.mypage-nav-list.angle-right:hover{
+  color: black;
+}
+
+.mypage-nav-list
+
+.mypage-nav-head {
+  margin: 40px 0 0;
+}
+
+.mypage-nav-head+.mypage-nav-list {
+  margin: 8px 0 0;
+}
+
+.angle-right{
+  width: 10%;
+  padding: 12px 0;
+  text-align: center;
+  font-size: 28px;
+  color: #ccc;
+  font-weight: 500;
+}
