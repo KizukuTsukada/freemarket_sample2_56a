@@ -13,16 +13,27 @@
 //トップページ
 @import "main";
 
+// マイページ
+@import "mypage";
+@import "mypage-logout";
+@import "mypage-payway";
+@import "add_credit";
+
+//新規登録ページヘッダーとフッター
+@import "single-header-footer";
+@import "progress-bar";
 
 //新規登録ページ
 @import "users-index";
 @import "users-signup";
 @import "sms-confirmation";
 @import "delivery-address";
+@import "pay_way";
+@import "complete_signup";
 
 //商品ページ
 @import "items";
 @import "log-in";
-
+@import "trade";
 //その他
 @import "font-awesome";
