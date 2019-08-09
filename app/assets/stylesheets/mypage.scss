@@ -204,7 +204,6 @@
     font-h3 {
       font-size: 22px;
     }
-
   }
 }
 
@@ -239,7 +238,8 @@
   height: 50px;
 }
 
-.mypage-nav-list-item.active-info {
+.mypage-nav-list-item.active-info-inner {
+  font-size: 14px;
   background: #eee;
   font-weight: 600;
   color: black;
@@ -275,7 +275,6 @@
   font-size: 16px;
  }
 
-<<<<<<< HEAD
 h3 {
   font-size: 22px;
 }
@@ -284,8 +283,6 @@ h3 {
 
 }
 
-=======
->>>>>>> 65e8374deac54d7b970dfe86f7dfa82537ef5793
 .mypage-nav-head+.mypage-nav-list {
   margin: 8px 0 0;
 }
@@ -298,10 +295,12 @@ h3 {
   color: #ccc;
   font-weight: 500;
 }
-<<<<<<< HEAD
-=======
 
 .footer-design{
   width: 100%  
 }
->>>>>>> 65e8374deac54d7b970dfe86f7dfa82537ef5793
+
+.mypage-btn{
+  background: #eee;
+  
+}
