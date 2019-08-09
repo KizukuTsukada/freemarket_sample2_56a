@@ -1,3 +1,4 @@
+
 .default-container 
   %main.l-container.clearfix
 
@@ -18,55 +19,71 @@
           %li.mypage-info
             %h3 やることリスト
         .tab-content
-          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active-info
+          %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
             %li
-              %a.mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
+                  .mypage-item-text 《8%ポイント還元》得々祭期間中に使えるお得チケットをプレゼントしました
                   %time
                     %i.icon-time
-                    %span 2 時間前
+                    %span 20 時間前
+                %i.angle-right
+                  = fa_icon 'angle-right'
 
             %li
-              %a.mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
+                  .mypage-item-text 《8%ポイント還元》得々祭期間中に使えるお得チケットをプレゼントしました
                   %time
                     %i.icon-time
-                    %span 2 時間前
+                    %span 20 時間前
+                %i.angle-right
+                  = fa_icon 'angle-right'
+
             %li
-              %a.mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
+                  .mypage-item-text 《8%ポイント還元》得々祭期間中に使えるお得チケットをプレゼントしました
                   %time
                     %i.icon-time
-                    %span 2 時間前
+                    %span 20 時間前
+                %i.angle-right
+                  = fa_icon 'angle-right'
+
             %li
-              %a.mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
+                  .mypage-item-text 《8%ポイント還元》得々祭期間中に使えるお得チケットをプレゼントしました
                   %time
                     %i.icon-time
-                    %span 2 時間前
+                    %span 20 時間前
+                %i.angle-right
+                  = fa_icon 'angle-right'
+
             %li
-              %a.mypage-item-link
-                = image_tag "mercari_profile.png", size: "30x30", alt: ""
+              %a.mypage-item-link{"data-modal" => "banner", "data-open" => "modal", :href => ""}
+                %figure
+                  %img.lazyloaded{:alt => "", "data-src" => "//static.mercdn.net/images/mercari_profile.png", :src => "//static.mercdn.net/images/mercari_profile.png"}/
                 .mypage-item-body
-                  .mypage-item-text
-                    事務局から個別メッセージ「ログイン通知」
+                  .mypage-item-text 《8%ポイント還元》得々祭期間中に使えるお得チケットをプレゼントしました
                   %time
                     %i.icon-time
-                    %span 2 時間前
+                    %span 20 時間前
+                %i.angle-right
+                  = fa_icon 'angle-right'
+            
             %li.mypage-go-list
               %a 一覧を見る
+
+      .mypage-tab-container
 
     -# ここまで
 
@@ -168,4 +185,4 @@
             %i.angle-right
               = fa_icon 'angle-right'
   
-  %footer.global-footer
+  %footer
