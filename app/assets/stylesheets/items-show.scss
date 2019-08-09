@@ -1,0 +1,241 @@
+
+.default-container2{
+  box-sizing: border-box;
+  width: 50%;
+  margin: 0 auto;
+}
+.item-box-container {
+  background: #fff;
+  margin: 40px auto 0;
+  padding: 20px 60px 55px 60px;
+}
+.item-name {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1.4;
+}
+.item-main-content {
+  margin: 16px 0 0;
+  display: flex;
+}
+.item-photo {
+  position: relative;
+  min-width: 280px;
+  max-width: 360px;
+  min-height: 280px;
+  margin: 0 auto;
+  background: #fafafa;
+}
+.owl-carousel {
+  position: relative;
+}
+.owl-carousel .owl-stage {
+  position: relative;
+}
+.owl-carousel .owl-item {
+  min-height: 1px;
+  float: left;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+.owl-carousel .owl-item-inner {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+}
+.owl-carousel .owl-stage-outer {
+  position: relative;
+  overflow: hidden;
+}
+.owl-carousel .owl-lazy {
+  transition: opacity 400ms ease;
+}
+.owl-carousel .owl-nav {
+  display: none;
+}
+.owl-nav.disabled .owl-prev, .owl-nav.disabled .owl-next {
+  display: none;
+}
+.owl-dots {
+  line-height: 0;
+}
+.owl-dot.active {
+  opacity: 1;
+  cursor: default;
+}
+.owl-dot span {
+  display: none;
+}
+.owl-dot-inner {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+  pointer-events: none;
+}
+.owl-carousel img {
+width: 100%;
+  vertical-align: bottom;
+}
+.owl-dot {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 20%;
+  max-height: 90px;
+  opacity: .4;
+  cursor: pointer;
+}
+.item-price-box {
+  margin: 24px 0 0;
+}
+.item-price {
+  margin: 0 8px 0 0;
+  font-size: 32px;
+}
+.item-price-box {
+  margin: 24px 0 0;
+}
+.item-tax {
+  font-size: 10px;
+}
+.item-shipping-fee {
+  display: inline-block;
+  font-size: 16px;
+}
+.item-buy-btn {
+  display: block;
+  height: 56px;
+  margin: 16px 0 0;
+  background: #ea352d;
+  color: #fff;
+  line-height: 56px;
+  text-align: center;
+  font-weight: 600;
+  transition: all ease-out .3s;
+  font-size: 32px;
+}
+.item-btn-float-area>.item-btn-client {
+  margin: 0;
+}
+[data-client='visible'] {
+  display: none;
+}
+
+.item-detail-table {
+  float: right;
+  max-width: 300px;
+  height: 420px;
+  margin: 0 auto;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.item-detail-table {
+  float: right;
+  max-width: 300px;
+  height: 420px;
+  margin: 0 auto;
+}
+.item-detail-table th, .item-detail-table td {
+  border-collapse: collapse;
+  border: 1px solid #f5f5f5;
+  padding: 16px 8px;
+}
+.item-detail-table th {
+  width: 39%;
+  text-align: left;
+  font-weight: 400;
+  background: #fafafa;
+}
+i[class^='icon-'], i[class*='icon-'] {
+  display: inline-block;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+.item-description {
+  padding: 24px 0 0;
+  line-height: 1.5;
+}
+.item-description-inner {
+  white-space: pre-wrap;
+}
+.login-header-nav-box.clearfix{
+  padding-top: 8px;
+}
+.login-header-nav{
+  display: flex;
+}
+.pc-header-user-nav>li>a span {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.sp-header-user-nav.clearfix{
+  height: 30px;
+  display: flex;
+  float: right;
+}
+.sp-header-user-nav.clearfix span{
+  margin-left: 0 7px;
+}
+.icon-like{
+  margin-left: 5px;
+}
+.l-light2{
+  float: right;
+  padding-top: 10px;
+}
+.tagicon{
+  margin-left: 15px;
+}
+.redicon{
+  color: red;
+} 
+
+//その他のアイテム
+.items-box-container2{
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.text-item-style2{
+  font-size: 24px;
+  color: white
+}
+.items-box-content{
+  width: 100%;
+  margin: 0 auto;
+}
+.items-box2{
+  margin: 0 auto;
+  width: calc(25% - 20px);
+  display: inline-block;
+}
+.itemstyle2{
+  width: 213px;
+  padding-top: 10px;
+  height: 280px;
+}
+.itemstyle3{
+  width: 213px;
+  padding-top: 10px;
+  margin-left: 90px;
+  height: 280px;
+}
+.itemstyle4{
+  width: 213px;
+  padding-top: 10px;
+  margin-left: 180px;
+  height: 280px;
+}

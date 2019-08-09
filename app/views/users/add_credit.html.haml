@@ -1,0 +1,247 @@
+%body
+  .default-container
+    %header.pc-header.visible-pc
+      .pc-header-inner
+        .pc-header-top
+          %h1.pc-header-image
+            =link_to root_path do
+              =image_tag "main-logo.svg"
+          %form.pc-header-form2
+            %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
+            %i.icon-search2
+              = fa_icon 'search', class: 'icon-search2__icon'
+        .pc-header-nav-box.clearfix
+          %nav.l-left
+            %ul.pc-header-nav
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'list', class: 'main-icon'
+                    %span.catebrastyle
+                      カテゴリーから探す
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'tag', class: 'main-icon'
+                    %span.catebrastyle
+                      ブランドから探す
+          %nav.l-right
+            %ul.pc-header-nav
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'heart', class: 'header-icon'
+                    %span.catebrastyle
+                      いいね!一覧
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'bell', class: 'header-icon'
+                    %span.catebrastyle
+                      お知らせ
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = fa_icon 'check', class: 'header-icon'
+                    %span.catebrastyle
+                      やることリスト
+              %li
+                %h2
+                  =link_to "","", class: 'pc-header-nav-root list-parent'
+                  %i.icon-list
+                    = image_tag "mypage.png" , class: 'mypage-icon'
+                    %span.catebrastyle
+                      マイページ
+    %main.l-container.clearfix
+
+      -# マイページ右側
+      .l-content
+      
+        -# 編集はここから
+        .l-chapter-container
+          .l-chapter-head クレジットカード情報入力
+          .mypage-credit-wrapper
+            .l-single-content
+              .each-forms
+                %div
+                  -# = form_for [@???] do |f|
+                  %label カード番号
+                  -# = f.label :card_no, "カード番号"
+                  %span.form-must 必須
+                %textarea{name: "nickname", class: "text-default", placeholder: "例）メルカリ太郎"}
+                -# = f.text_field :card_no, class: "text-default"
+                .card-images
+                  = image_tag "visa.svg"
+                  = image_tag "master-card.svg"
+                  = image_tag "saison-card.svg"
+                  = image_tag "jcb.svg"
+                  = image_tag "american_express.svg"
+                  = image_tag "dinersclub.svg"
+                  = image_tag "discover.svg"
+
+              .each-forms
+                -# = form_for [@???] do |f|
+                %label 有効期限
+                -# = f.label :birthday, "有効期限"
+                %span.form-must 必須
+                %br/
+                .creditcard_wrap
+                  .select-form-wrap
+                    -# = f.collection_select (:job_id, @jobs, :id, :birth_year, class: "select-text-default")
+                    %i.icon-arrow-bottom
+                    %select.select-default.creditcard{name: "birth_year", class: "select-text-default"}
+                      %option{value: ""} ---
+                      %option{value: "1"} 1
+                      %option{value: "2"} 2
+                      %option{value: "3"} 3
+                      %option{value: "4"} 4
+                      %option{value: "5"} 5
+                      %option{value: "6"} 6
+                      %option{value: "7"} 7
+                      %option{value: "8"} 8
+                      %option{value: "9"} 9
+                      %option{value: "10"} 10
+                      %option{value: "11"} 11
+                      %option{value: "12"} 12
+                    %span 月
+
+                    -# = f.collection_select (:job_id, @jobs, :id, :birth_month, class: "select-text-default")
+                    %i.icon-arrow-bottom
+                    %select.select-default.creditcard{name: "birth_month", class: "select-text-default"}
+                      %option{value: ""} ---
+                      %option{value: "1"} 2022
+                      %option{value: "2"} 2021
+                      %option{value: "3"} 2020
+                    %span  年
+
+                
+                .each-forms
+                %div
+                  -# = form_for [@???] do |f|
+                  %label セキュリティコード
+                  -# = f.label :card_no, "セキュリティコード"
+                  %span.form-must 必須
+                %textarea{name: "nickname", class: "text-default", placeholder: "カードの背面4桁もしくは3桁の番号"}
+                -# = f.text_field :card_no, class: "text-default"
+
+                %p.security_no_detail
+                  = fa_icon 'question-circle', class: 'icon'
+                  %a カードの裏面の番号とは？
+                
+                .emptybox-payway
+                %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 次へ進む
+                -# = f.submit '次へ進む', class: 'btn-default btn-red text-default__submit'
+
+        -# ここまで
+
+
+      -# マイページ左側
+      .l-side
+        %nav.mypage-nav
+          %ul.mypage-nav-list
+            %li
+              = link_to "マイページ", mypage_path, class: "mypage-nav-list-item active-info"
+            %li
+              %a.mypage-nav-list-item お知らせ
+              %i.angle-right
+                = fa_icon 'angle-right'
+            %li
+              %a.mypage-nav-list-item やることリスト
+              %i.angle-right
+                = fa_icon 'angle-right'
+            %li
+              %a.mypage-nav-list-item いいね！一覧
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              = link_to "出品する", mypage_path, class: "mypage-nav-list-item"
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 出品した商品 - 出品中
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 出品した商品 - 取引中
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 出品した商品 - 売却済み
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 購入した商品 - 取引中
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 購入した商品 - 過去の取引
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item ニュース一覧
+              %i.angle-right
+                = fa_icon 'angle-right'           
+            %li
+              %a.mypage-nav-list-item 評価一覧
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item ガイド
+              %i.angle-right
+                = fa_icon 'angle-right'          
+            %li
+              %a.mypage-nav-list-item お問い合わせ
+              %i.angle-right
+                = fa_icon 'angle-right'
+                
+          %h3.mypage-nav-head メルペイ
+          %ul.mypage-nav-list
+            %li
+              %a.mypage-nav-list-item 売上・振込申請
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item ポイント
+              %i.angle-right
+                = fa_icon 'angle-right'            
+          %h3.mypage-nav-head 設定
+          %ul.mypage-nav-list
+            %li
+              -# プロフィールページ作ったらパス変更
+              = link_to "プロフィール", mypage_path, class: "mypage-nav-list-item"
+            %li
+              %a.mypage-nav-list-item 発送元・お届け先住所変更
+              %i.angle-right
+                = fa_icon 'angle-right'            
+            %li
+              %a.mypage-nav-list-item 支払い方法
+              %i.angle-right
+                = fa_icon 'angle-right'           
+            %li
+              %a.mypage-nav-list-item メール/パスワード
+              %i.angle-right
+                = fa_icon 'angle-right'        
+            %li
+              %a.mypage-nav-list-item 本人情報
+              %i.angle-right
+                = fa_icon 'angle-right'           
+            %li
+              %a.mypage-nav-list-item 電話番号の確認
+              %i.angle-right
+                = fa_icon 'angle-right'
+            %li
+              %a.mypage-nav-list-item ログアウト
+              %i.angle-right
+                = fa_icon 'angle-right'
+    
+    %footer
+      = image_tag 'mainfooter.png', class: 'footer-design'
+      =link_to root_path do
+        .footer-sell-btn
+          %span.footer-sell-btn__sell  出品
+          = fa_icon 'camera', class: 'camera-icon' 

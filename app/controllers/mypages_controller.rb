@@ -11,3 +11,13 @@ class MypagesController < ApplicationController
 
 
 end
+  def logout
+  end
+
+  def pay_way
+  end
+
+  def identification
+  end
+
+end
