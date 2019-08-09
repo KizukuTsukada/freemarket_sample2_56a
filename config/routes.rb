@@ -14,6 +14,7 @@ resources :users, only:[:index, :show] do
     get 'delivery_address'
     get 'pay_way'
     get 'complete_signup'
+    get 'add_credit'
   end
 end
 
@@ -23,7 +24,14 @@ end
   get "public/index", to: "public#index"
 
   get "mypages", to: "mypages#index", as: :mypage
-  resources :mypages, only:[:index, :show]
+  resources :mypages, only:[:index, :show] do
+    collection do
+      get 'logout'
+      get 'pay_way'
+      get 'identification'
+    end
+  end
+
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
