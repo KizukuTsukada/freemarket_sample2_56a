@@ -14,7 +14,6 @@
 |saler|integer||
 |buyer|integer||
 |detail|text|null: false|
-|photo_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 
@@ -52,12 +51,12 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birth_year|integer|null: false|
-|birth_month|integer|null: false|                 
-|birth_day|integer|null: false| 
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 |postal_code|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
-|address1|string|null: false|               
+|address1|string|null: false|
 |address2|string||
 |phone_number|string|null: false|
 
@@ -82,7 +81,7 @@
 ## photosテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string||
+|image|string|null: false|
 |item_id|references|foreign_key: true|
 
 ### Association
