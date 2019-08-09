@@ -1,3 +1,28 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+img {
+  vertical-align: middle;
+}
+
+figure {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 40px;
+  margin-inline-end: 40px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.default-container{
+padding: 20px 150px;
+}
 
 .l-content {
   float: right;
@@ -7,7 +32,6 @@
 .l-container {
   margin: 40px 76px 0;
   width: 1020px;
-  padding: 20px 150px;
 }
 
 .mypage-user-icon {
@@ -172,7 +196,7 @@
   height: 70px;
 }
 
-.active-info{
+.active{
   float: left;
   a{
     font-size: 22px;
@@ -191,7 +215,7 @@
   font-size: 0;
 }
 
-.mypage-tabs li.active-info, .listing-tabs li.active-info, .review-history-tabs li.active-info {
+.mypage-tabs li.active, .listing-tabs li.active, .review-history-tabs li.active {
   background: #fff;
 }
 
@@ -211,7 +235,7 @@
   height: 50px;
 }
 
-.mypage-nav-list-item.active-info {
+.mypage-nav-list-item.active {
   background: #eee;
   font-weight: 600;
   color: black;
@@ -241,11 +265,6 @@
 .mypage-nav-head {
   margin: 40px 0 0;
 }
-
-.mypage-nav h3{
-  margin-top: 40px;
-  font-size: 16px;
- }
 
 .mypage-nav-head+.mypage-nav-list {
   margin: 8px 0 0;
