@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
 resources :users, only:[:index, :show] do
   collection do
+    # 新規登録
     get 'sms_confirmation'
     get 'delivery_address'
     get 'pay_way'
@@ -19,11 +20,10 @@ end
   root "home#index"
   
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
-  get "public/index" => "public#index"
+  get "public/index", to: "public#index"
 
-  get "mypages" => "mypages#index", as: :mypage
+  get "mypages", to: "mypages#index", as: :mypage
   resources :mypages, only:[:index, :show]
-  resources :users, only:[:edit, :show]  
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
