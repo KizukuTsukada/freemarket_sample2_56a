@@ -20,7 +20,7 @@
         .tab-content
           %ul#mypage-tab-notification.mypage-item-list.tab-pane.active
             %li
-              .mypage-item-link
+              %a.mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
                 .mypage-item-body
                   .mypage-item-text
@@ -30,7 +30,7 @@
                     %span 2 時間前
 
             %li
-              .mypage-item-link
+              %a.mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
                 .mypage-item-body
                   .mypage-item-text
@@ -39,7 +39,7 @@
                     %i.icon-time
                     %span 2 時間前
             %li
-              .mypage-item-link
+              %a.mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
                 .mypage-item-body
                   .mypage-item-text
@@ -48,7 +48,7 @@
                     %i.icon-time
                     %span 2 時間前
             %li
-              .mypage-item-link
+              %a.mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
                 .mypage-item-body
                   .mypage-item-text
@@ -57,7 +57,7 @@
                     %i.icon-time
                     %span 2 時間前
             %li
-              .mypage-item-link
+              %a.mypage-item-link
                 = image_tag "mercari_profile.png", size: "30x30", alt: ""
                 .mypage-item-body
                   .mypage-item-text
@@ -68,9 +68,6 @@
             %li.mypage-go-list
               %a 一覧を見る
 
-      %aside.modal{"data-close": "modal", "data-modal": "banner"}
-        .modal-inner.modal-banner
-          .modal-banner-eye-catch
     -# ここまで
 
     .l-side
