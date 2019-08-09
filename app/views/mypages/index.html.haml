@@ -1,5 +1,7 @@
 .default-container 
   %main.l-container.clearfix
+  
+    -# ここから
     .l-content
       %section.mypage-user-icon
         %figure
@@ -69,11 +71,12 @@
       %aside.modal{"data-close": "modal", "data-modal": "banner"}
         .modal-inner.modal-banner
           .modal-banner-eye-catch
-      
+    -# ここまで
+
     .l-side
       %nav.mypage-nav
         %ul.mypage-nav-list
-          .list-top
+          %li
             = link_to "マイページ", mypage_path, class: "mypage-nav-list-item active"
           %li
             %a.mypage-nav-list-item お知らせ
