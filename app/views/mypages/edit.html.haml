@@ -6,15 +6,15 @@
       %section.l-chapter-container
         %h2.l-chapter-head プロフィール
         %form
-          %setting-profile-icon
+          %div.setting-profile-icon
             %figure
               %img
-                =link_to root_path do
-                  =image_tag "footer-logo.svg"
-            %input.input-default ポン
-          %settinng-profile-content
-            %textarea.textarea-default
-            %button.btn-default.btn-red 変更する
+              = link_to image_tag("footer-logo.svg"), mypages_path 
+            %input.input-default
+          .settinng-profile-content
+          %textarea.textarea-default こんにちは。ご覧いただきありがとうございます!可愛いものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪
+          %button.btn-defaulte.btn-red 変更する
+            
     -# ここまで
 
     .l-side
