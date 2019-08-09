@@ -5,10 +5,13 @@
 //全体に適応
 @import "to-all";
 
+//ヘッダーとフッター
+@import "single-header-footer";
+@import "progress-bar";
+@import "header-sinki-mypage";
 
 //トップページ
 @import "main";
-@import "main2";
 
 // マイページ
 @import "mypage";
