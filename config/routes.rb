@@ -23,7 +23,12 @@ end
   get "public/index", to: "public#index"
 
   get "mypages", to: "mypages#index", as: :mypage
-  resources :mypages, only:[:index, :show]
+  resources :mypages, only:[:index, :show] do
+    collection do
+      get 'logout'
+    end
+  end
+
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
