@@ -14,7 +14,7 @@ resources :users, only:[:index, :show] do
   end
 end
 
-  root "items#show"
+  root "home#index"
   
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
   get "public/index" => "public#index"

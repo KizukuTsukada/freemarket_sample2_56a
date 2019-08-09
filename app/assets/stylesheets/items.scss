@@ -315,7 +315,7 @@
 
 .default-container2{
   box-sizing: border-box;
-  width: 55%;
+  width: 50%;
   margin: 0 auto;
 }
 .item-box-container {
@@ -536,8 +536,35 @@ i[class^='icon-'], i[class*='icon-'] {
 .items-box-container2{
   width: 100%;
   margin: 0 auto;
+  padding-top: 25px;
 }
-.text-item-style{
-  color: #0000ee;
-  font-size: 22px;
+.text-item-style2{
+  font-size: 24px;
+  color: white
+}
+.items-box-content{
+  width: 100%;
+  margin: 0 auto;
+}
+.items-box2{
+  margin: 0 auto;
+  width: calc(25% - 20px);
+  display: inline-block;
+}
+.itemstyle2{
+  width: 213px;
+  padding-top: 10px;
+  height: 280px;
+}
+.itemstyle3{
+  width: 213px;
+  padding-top: 10px;
+  margin-left: 90px;
+  height: 280px;
+}
+.itemstyle4{
+  width: 213px;
+  padding-top: 10px;
+  margin-left: 180px;
+  height: 280px;
 }
