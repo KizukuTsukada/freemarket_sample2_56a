@@ -33,109 +33,64 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-        = form_for @user, url: sms_confirmation_signup_index_path do |f|
-          .each-forms
-            = f.label :nickname, "ニックネーム"
-            %span.form-must 必須
-            = f.text_field :nickname, class: "text-default", placeholder: "例）メルカリ太郎"
-          .each-forms
-            = f.label :email, "メールアドレス"
-            %span.form-must 必須
-            = f.text_field :email, class: "text-default", placeholder: "PC・携帯どちらでも可"
-          .each-forms
-            = f.label :password, "パスワード"
-            %span.form-must 必須
-            = f.text_field :password, class: "text-default", placeholder: "7文字以上"
-          .each-forms
-            = f.label :password, "パスワード(確認)"
-            %span.form-must 必須
-            = f.text_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
-          .each-forms
-            %h3.text-left.l-chapter-sub-head 本人確認
-            %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            = form_for @user, url: sms_confirmation_signup_index_path do |f|
+              .each-forms
+                = f.label :nickname, "ニックネーム"
+                %span.form-must 必須
+                = f.text_field :nickname, class: "text-default", placeholder: "例）メルカリ太郎"
+              .each-forms
+                = f.label :email, "メールアドレス"
+                %span.form-must 必須
+                = f.text_field :email, class: "text-default", placeholder: "PC・携帯どちらでも可"
+              .each-forms
+                = f.label :password, "パスワード"
+                %span.form-must 必須
+                = f.text_field :password, class: "text-default", placeholder: "7文字以上"
+              .each-forms
+                = f.label :password, "パスワード(確認)"
+                %span.form-must 必須
+                = f.text_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
+              .each-forms
+                %h3.text-left.l-chapter-sub-head 本人確認
+                %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
-          -# ここからprofileテーブルに入れる。
-          = fields_for @plofile do |p|
-            .each-forms
-              = p.label :password, "お名前(全角)"
-              %span.form-must 必須
-              = p.text_field :family_name_kanji, class: "text-default half", placeholder: "例）山田"
-              = p.text_field :first_name_kanji, class: "text-default half", placeholder: "例）彩"
-            .each-forms
-              = p.label :password, "お名前カナ(全角)"
-              %span.form-must 必須
-              = p.text_field :family_name_kana, class: "text-default half", placeholder: "例）ヤマダ"
-              = p.text_field :first_name_kana, class: "text-default half", placeholder: "例）アヤ"
-            -# .each-forms
-            -#   = p.label :birthday, "生年月日"
-            -#   %span.form-must 必須
-            -#   %br/
-            -#   .birthday_wrap
-            -#     .select-form-wrap
-                  -# != sprintf(f.date_select(:birth_year, prefix: 'birth_year', with_css_classes: 'select-text-default', prompt: '--'))
-                  -# %span 年
-                  -# != sprintf(f.date_select(:birth_month, prefix: 'birth_month', with_css_classes: 'select-text-default', prompt: '--'))
-                 
-                  -# %select.select-default{name: "birth_month", class: "select-text-default"}
-                  -#   %option{value: ""} ---
-                  -#   %option{value: "1"} 1
-                  -#   %option{value: "2"} 2
-                  -#   %option{value: "3"} 3
-                  -#   %option{value: "4"} 4
-                  -#   %option{value: "5"} 5
-                  -#   %option{value: "6"} 6
-                  -#   %option{value: "7"} 7
-                  -#   %option{value: "8"} 8
-                  -#   %option{value: "9"} 9
-                  -#   %option{value: "10"} 10
-                  -#   %option{value: "11"} 11
-                  -#   %option{value: "12"} 12
-                  -# %span 月
-                  -# = p.collection_select :birth_day, class: "select-text-default"
-                  -# %i.icon-arrow-bottom
-                  -# %select.select-default{name: "birth_day", class: "select-text-default"}
-                  -#   %option{value: ""} ---
-                  -#   %option{value: "1"} 1
-                  -#   %option{value: "2"} 2
-                  -#   %option{value: "3"} 3
-                  -#   %option{value: "4"} 4
-                  -#   %option{value: "5"} 5
-                  -#   %option{value: "6"} 6
-                  -#   %option{value: "7"} 7
-                  -#   %option{value: "8"} 8
-                  -#   %option{value: "9"} 9
-                  -#   %option{value: "10"} 10
-                  -#   %option{value: "11"} 11
-                  -#   %option{value: "12"} 12
-                  -#   %option{value: "13"} 13
-                  -#   %option{value: "14"} 14
-                  -#   %option{value: "15"} 15
-                  -#   %option{value: "16"} 16
-                  -#   %option{value: "17"} 17
-                  -#   %option{value: "18"} 18
-                  -#   %option{value: "19"} 19
-                  -#   %option{value: "21"} 21
-                  -#   %option{value: "22"} 22
-                  -#   %option{value: "23"} 23
-                  -#   %option{value: "24"} 24
-                  -#   %option{value: "25"} 25
-                  -#   %option{value: "26"} 26
-                  -#   %option{value: "27"} 27
-                  -#   %option{value: "28"} 28
-                  -#   %option{value: "29"} 29
-                  -#   %option{value: "30"} 30
-                  -#   %option{value: "31"} 31
-                  -# %span 日
-              .clearfix
-              %p.form-into-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              -# ここからprofileテーブルに入れる。
+              = fields_for @plofile do |p|
+                .each-forms
+                  %div
+                    = p.label :password, "お名前(全角)"
+                    %span.form-must 必須
+                  = p.text_field :family_name_kanji, class: "text-default half", placeholder: "例）山田"
+                  = p.text_field :first_name_kanji, class: "text-default half", placeholder: "例）彩"
+                .each-forms
+                  %div
+                    = p.label :password, "お名前カナ(全角)"
+                    %span.form-must 必須
+                  = p.text_field :family_name_kana, class: "text-default half", placeholder: "例）ヤマダ"
+                  = p.text_field :first_name_kana, class: "text-default half", placeholder: "例）アヤ"
+                .each-forms
+                  = p.label :birthday, "生年月日"
+                  %span.form-must 必須
+                  %br/
+                  .birthday_wrap
+                    .select-form-wrap
+                      = p.select :birth_year, [["2000", "2000"], ["1999", "1999"], ["1998", "1998"], ["1997", "1997"], ["1996", "1996"], ["1995", "1995"]], {prompt: "---"}, class: "select-default select-text-default"
+                      %span 年
+                      = p.select :birth_month, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"]],  {prompt: "---"}, class: "select-default select-text-default"
+                      %span 月
+                      = p.select :birth_day, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"], ["5", "5"], ["6", "6"], ["7", "7"], ["8", "8"], ["9", "9"], ["10", "10"], ["11", "11"], ["12", "12"], ["13", "13"], ["14", "14"], ["15", "15"], ["16", "16"], ["17", "17"], ["18", "18"], ["19", "19"], ["20", "20"], ["21", "21"], ["22", "22"], ["23", "23"], ["24", "24"], ["25", "25"], ["26", "26"], ["27", "27"], ["28", "28"], ["29", "29"], ["30", "30"], ["31", "31"]], {prompt: "---"}, class: "select-default select-text-default"
+                      %span 日
+                  .clearfix
+                  %p.form-into-text ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-          .l-single-content
-            .each-forms
-              %p.l-single-text.text-center
-                「次へ進む」のボタンを押すことにより、
-                %a 利用規約
-                に同意したものとみなします
-              = p.submit '次へ進む', class: 'btn-default btn-red'
+              .l-single-content
+                .each-forms
+                  %p.l-single-text.text-center
+                    「次へ進む」のボタンを押すことにより、
+                    %a 利用規約
+                    に同意したものとみなします
+                  .emptybox.delivery_address  
+              = f.submit '次へ進む', class: 'btn-default btn-red'
 
 
     %footer.single-footer
