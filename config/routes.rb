@@ -46,9 +46,11 @@ Rails.application.routes.draw do
     end
   end
 
-
- # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
+  root "home#index"
+  
+  # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
   get "public/index", to: "public#index"
+  get 'search', to: 'search#index'
 
 
  # その他のルーティング
