@@ -14,6 +14,7 @@
 |saler_id|integer|null: false|
 |buyer_id|integer|
 |detail|text|null: false|
+|situation|string|null: false|
 |brand_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 
