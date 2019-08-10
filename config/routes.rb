@@ -34,7 +34,6 @@ Rails.application.routes.draw do
     end
   end
 
-
  # mypages
   get "mypages", to: "mypages#index", as: :mypage
   get "mypages/edit", to: "mypages#edit"
