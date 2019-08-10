@@ -8,10 +8,11 @@ class SignupController < ApplicationController
   end
 
   def sms_confiemation
+    session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
     session[:password_confirmation] = user_params[:password_confirmation]
-    @user.build_profiele(user_params[:profiele_attributes]) 
+    @user.build_profile(user_params[:profile_attributes]) 
     @user = User.new
   end
 
@@ -33,8 +34,6 @@ class SignupController < ApplicationController
     # session[:email] = user_params[:email]
   end
 
-  def credit_attreibute
-  end
 
   private
 
