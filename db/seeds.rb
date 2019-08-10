@@ -21,4 +21,7 @@ entmusic.entertainments.create([{name:"洋楽"}, {name:"邦楽"}])
 
 sports = Category.create(name:"スポーツ")
 
-sports_soccer = sports.children
+sports_soccer = sports.children.create(name:"サッカー")
+sports_soccer.children.create([{name:"ユニフォーム"}, {name:"ボール"}])
+saports_baseball = sports.children.create(name:"野球")
+saports_baseball.children.create([{name:"ユニフォーム"}, {name:"グローブ"}])

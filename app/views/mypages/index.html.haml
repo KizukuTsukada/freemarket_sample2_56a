@@ -18,6 +18,7 @@
                   =link_to "","", class: 'pc-header-nav-root list-parent'
                   %i.icon-list
                     = fa_icon 'list', class: 'main-icon'
+                    = f.collection_select :category_ids, @parents, :id, :name,{prompt: "---"}, class: "icon-list"
                     %span.catebrastyle
                       カテゴリーから探す
               %li
