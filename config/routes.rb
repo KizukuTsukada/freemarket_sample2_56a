@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
  # signup(session)
   get "signup", to: "signup#index"
-  resource :signup, only:[:index] do
+  resources :signup do
     collection do
       get 'registration'
       get 'sms_confirmation'
