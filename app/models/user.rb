@@ -3,4 +3,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_one :book
+  accepts_nested_attributes_for :book
+
+  has_one :credit
+  accepts_nested_attributes_for :credit
 end
