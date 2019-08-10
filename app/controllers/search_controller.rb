@@ -1,5 +1,5 @@
 def search
-  @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order("id DESC").page(params[:page]).per(15)
+  @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order("id DESC")
   if params[:keyword] == ""
     redirect_to '/items/search?utf8=✓&keyword=+++'
   end
