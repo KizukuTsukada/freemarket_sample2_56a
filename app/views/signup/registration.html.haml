@@ -33,7 +33,7 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-        = form_for @users, url: sms_confirmation_signup_index_path do |f|
+        = form_for @user, url: sms_confirmation_signup_index_path do |f|
           .each-forms
             = f.label :nickname, "ニックネーム"
             %span.form-must 必須
@@ -49,13 +49,13 @@
           .each-forms
             = f.label :password, "パスワード(確認)"
             %span.form-must 必須
-            = f.text_field :password2, class: "text-default", placeholder: "7文字以上"
+            = f.text_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
           .each-forms
             %h3.text-left.l-chapter-sub-head 本人確認
             %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
           -# ここからprofileテーブルに入れる。
-          = field_for @plofile do |p|
+          = fields_for @plofile do |p|
             .each-forms
               = p.label :password, "お名前(全角)"
               %span.form-must 必須
