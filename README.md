@@ -110,9 +110,3 @@
 ### Association
 - has_many :items
 - has_ancestry
-
-
-
-### Association
-- belongs_to :user
-- belongs_to :item
