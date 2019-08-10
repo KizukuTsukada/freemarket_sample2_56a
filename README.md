@@ -11,7 +11,7 @@
 |deliver_way|integer|null: false|
 |deliver_date|integer|null: false|
 |deliver_fee|integer|null: false|
-|saler_id|integer||
+|saler_id|integer|null: false|
 |buyer_id|integer||
 |detail|text|null: false|
 |brand_id|references|foreign_key: true|
