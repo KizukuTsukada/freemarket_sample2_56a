@@ -11,8 +11,8 @@
 |deliver_way|integer|null: false|
 |deliver_date|integer|null: false|
 |deliver_fee|integer|null: false|
-|saler_id|integer||
-|buyer_id|integer||
+|saler_id|integer|
+|buyer_id|integer|
 |detail|text|null: false|
 |brand_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
@@ -29,7 +29,7 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string||
+|image|string|
 |gender|integer|null: false|
 |introduction|text|
 |email|string|null: false, unique: true|
@@ -59,7 +59,7 @@
 |prefectures|string|null: false|
 |city|string|null: false|
 |address1|string|null: false|
-|address2|string||
+|address2|string|
 |phone_number|string|null: false|
 
 ### Association
@@ -106,6 +106,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancesty|integer|
 
 ### Association
 - has_many :items
