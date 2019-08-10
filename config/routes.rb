@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
  # mypages
   get "mypages", to: "mypages#index", as: :mypage
+  # まだidがないので仮で作成
   get "mypages/edit", to: "mypages#edit"
 
   resources :mypages, only:[:index, :show] do
@@ -51,7 +52,8 @@ Rails.application.routes.draw do
  # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
   get "public/index", to: "public#index"
 
-
+  # まだidがないので仮で作成
+  get "items/create", to: "items#create"
  # その他のルーティング
   resources :categories, only: [:index]
   resources :brands, only: [:index]
