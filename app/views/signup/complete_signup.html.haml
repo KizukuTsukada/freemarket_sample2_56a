@@ -32,16 +32,17 @@
           会員登録完了
         .l-single-inner.registration-form
           .l-single-content
-            .complete-signup-message
-              %p ありがとうございます。
-              %br/ 
-              会員登録が完了しました。
-            .emptybox-completesignup
-            %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} メルカリをはじめる
-            -# = f.submit 'メルカリをはじめる', class: 'btn-default btn-red'
+
+            = form_for :user, url: sms_confirmation_signup_index_path do |f|
+              .complete-signup-message
+                %p ありがとうございます。
+                %br/ 
+                会員登録が完了しました。
+              .emptybox-completesignup
+              = f.submit 'メルカリをはじめる', class: 'btn-default btn-red text-default__submit'
 
 
-              
+
     %footer.single-footer
       %ul.clearfix
         %li
