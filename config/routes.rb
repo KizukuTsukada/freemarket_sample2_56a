@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   }
 
  # signup(session)
-  resources :signup, only:[:index] do
+  get "signup", to: "signup#index"
+  resources :signup do
     collection do
       get 'registration'
       get 'sms_confirmation'
