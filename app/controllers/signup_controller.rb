@@ -16,21 +16,21 @@ class SignupController < ApplicationController
   end
 
   def delivery_address
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
   end
 
   def pay_way
-    @user.build_credit(user_params[:credit_attributes]) 
+    # @user.build_credit(user_params[:credit_attributes]) 
   end
 
   def complete_signup
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
-    session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
+    # session[:email] = user_params[:email]
   end
 
   def credit_attreibute
@@ -39,13 +39,14 @@ class SignupController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(
+    params.require(@user).permit(
       :nickname,
       :email,
       :password, 
       :password_confirmation, 
       profile_attributes: [:family_name_kanji, :first_name_kanji, :family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :postal_code, :prefectures, :city, :address1, :address2, :phone_number],
       credirt_attreibutes: [:card_no, :validity_year, :validity_month, :security_no]
+    )
   end
 
 end
