@@ -29,21 +29,23 @@
       %section.l-single-container
         %h2.l-single-head.registration
           電話番号の確認
-        %form.l-single-inner.registration-form
+        .l-single-inner.registration-form
           .l-single-content
-            .form-group
-              %label 携帯電話の番号
-              %input.input-default.sms{placeholder: "携帯電話の番号を入力"}
-              %p.form-group-comment
-                本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-              %submit.btn-default.btn-red
-                SMSを送信する
-              %p.form-group-comment
-                ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
 
-            .form-group.text-right
-              電話番号の確認が必要な理由
-          
+            = form_for :user, url: delivery_address_signup_index_path do |f|
+              = fields_for @plofile do |p|
+                .each-group
+                  = p.label :phone_number, "携帯電話の番号"
+                  = p.text_field :phone_number, class: "text-default", placeholder: "携帯電話の番号を入力"
+                %p.form-group-comment
+                  本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+                = f.submit 'SMSを送信する', class: 'btn-default btn-red'
+                %p.form-group-comment
+                  ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+
+                .form-group.text-right
+                  電話番号の確認が必要な理由
+            
 
       %footer.single-footer
         %ul.clearfix
