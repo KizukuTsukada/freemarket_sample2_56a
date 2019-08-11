@@ -97,4 +97,4 @@ ActiveRecord::Schema.define(version: 2019_08_11_073500) do
 
   add_foreign_key "brands", "items"
   add_foreign_key "photos", "items"
-
+end
