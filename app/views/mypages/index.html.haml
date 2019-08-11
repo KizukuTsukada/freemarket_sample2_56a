@@ -20,6 +20,8 @@
                     = fa_icon 'list', class: 'main-icon'
                     %span.catebrastyle
                       カテゴリーから探す
+                      // 親のカテゴリーセレクトボックスの生成
+                      = f.select :category, @category_parent_array, {}, {class: 'pc-header-nav-root list-parent', id: 'parent_category'}
               %li
                 %h2
                   =link_to "","", class: 'pc-header-nav-root list-parent'

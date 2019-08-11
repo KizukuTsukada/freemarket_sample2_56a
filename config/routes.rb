@@ -40,11 +40,14 @@ Rails.application.routes.draw do
   # まだidがないので仮で作成
   get "mypages/edit", to: "mypages#edit"
 
-  resources :mypages, only:[:index, :show] do
+  resources :mypages, only:[:index, :show, :edit, :new, :destroy] do
     collection do
       get 'logout'
       get 'pay_way'
       get 'identification'
+      #Ajaxで動くアクションのルートを作成
+      get 'get_category_children', defaults: {format: 'json'}
+      get 'get_category_grandchildren', defaults: {format: 'json'}
     end
   end
 
@@ -58,28 +61,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
-  resources :items, only: [:index, :create, :new, :] do
+  resources :items, only: [:index] do
     #Ajaxで動くアクションのルートを作成
     collection do
-      get 'get_category_children', defaults: { format: 'json' }
-      get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-
-
+  end
 end
-def index
-end
-
-def create
-end
-
-def new
-end
-
-def edit
-end
-
-def show
-end
-
-def update
