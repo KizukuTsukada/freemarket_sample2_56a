@@ -13,3 +13,11 @@ mens_tops.children.create([{name: "Tシャツ"}, {name: "ジャケット"}])
 
 mens_pants = mens.children.create(name: "パンツ")
 mens_pants.children.create([{name: "デニム"}, {name: "チノパン"}])
+
+entertainments = Category.create(name: "本・CD")
+
+entbook = entbook.children.create(name: "本")
+entbook.children.create([{name: "漫画"}, {name: "ラノベ"}])
+
+entmusic = entmusic.children.create(name: "音楽")
+entmusic.children.create([{name: "洋楽"}, {name: "邦楽"}])

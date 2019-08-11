@@ -58,7 +58,28 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
-  resources :items
+  resources :items, only: [:index, :create, :new, :] do
+    #Ajaxで動くアクションのルートを作成
+    collection do
+      get 'get_category_children', defaults: { format: 'json' }
+      get 'get_category_grandchildren', defaults: { format: 'json' }
+    end
 
 
 end
+def index
+end
+
+def create
+end
+
+def new
+end
+
+def edit
+end
+
+def show
+end
+
+def update
