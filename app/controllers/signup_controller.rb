@@ -5,6 +5,7 @@ class SignupController < ApplicationController
 
   def registration
     @user= User.new
+    @user.build_profile
   end
 
   def sms_confiemation
@@ -26,10 +27,6 @@ class SignupController < ApplicationController
     @user = User.new
   end
 
-  def complete_signup
-    @user.build_profile(user_params[:profile_attributes]) 
-    @user = User.new
-  end
 
   def create
     @user = User.new(
@@ -46,6 +43,10 @@ class SignupController < ApplicationController
     else
       render '/signup/registration'
     end
+  end
+
+  def complete_signup
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 

@@ -15,10 +15,10 @@ Rails.application.routes.draw do
   resources :signup do
     collection do
       get 'registration'
-      get 'sms_confirmation'
-      get 'delivery_address'
-      get 'pay_way'  # 入力が全て完了
-      get 'complete_signup'  #登録完了後
+      post 'sms_confirmation'
+      post 'delivery_address'
+      post 'pay_way'  # 入力が全て完了
+      post 'complete_signup'  #登録完了後
     end
   end
 

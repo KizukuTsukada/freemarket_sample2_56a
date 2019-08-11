@@ -33,7 +33,7 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-            = form_for @user, url: pay_way_signup_index_path do |f|
+            = form_for :user, url: pay_way_signup_index_path do |f|
               = fields_for @plofile do |p|
                 .each-forms
                   %div
