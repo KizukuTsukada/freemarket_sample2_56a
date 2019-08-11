@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :book
-  accepts_nested_attributes_for :book
+  has_one :profile
+  accepts_nested_attributes_for :profile
 
   has_one :credit
   accepts_nested_attributes_for :credit

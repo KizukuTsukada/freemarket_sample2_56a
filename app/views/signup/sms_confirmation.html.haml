@@ -32,7 +32,7 @@
         .l-single-inner.registration-form
           .l-single-content
 
-            = form_for :user, url: delivery_address_signup_index_path do |f|
+            = form_for @user, url: delivery_address_signup_index_path do |f|
               = fields_for @plofile do |p|
                 .each-group
                   = p.label :phone_number, "携帯電話の番号"
