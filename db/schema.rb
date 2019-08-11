@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_11_075134) do
-
-  create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 2019_08_11_083036) do
 
   create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
@@ -65,6 +58,10 @@ ActiveRecord::Schema.define(version: 2019_08_11_075134) do
     t.string "situation", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "brand_id"
+    t.bigint "categorie_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["categorie_id"], name: "index_items_on_categorie_id"
   end
 
   create_table "photos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -73,11 +70,6 @@ ActiveRecord::Schema.define(version: 2019_08_11_075134) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_photos_on_item_id"
-  end
-
-  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -96,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_08_11_075134) do
     t.string "phone_number", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,13 +104,13 @@ ActiveRecord::Schema.define(version: 2019_08_11_075134) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "profile_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "brands", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories", column: "categorie_id"
   add_foreign_key "photos", "items"
-  add_foreign_key "users", "profiles"
+  add_foreign_key "profiles", "users"
 end
