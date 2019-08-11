@@ -107,7 +107,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancesty|integer|
+|ancestry|integer|
 
 ### Association
 - has_many :items

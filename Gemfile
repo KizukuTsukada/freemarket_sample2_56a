@@ -77,3 +77,4 @@ end
 gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'seed-fu', '~> 2.3'
+gem 'ancestry'
