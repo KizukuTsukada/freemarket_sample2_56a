@@ -2,8 +2,9 @@ class Category < ApplicationRecord
   has_ancestry
 end
 
-mens = Category.create(name: "メンズ")
+# レディースブロック
 
-mens_tops = mens.children.create(name: "トップス")
-
-mens_tops.children.create([{name: "Tシャツ"}, {name: "ジャケット"}])
+# レディースの子カテゴリー配列
+lady_child_array = ['トップス', 'パンツ']
+#レディースの孫カテゴリー配列
+lady_grandchild_array = 
