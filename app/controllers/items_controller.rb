@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   end
   
   def create
+    @item = Item.new
   end
   
   def new
@@ -18,4 +19,7 @@ class ItemsController < ApplicationController
   def update
   end
   
+  def delete
+  end
+
 end
