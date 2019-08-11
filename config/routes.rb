@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root "home#index"
+ 
 
 
  # deviseのカスタマイズコントローラ用ルーティン。新規登録時にしよう。
