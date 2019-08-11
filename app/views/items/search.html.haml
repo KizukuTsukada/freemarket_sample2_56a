@@ -1,0 +1,23 @@
+%body
+  .yjContainer
+    %span.yjGuid
+       %a#yjContentsStart{:name => "yjContentsStart"}
+        #yjMain
+          %article.section
+            .container
+              %header.header.header--section
+                %h2.text-middle
+                  %i.icon-movie.color-gray-light>
+                  新着作品
+              %ul#list-module.thumbnails.thumbnail--movies.row.grid4.js-lazy-load-images.js-my-check-stats
+                - @products.each do |product|
+                  %li.col
+                    %a{:href => "/products/#{product.id}"}
+                      .thumbnail__figure{:style => "background-image:url(#{product.image_url})"}
+                    .thumbnail__caption
+                      %h3.text-xsmall.text-overflow{:title => "#{product.title}"}
+                        = product.title
+                      %p.text-small
+                        %span.rating-star
+                          %i.star-actived{:class => "rate-[ここに評価を表示]0"}
+        #yjSub
