@@ -46,9 +46,9 @@
                     = p.label :prefectures, "都道府県"
                     %span.form-must 必須
                     %br/
-                    .prefectures_wrap
-                      .select-form-wrap
-                        = p.select :prefecture_id, Prefecture.all, :id, :name "prefectures", class: "text-default"
+                  .prefectures_wrap
+                    .select-form-wrap
+                      = p.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "text-default-prefecture"}
                 .each-forms
                   %div
                     = p.label :city, "市区町村"
