@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new
+    @item.photos.build
   end
   
   def new
