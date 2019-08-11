@@ -1,6 +1,10 @@
-ladys = Category.create(name: "")
+ladys = Category.create(name: "レディース")
 
-ladys_tops = 
+ladys_tops = ladys.children.create(name: "トップス")
+ladys_tops.children.create([{name: "Tシャツ"}, {name: "ジャケット"}])
+
+ladys_pants = ladys.children.create(name: "パンツ")
+ladys_pants.
 
 mens = Category.create(name: "メンズ")
 
