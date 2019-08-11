@@ -33,7 +33,8 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-            = form_for @user, url: sms_confirmation_signup_index_path do |f|
+            = form_for :user, url: sms_confirmation_signup_index_path do |f|
+              = hidden_field_tag :current_step, 'registration'
               .each-forms
                 = f.label :nickname, "ニックネーム"
                 %span.form-must 必須
@@ -55,7 +56,7 @@
                 %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
               -# ここからprofileテーブルに入れる。
-              = fields_for @profile do |p|
+              = f.fields_for :profile do |p|
                 .each-forms
                   %div
                     = p.label :password, "お名前(全角)"

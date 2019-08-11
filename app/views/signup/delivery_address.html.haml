@@ -34,7 +34,8 @@
           .l-single-content
 
             = form_for :user, url: pay_way_signup_index_path do |f|
-              = fields_for @profile do |p|
+              = hidden_field_tag :current_step, 'delivery_address'
+              = f.fields_for :profile do |p|
                 .each-forms
                   %div
                     = p.label :postal_code, "郵便番号"

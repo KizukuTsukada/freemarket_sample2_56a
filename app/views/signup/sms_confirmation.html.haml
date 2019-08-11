@@ -33,7 +33,8 @@
           .l-single-content
 
             = form_for :user, url: delivery_address_signup_index_path do |f|
-              = fields_for @profile do |p|
+              = hidden_field_tag :current_step, 'sms_confirmation'
+              = f.fields_for :profile do |p|
                 .each-group
                   = p.label :phone_number, "携帯電話の番号"
                   = p.text_field :phone_number, class: "text-default", placeholder: "携帯電話の番号を入力"

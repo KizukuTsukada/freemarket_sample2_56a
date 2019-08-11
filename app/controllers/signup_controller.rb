@@ -5,7 +5,7 @@ class SignupController < ApplicationController
 
   def registration
     @user = User.new
-    @user.profile.build
+    @user.build_profile
   end
 
   def sms_confiemation
@@ -18,13 +18,13 @@ class SignupController < ApplicationController
   end
 
   def delivery_address
-    @user.build_profile(user_params[:profile_attributes]) 
     @user = User.new
+    @user.build_profile(user_params[:profile_attributes]) 
   end
 
   def pay_way
-    @user.build_profile(user_params[:profile_attributes]) 
     @user = User.new
+    @user.build_profile(user_params[:profile_attributes]) 
   end
 
 
@@ -53,7 +53,7 @@ class SignupController < ApplicationController
   private
 
   def user_params
-    params.require(@user).permit(
+    params.require(:user).permit(
       :nickname,
       :email,
       :password, 
