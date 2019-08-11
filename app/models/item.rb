@@ -6,7 +6,7 @@ class Item < ApplicationRecord
   belongs_to :brand
   accepts_nested_attributes_for :brand
   
-  belongs_to :category
+  belongs_to :categorie
 
   # itemsテーブルのsaler_idとbuyer_idをusersテーブルと紐ずけ
   belongs_to :saler, class_name: "User"
@@ -16,4 +16,11 @@ class Item < ApplicationRecord
   validates :dedail, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, inclusion: { in: (300..9999999) }
 
+  def previous
+    Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
+  end
+
+  def next
+    Item.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
+  end 
 end

@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new
+    # @parents = Category.where(ancestry: nil)
     @item.photos.build
   end
   
