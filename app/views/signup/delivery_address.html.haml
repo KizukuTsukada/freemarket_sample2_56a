@@ -47,7 +47,7 @@
                     %br/
                     .prefectures_wrap
                       .select-form-wrap
-                        -# = p.select :prefecture_id, Prefecture.all, :id, :name "prefectures", class: "text-default"
+                        = p.select :prefecture_id, Prefecture.all, :id, :name "prefectures", class: "text-default"
                 .each-forms
                   %div
                     = p.label :city, "市区町村"
