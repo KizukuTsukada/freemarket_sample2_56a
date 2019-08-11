@@ -7,4 +7,4 @@ end
 # レディースの子カテゴリー配列
 lady_child_array = ['トップス', 'パンツ']
 #レディースの孫カテゴリー配列
-lady_grandchild_array = 
+lady_grandchild_array = ['Tシャツ', 'ジャケツト']
