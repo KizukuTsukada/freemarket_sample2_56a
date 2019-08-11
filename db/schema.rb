@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_08_11_073500) do
 
-  create_table "adresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "prefecture_id"
-    t.string "city"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "item_id"
@@ -68,11 +61,6 @@ ActiveRecord::Schema.define(version: 2019_08_11_073500) do
     t.index ["item_id"], name: "index_photos_on_item_id"
   end
 
-  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name_kanji", null: false
     t.string "first_name_kanji", null: false
@@ -109,4 +97,4 @@ ActiveRecord::Schema.define(version: 2019_08_11_073500) do
 
   add_foreign_key "brands", "items"
   add_foreign_key "photos", "items"
-end
+
