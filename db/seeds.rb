@@ -1,5 +1,6 @@
 ladys = Category.create(name: "")
 
+ladys_tops = 
 
 mens = Category.create(name: "メンズ")
 
