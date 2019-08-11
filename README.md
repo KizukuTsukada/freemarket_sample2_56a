@@ -99,7 +99,7 @@
 |item_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :item
+- has_many :items
 
 
 
