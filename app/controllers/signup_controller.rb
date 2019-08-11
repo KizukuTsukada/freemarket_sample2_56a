@@ -4,8 +4,8 @@ class SignupController < ApplicationController
   end
 
   def registration
-    @user= User.new
-    @user.build_profile
+    @user = User.new
+    @user.profile.build
   end
 
   def sms_confiemation
