@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   
   # public/indexは後々ログイン時のルートに設定する。設定方法は後々調べる。
   get "public/index", to: "public#index"
-  get 'search', to: 'search#index'
+  get 'search', to: 'items#search'
 
 
  # その他のルーティング
