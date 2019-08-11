@@ -34,7 +34,8 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-            = form_for @user, url: complete_signup_signup_index_path do |f|
+            = form_for @user, url: signup_index_path, method: :post do |f|
+              = hidden_field_tag :current_step, 'pay_way'
               = f.fields_for :credit do |c|
                 .each-forms
                   %div

@@ -32,24 +32,27 @@
           会員情報入力
         .l-single-inner.registration-form1
           .l-single-content
-
-            = form_for :user, url: sms_confirmation_signup_index_path do |f|
+            = form_for @user, url: sms_confirmation_signup_index_path do |f|
               = hidden_field_tag :current_step, 'registration'
               .each-forms
-                = f.label :nickname, "ニックネーム"
-                %span.form-must 必須
+                %div
+                  = f.label :nickname, "ニックネーム"
+                  %span.form-must 必須
                 = f.text_field :nickname, class: "text-default", placeholder: "例）メルカリ太郎"
               .each-forms
-                = f.label :email, "メールアドレス"
-                %span.form-must 必須
+                %div
+                  = f.label :email, "メールアドレス"
+                  %span.form-must 必須
                 = f.text_field :email, class: "text-default", placeholder: "PC・携帯どちらでも可"
               .each-forms
-                = f.label :password, "パスワード"
-                %span.form-must 必須
+                %div
+                  = f.label :password, "パスワード"
+                  %span.form-must 必須
                 = f.text_field :password, class: "text-default", placeholder: "7文字以上"
               .each-forms
-                = f.label :password, "パスワード(確認)"
-                %span.form-must 必須
+                %div
+                  = f.label :password, "パスワード(確認)"
+                  %span.form-must 必須
                 = f.text_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
               .each-forms
                 %h3.text-left.l-chapter-sub-head 本人確認

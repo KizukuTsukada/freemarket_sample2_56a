@@ -32,7 +32,7 @@
         .l-single-inner.registration-form
           .l-single-content
 
-            = form_for :user, url: delivery_address_signup_index_path do |f|
+            = form_for @user, url: delivery_address_signup_index_path do |f|
               = hidden_field_tag :current_step, 'sms_confirmation'
               = f.fields_for :profile do |p|
                 .each-group

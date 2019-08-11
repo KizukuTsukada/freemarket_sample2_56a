@@ -33,7 +33,7 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-            = form_for :user, url: pay_way_signup_index_path do |f|
+            = form_for @user, url: pay_way_signup_index_path do |f|
               = hidden_field_tag :current_step, 'delivery_address'
               = f.fields_for :profile do |p|
                 .each-forms
@@ -48,7 +48,7 @@
                     %br/
                   .prefectures_wrap
                     .select-form-wrap
-                      = p.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "---"}, {class: "text-default-prefecture"}
+                      = p.collection_select :prefectures, Prefecture.all, :id, :name, {prompt: "---"}, {class: "text-default-prefecture"}
                 .each-forms
                   %div
                     = p.label :city, "市区町村"
