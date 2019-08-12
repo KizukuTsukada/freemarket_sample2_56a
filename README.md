@@ -112,3 +112,13 @@
 ### Association
 - has_many :items
 - has_ancestry
+
+# sns_credencials
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|
+|uid|string|
+|user|references|
+
+## Association
+- belongs_to :user
