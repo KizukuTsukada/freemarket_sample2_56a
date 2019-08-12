@@ -90,7 +90,7 @@
                       %span.form-require 必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :condition, [["1~2日で発送", "1~2日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
+                      = f.select :condition, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
 
               .sell-form__content.clearfix
                 %h3.sell-form__content__head 販売価格(300〜9,999,999)
@@ -105,7 +105,7 @@
                         .l-right.sell-price-input
                           ¥
                           %div
-                            %input.input-default2{placeholder: "例）300", :value => ""}/
+                            = f.text_field :price, class: 'input-default2', placeholder: '例）300'
                     %li.clearfix
                       .l-left
                         販売手数料 (10%)
@@ -130,9 +130,9 @@
                     また、出品をもちまして
                     %a 加盟店規約
                     に同意したことになります。
-                %button.btn-default.btn-red{:type => "submit"}
-                  出品する
-                = link_to "もどる", :back,class: "btn-default btn-gray"
+                = f.submit "出品する",class: "btn-default btn-red"
+                .btn-default.btn-gray
+                  = link_to "もどる", :back,class: ""
                   
 
   %footer.single-footer
