@@ -58,6 +58,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:index]
   resources :brands, only: [:index]
   resources :trade, only: [:index, :show]
-  resources :items
 
 end

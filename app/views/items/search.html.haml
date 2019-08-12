@@ -1,11 +1,4 @@
-
-= search_form_for @search do |f|
-  .form-group
-    　　hoge_cont itemnameだったらitemname_cont
-    \#{f.label :itemname_cont, "Name"}
-    \#{f.search_field :itemname_cont, class: "form-control"}
-  .actions= f.submit "Search"
-
-- if @results.any?
-  - @results.each do |result|
-    %p= result.itemname
+%ul.items
+  - @search_items.each do |item|
+    %li
+      #{item.name}
