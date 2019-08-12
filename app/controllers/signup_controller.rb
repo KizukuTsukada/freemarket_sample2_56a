@@ -58,9 +58,10 @@ class SignupController < ApplicationController
   end
   # validation
   def save_pay_way_to_session
-    session[:profile_attributes3] = user_params[:profile_attributes]
-    session[:profile_attributes3].merge!(session[:profile_attributes2])
-    render '/signup/pay_way' unless @user.valid?
+    @user = User.new(session[:user_params])
+    @user.build_profile(session[:profile_attributes3])
+    @user.build_credit(user_params[:credit_attributes])
+    render '/signup/pay_way' unless user_params[:credit_attributes][:card_no].present? && user_params[:credit_attributes][:validity_year].present? && user_params[:credit_attributes][:validity_month].present? && user_params[:credit_attributes][:security_no].present?
   end
 
 
