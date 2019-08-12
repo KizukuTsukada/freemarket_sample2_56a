@@ -5,10 +5,7 @@
 
     %main.l-container.clearfix
 
-      -# マイページ右側
       .l-content
-      
-        -# 編集はここから
         .l-chapter-container
           .l-chapter-head 支払い方法
           .l-single-inner.mypage-payway
@@ -18,106 +15,7 @@
             .emptybox-mypage-payway
             .mypage-payway-next-link
               %p 支払い方法について ＞
-        -# ここまで
-
-
-      -# マイページ左側
-      .l-side
-        %nav.mypage-nav
-          %ul.mypage-nav-list
-            %li
-              = link_to "マイページ", mypage_path, class: "mypage-nav-list-item active-info-inner"
-            %li
-              %a.mypage-nav-list-item お知らせ
-              %i.angle-right
-                = fa_icon 'angle-right'
-            %li
-              %a.mypage-nav-list-item やることリスト
-              %i.angle-right
-                = fa_icon 'angle-right'
-            %li
-              %a.mypage-nav-list-item いいね！一覧
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              = link_to "出品する", mypage_path, class: "mypage-nav-list-item"
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 出品した商品 - 出品中
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 出品した商品 - 取引中
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 出品した商品 - 売却済み
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 購入した商品 - 取引中
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 購入した商品 - 過去の取引
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item ニュース一覧
-              %i.angle-right
-                = fa_icon 'angle-right'           
-            %li
-              %a.mypage-nav-list-item 評価一覧
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item ガイド
-              %i.angle-right
-                = fa_icon 'angle-right'          
-            %li
-              %a.mypage-nav-list-item お問い合わせ
-              %i.angle-right
-                = fa_icon 'angle-right'
-                
-          %h3.mypage-nav-head メルペイ
-          %ul.mypage-nav-list
-            %li
-              %a.mypage-nav-list-item 売上・振込申請
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item ポイント
-              %i.angle-right
-                = fa_icon 'angle-right'            
-          %h3.mypage-nav-head 設定
-          %ul.mypage-nav-list
-            %li
-              -# プロフィールページ作ったらパス変更
-              = link_to "プロフィール", mypage_path, class: "mypage-nav-list-item"
-            %li
-              %a.mypage-nav-list-item 発送元・お届け先住所変更
-              %i.angle-right
-                = fa_icon 'angle-right'            
-            %li
-              %a.mypage-nav-list-item 支払い方法
-              %i.angle-right
-                = fa_icon 'angle-right'           
-            %li
-              %a.mypage-nav-list-item メール/パスワード
-              %i.angle-right
-                = fa_icon 'angle-right'        
-            %li
-              %a.mypage-nav-list-item 本人情報
-              %i.angle-right
-                = fa_icon 'angle-right'           
-            %li
-              %a.mypage-nav-list-item 電話番号の確認
-              %i.angle-right
-                = fa_icon 'angle-right'
-            %li
-              %a.mypage-nav-list-item ログアウト
-              %i.angle-right
-                = fa_icon 'angle-right'
+ 
+      = render partial: 'mypages/leftbox'
     
     = render partial: 'home/footer'
