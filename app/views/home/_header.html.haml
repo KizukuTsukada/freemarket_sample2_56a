@@ -1,0 +1,92 @@
+- if user_signed_in?
+  %header.pc-header.visible-pc
+    .pc-header-inner
+      .pc-header-top
+        %h1.pc-header-image
+          =link_to root_path do
+            =image_tag "main-logo.svg"
+        %form.pc-header-form2
+          %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
+          %i.icon-search2
+            = fa_icon 'search', class: 'icon-search2__icon'
+      .pc-header-nav-box.clearfix
+        %nav.l-left
+          %ul.pc-header-nav
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'list', class: 'main-icon'
+                  %span.catebrastyle
+                    カテゴリーから探す
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'tag', class: 'main-icon'
+                  %span.catebrastyle
+                    ブランドから探す
+        %nav.l-right
+          %ul.pc-header-nav
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'heart', class: 'header-icon'
+                  %span.catebrastyle
+                    いいね!一覧
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'bell', class: 'header-icon'
+                  %span.catebrastyle
+                    お知らせ
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'check', class: 'header-icon'
+                  %span.catebrastyle
+                    やることリスト
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = image_tag "mypage.png" , class: 'mypage-icon'
+                  %span.catebrastyle
+                    = link_to "マイページ", mypage_path
+- else                    
+  %header.pc-header.visible-pc
+    .pc-header-inner
+      .pc-header-top
+        %h1.pc-header-image
+          =link_to root_path do
+            =image_tag "main-logo.svg"
+        %form.pc-header-form2
+          %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
+          %i.icon-search2
+            = fa_icon 'search', class: 'icon-search2__icon'
+      .pc-header-nav-box.clearfix
+        %nav.l-left
+          %ul.pc-header-nav
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'list', class: 'main-icon'
+                  %span.catebrastyle
+                    カテゴリーから探す
+            %li
+              %h2
+                =link_to "","", class: 'pc-header-nav-root list-parent'
+                %i.icon-list
+                  = fa_icon 'tag', class: 'main-icon'
+                  %span.catebrastyle
+                    ブランドから探す
+        .l-right
+          %ul.pc-header-login-nav
+            %li.pc-header-login-nav.btn-red2
+              =link_to " 新規会員登録",signup_index_path, method: :get,class: 'new-btn'
+            %li.pc-header-login-nav.header-login2
+              =link_to "ログイン",new_user_session_path,class: 'login-btn'
