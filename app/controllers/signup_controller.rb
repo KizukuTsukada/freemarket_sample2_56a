@@ -35,8 +35,8 @@ class SignupController < ApplicationController
 
   def create
     @user = User.new(session[:user_params])
-    @user.build_profile(session[:profile_attributes3] ) # 入力値を引数で渡す
-    @user.build_credit(user_params[:credit_attributes]) # 入力値を引数で渡す
+    @user.build_profile(session[:profile_attributes3] )
+    @user.build_credit(user_params[:credit_attributes])
     if @user.save
       session[:id] = @user.id
       redirect_to complete_signup_signup_index_path
