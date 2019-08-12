@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @products = Product.order('id ASC').limit(20)
   end
   
   def create
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
   end
   
   def show
+    @product = Product.find(params[:id])
   end
   
   def update
@@ -26,4 +28,6 @@ class ItemsController < ApplicationController
     if @items.count == 0
       @all_items = Item.limit(20).order("id ASC")
     end
+    @products = []
   end
+end
