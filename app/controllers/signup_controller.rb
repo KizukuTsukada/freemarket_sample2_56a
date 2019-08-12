@@ -1,7 +1,7 @@
 class SignupController < ApplicationController
 
   before_action :save_registration_to_session, only: :sms_confirmation
-  # before_action :save_sms_confirmation_to_session, only: :delivery_address
+  before_action :save_sms_confirmation_to_session, only: :delivery_address
   # before_action :save_delivery_address_to_session, only: :pay_way
   # before_action :save_pay_way_to_session, only: :create
 
@@ -27,14 +27,14 @@ class SignupController < ApplicationController
     @user = User.new
     @user.build_profile
   end
-  # # validation
-  # def save_sms_confirmation_to_session
-  #   session[:profile_attributes2] = user_params[:profile_attributes]
-  #   session[:profile_attributes2].merge!(session[:profile_attributes1])
-  #   @user = User.new
-  #   @user.build_profile(session[:profile_attributes2])
-  #   render '/signup/sms_confirmation' unless @user.valid?
-  # end
+  # validation
+  def save_sms_confirmation_to_session
+    session[:profile_attributes2] = user_params[:profile_attributes]
+    session[:profile_attributes2].merge!(session[:profile_attributes1])
+    @user = User.new(session[:user_params])
+    @user.build_profile(session[:profile_attributes2])
+    render '/signup/sms_confirmation' unless session[:profile_attributes2][:phone_number].present?
+  end
 
 
   def delivery_address
