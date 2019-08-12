@@ -1,79 +1,44 @@
 %body
   .default-container
-    %header.pc-header.visible-pc
-      .pc-header-inner
-        .pc-header-top
-          %h1.pc-header-image
-            =link_to root_path do
-              =image_tag "main-logo.svg"
-          %form.pc-header-form2
-            %input.pc-header-forms.input-default2{placeholder: "何かお探しですか？"}
-            %i.icon-search2
-              = fa_icon 'search', class: 'icon-search2__icon'
-        .pc-header-nav-box.clearfix
-          %nav.l-left
-            %ul.pc-header-nav
-              %li
-                %h2
-                  =link_to "","", class: 'pc-header-nav-root list-parent'
-                  %i.icon-list
-                    = fa_icon 'list', class: 'main-icon'
-                    %span.catebrastyle
-                      カテゴリーから探す
-              %li
-                %h2
-                  =link_to "","", class: 'pc-header-nav-root list-parent'
-                  %i.icon-list
-                    = fa_icon 'tag', class: 'main-icon'
-                    %span.catebrastyle
-                      ブランドから探す
-          .l-right
-            %ul.pc-header-login-nav
-              %li.pc-header-login-nav.btn-red2
-                =link_to " 新規会員登録","",class: 'new-btn'
-              %li.pc-header-login-nav.header-login2
-                =link_to "ログイン","",class: 'login-btn'
-    %main
-      %section.owl-carousel.top-carousel
-        .owl-stage-outer
-          .owl-item.cloned
-            =image_tag "mainimage.png", class: 'imagestyle-mein'
-      %section.pickup-container
-        %h2.pickup-head
-          ピックアップカテゴリー
-        %section.items-box-container.clearfix
-          %h3.text-center.home
-            =link_to "レディース 新着アイテム", class: 'textstyle'
-          .items-box-contenter
-            .items-box-content.clearfix
-              %section.items-box
-                =image_tag "ladies.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "ladies.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "ladies.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "ladies.png", class: 'itemstyle'
-            .view-all
-              =link_to "全ての商品を見る","",class: 'allitem'
-        %section.items-box-container.clearfix
-          %h3.text-center.home
-            =link_to " メンズ 新着アイテム", class: 'textstyle'
-          .items-box-contenter
-            .items-box-content.clearfix
-              %section.items-box
-                =image_tag "mens.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "mens.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "mens.png", class: 'itemstyle'
-              %section.items-box
-                =image_tag "mens.png", class: 'itemstyle'
-            .view-all
-              =link_to "全ての商品を見る","",class: 'allitem'
-    %footer
-      = image_tag 'mainfooter.png', class: 'footer-design'
-      =link_to root_path do
-        .footer-sell-btn
-          %span.footer-sell-btn__sell  出品
-          = fa_icon 'camera', class: 'camera-icon' 
+  = render partial: 'home/header'
+
+  %main
+    %section.owl-carousel.top-carousel
+      .owl-stage-outer
+        .owl-item.cloned
+          =image_tag "mainimage.png", class: 'imagestyle-mein'
+    %section.pickup-container
+      %h2.pickup-head
+        ピックアップカテゴリー
+      %section.items-box-container.clearfix
+        %h3.text-center.home
+          =link_to "レディース 新着アイテム", class: 'textstyle'
+        .items-box-contenter
+          .items-box-content.clearfix
+            %section.items-box
+              =image_tag "ladies.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "ladies.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "ladies.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "ladies.png", class: 'itemstyle'
+          .view-all
+            =link_to "全ての商品を見る","",class: 'allitem'
+      %section.items-box-container.clearfix
+        %h3.text-center.home
+          =link_to " メンズ 新着アイテム", class: 'textstyle'
+        .items-box-contenter
+          .items-box-content.clearfix
+            %section.items-box
+              =image_tag "mens.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "mens.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "mens.png", class: 'itemstyle'
+            %section.items-box
+              =image_tag "mens.png", class: 'itemstyle'
+          .view-all
+            =link_to "全ての商品を見る","",class: 'allitem'
+    
+    = render partial: 'home/footer'
