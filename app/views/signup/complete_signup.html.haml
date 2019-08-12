@@ -33,13 +33,12 @@
         .l-single-inner.registration-form
           .l-single-content
 
-            = form_for @user, url: sms_confirmation_signup_index_path do |f|
-              .complete-signup-message
-                %p ありがとうございます。
-                %br/ 
-                会員登録が完了しました。
-              .emptybox-completesignup
-              = f.submit 'メルカリをはじめる', class: 'btn-default btn-red text-default__submit'
+            .complete-signup-message
+              %p ありがとうございます。
+              %br/ 
+              会員登録が完了しました。
+            .emptybox-completesignup
+            = link_to 'メルカリをはじめる', root_path, class: 'btn-default btn-red text-default__submit'
 
 
 

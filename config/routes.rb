@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       post 'sms_confirmation'
       post 'delivery_address'
       post 'pay_way'  # 入力が全て完了
-      post 'complete_signup'  #登録完了後
+      get 'complete_signup'  #登録完了後
     end
   end
 

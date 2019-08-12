@@ -3,6 +3,7 @@ class SignupController < ApplicationController
   def index
   end
 
+
   def registration
     @user = User.new
     @user.build_profile
@@ -38,7 +39,7 @@ class SignupController < ApplicationController
     @user.build_credit(user_params[:credit_attributes]) # 入力値を引数で渡す
     if @user.save
       session[:id] = @user.id
-      redirect_to complete_signup_index_path
+      redirect_to complete_signup_signup_index_path
     else
       render '/signup/registration'
     end
