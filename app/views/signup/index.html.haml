@@ -15,19 +15,20 @@
             .btn-default.btn-mail
               = fa_icon 'envelope-o', class: 'icon icon-mail'
               =link_to "メールアドレスで登録する", registration_signup_index_path
-          - if Rails.env.development?
-            =link_to user_facebook_omniauth_authorize_path, class: "facebook-login", method: :post do
-              =fa_icon "facebook", class: "facebook-icon"
-              Facebookで登録する
-            =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login", method: :post do
-              Googleで登録する
-          - else
-            %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
-              = fa_icon 'facebook-square', class: 'icon icon-facebook'
-              Facebookで登録する
-            %button#google-login.btn-default.btn-sns.btn-sns-google
-              = image_tag "google-logo.svg", class: 'icon'
-              Googleで登録する
+            - if Rails.env.development?
+              =link_to user_facebook_omniauth_authorize_path, class: "facebook-login btn-default btn-sns btn-sns-facebook", method: :post do
+                =fa_icon "facebook-square", class: "icon icon-facebook"
+                Facebookで登録する
+              =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login btn-default btn-sns btn-sns-google", method: :post do
+                = image_tag "google-logo.svg", class: 'icon'
+                Googleで登録する
+            - else
+              %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+                = fa_icon 'facebook-square', class: 'icon icon-facebook'
+                Facebookで登録する
+              %button#google-login.btn-default.btn-sns.btn-sns-google
+                = image_tag "google-logo.svg", class: 'icon'
+                Googleで登録する
 
               
     %footer.single-footer

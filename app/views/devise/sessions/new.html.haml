@@ -19,10 +19,11 @@
         -# facebook, google
         .login-form-inner
           - if Rails.env.development?
-            =link_to user_facebook_omniauth_authorize_path, class: "facebook-login", method: :post do
-              =fa_icon "facebook", class: "facebook-icon"
+            =link_to user_facebook_omniauth_authorize_path, class: "facebook-login btn-default btn-sns btn-sns-facebook", method: :post do
+              =fa_icon "facebook", class: "icon icon-facebook"
               Facebookでログイン
-            =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login", method: :post do
+            =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login btn-default btn-sns btn-sns-google", method: :post do
+              = image_tag "google-logo.svg", class: 'icon'
               Googleでログイン
           - else
             %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
