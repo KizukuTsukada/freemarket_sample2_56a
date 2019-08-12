@@ -60,5 +60,4 @@ Rails.application.routes.draw do
   resources :trade, only: [:index, :show]
   resources :items
 
-
 end
