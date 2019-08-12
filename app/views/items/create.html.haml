@@ -27,7 +27,6 @@
                           %pre.visible-pc クリックしてファイルをアップロード
                           %i.icon-camera
                           = f.file_field :image, class: 'hidden'
-                        -#  multiple="" name="image1" style="display: none;
               .sell-form__content
                 .sell-form__content__group__name
                   %label
@@ -39,10 +38,11 @@
                   %label
                     商品の説明
                     %span.form-require 必須
-                  %textarea.textarea-default{placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", :rows => "5"}
+                  = f.text_area :content, class: 'textarea-default', placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .sell-form__content.clearfix
-                %h3.sell-form__content__head 商品の詳細
-                .sell-form-box
+                %h3.sell-form__content__head
+                  商品の詳細
+                .sell-form__content__box
                   .sell-form__content__group__name
                     %label
                       カテゴリー
@@ -50,8 +50,6 @@
                     %div
                       .select-wrap
                         %i.icon-arrow-bottom
-                        -# = f.hidden_field :categorie_id, id:"category_id", value:""
-                        -# = f.collection_selectを使う
                         %select.select-default
                           %option{value: ""} ---
                           %option{value: "1"} レディース
@@ -64,21 +62,13 @@
                       %span.form-require
                         必須
                     .select-wrap
-                      = fa_icon 'chevron-down', class:"arrow-bottom"
-                      -# = f.select使う
-                      %select.select-default
-                        %option{value: ""} ---
-                        %option{value: "1"} 新品、未使用
-                        %option{value: "2"} 未使用に近い
-                        %option{value: "3"} 目立った傷や汚れなし
-                        %option{value: "4"} やや傷や汚れあり
-                        %option{value: "5"} 傷や汚れあり
-                        %option{value: "6"} 全体的に状態が悪い
+                      %i.icon-arrow-bottom
+                      = f.select :condition, [["---", "---"],["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,class:"select-default"
 
               .sell-form__content.clearfix
                 %h3.sell-form__content__head 配送について
                 %a.sell-form__content__question ?
-                .sell-form-box
+                .sell-form__content__box
                   .sell-form__content__group__name
                     %label
                       配送料の負担
@@ -160,7 +150,7 @@
               .sell-form__content.clearfix
                 %h3.sell-form__content__head 販売価格(300〜9,999,999)
                 %a.sell-form__content__question ?
-                .sell-form-box
+                .sell-form__content__box
                   %ul.sell-price
                     %li.sell-form__content__group__name
                       .clearfix
@@ -197,7 +187,8 @@
                     に同意したことになります。
                 %button.btn-default.btn-red{:type => "submit"}
                   出品する
-                %a.btn-default.btn-gray もどる
+                = link_to "もどる", :back,class: "btn-default btn-gray"
+                  
 
   %footer.single-footer
     %ul.clearfix

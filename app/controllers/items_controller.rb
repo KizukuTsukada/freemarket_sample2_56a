@@ -5,11 +5,14 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new
-    # @parents = Category.where(ancestry: nil)
+    # @parents = Categorie.where(ancestry: nil)
     @item.photos.build
   end
   
   def new
+    @item = Item.new
+    # @parents = Categorie.where(ancestry: nil)
+    @item.photos.build
   end
   
   def edit
