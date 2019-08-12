@@ -3,35 +3,50 @@ class SignupController < ApplicationController
   def index
   end
 
+
   def registration
-    @user= User.new
+    @user = User.new
+    @user.build_profile
   end
 
-  def sms_confiemation
-    session[:nickname] = user_params[:nickname]
-    session[:email] = user_params[:email]
-    session[:password] = user_params[:password]
-    session[:password_confirmation] = user_params[:password_confirmation]
-    @user.build_profile(user_params[:profile_attributes]) 
+  def sms_confirmation
+
+    session[:user_params] = user_params
+    session[:profile_attributes1] = user_params[:profile_attributes]
     @user = User.new
+    @user.build_profile
   end
 
   def delivery_address
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
+    session[:profile_attributes2] = user_params[:profile_attributes]
+    session[:profile_attributes2].merge!(session[:profile_attributes1])
+    @user = User.new
+    @user.build_profile
   end
 
   def pay_way
-    # @user.build_credit(user_params[:credit_attributes]) 
+    session[:profile_attributes3] = user_params[:profile_attributes]
+    session[:profile_attributes3].merge!(session[:profile_attributes2])
+    @user = User.new
+    @user.build_profile
+    @user.build_credit
+  end
+
+
+  def create
+    @user = User.new(session[:user_params])
+    @user.build_profile(session[:profile_attributes3] )
+    @user.build_credit(user_params[:credit_attributes])
+    if @user.save
+      session[:id] = @user.id
+      redirect_to complete_signup_signup_index_path
+    else
+      render '/signup/registration'
+    end
   end
 
   def complete_signup
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
-    # session[:email] = user_params[:email]
+    sign_in User.find(session[:id]) unless user_signed_in?
   end
 
 
@@ -43,8 +58,8 @@ class SignupController < ApplicationController
       :email,
       :password, 
       :password_confirmation, 
-      profile_attributes: [:family_name_kanji, :first_name_kanji, :family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :postal_code, :prefectures, :city, :address1, :address2, :phone_number],
-      credit_attributes: [:card_no, :validity_year, :validity_month, :security_no]
+      profile_attributes: [:id, :family_name_kanji, :first_name_kanji, :family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :postal_code, :prefectures, :city, :address1, :address2, :phone_number],
+      credit_attributes: [:id, :card_no, :validity_year, :validity_month, :security_no]
     )
   end
 
