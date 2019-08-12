@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_11_114634) do
+ActiveRecord::Schema.define(version: 2019_08_12_040259) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_114634) do
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "card_no", null: false
+    t.bigint "card_no", null: false
     t.integer "validity_year", null: false
     t.integer "validity_month", null: false
     t.integer "security_no", null: false
@@ -87,6 +87,15 @@ ActiveRecord::Schema.define(version: 2019_08_11_114634) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "image"
@@ -109,4 +118,5 @@ ActiveRecord::Schema.define(version: 2019_08_11_114634) do
   add_foreign_key "items", "categories", column: "categorie_id"
   add_foreign_key "photos", "items"
   add_foreign_key "profiles", "users"
+  add_foreign_key "sns_credentials", "users"
 end
