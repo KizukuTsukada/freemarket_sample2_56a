@@ -34,8 +34,8 @@
 |gender|integer|null: false|
 |introduction|text|
 |email|string|null: false, unique: true|
-|profile_id|references|foreign_key: true|
-|credit_id|references|foreign_key: true|
+
+
 
 ### Association
 - belongs_to :credit
@@ -62,6 +62,7 @@
 |address1|string|null: false|
 |address2|string|
 |phone_number|string|null: false|
+|user_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -75,6 +76,7 @@
 |validity_year|integer|null: false|
 |validity_month|integer|null: false|
 |security_no|integer|null: false|
+|user_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -112,3 +114,13 @@
 ### Association
 - has_many :items
 - has_ancestry
+
+# sns_credencials
+|Column|Type|Options|
+|------|----|-------|
+|provider|string|
+|uid|string|
+|user|references|
+
+## Association
+- belongs_to :user
