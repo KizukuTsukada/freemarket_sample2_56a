@@ -25,5 +25,6 @@ class ItemsController < ApplicationController
     end
     if @items.count == 0
       @all_items = Item.limit(25).order("id ASC")
+    end
   end
 end
