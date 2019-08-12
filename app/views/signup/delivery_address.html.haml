@@ -32,7 +32,6 @@
           お届け先住所入力
         .l-single-inner.registration-form1
           .l-single-content
-
             = form_for @user, url: pay_way_signup_index_path do |f|
               = hidden_field_tag :current_step, 'delivery_address'
               = f.fields_for :profile do |p|

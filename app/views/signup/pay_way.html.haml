@@ -41,7 +41,7 @@
                   %div
                     = c.label :card_no, "カード番号"
                     %span.form-must 必須
-                  = c.text_field :card_no, class: "text-default", placeholder: "例）メルカリ太郎"
+                  = c.text_field :card_no, class: "text-default", placeholder: "例）1234567890123456"
                   .card-images
                     = image_tag "visa.svg"
                     = image_tag "master-card.svg"
@@ -63,14 +63,14 @@
                       %span 年
                 .each-forms
                   %div
-                    = f.label :card_no, "セキュリティコード"
+                    = f.label :security_no, "セキュリティコード"
                     %span.form-must 必須
-                  = c.text_field :card_no, class: "text-default", placeholder: "カードの背面4桁もしくは3桁の番号"
+                  = c.text_field :security_no, class: "text-default", placeholder: "カードの背面4桁もしくは3桁の番号"
                   %p.security_no_detail
                     = fa_icon 'question-circle', class: 'icon icon-question-circle'
                     %a カードの裏面の番号とは？
-                .emptybox-payway
-                = f.submit '次へ進む', class: 'btn-default btn-red text-default__submit'
+              .emptybox-payway
+              = f.submit '次へ進む', class: 'btn-default btn-red text-default__submit'
 
 
 
