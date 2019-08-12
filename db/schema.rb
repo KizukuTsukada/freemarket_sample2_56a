@@ -67,6 +67,11 @@ ActiveRecord::Schema.define(version: 2019_08_12_040259) do
     t.index ["item_id"], name: "index_photos_on_item_id"
   end
 
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "family_name_kanji", null: false
     t.string "first_name_kanji", null: false
