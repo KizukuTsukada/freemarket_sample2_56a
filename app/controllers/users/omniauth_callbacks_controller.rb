@@ -16,8 +16,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     if @user.present?
       sign_in_and_redirect @user, event: :authentication 
     else
-      session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
-      redirect_to signup_index_path
+      session[:nickname] = request.env["omniauth.auth"].info.name
+      session[:email] = request.env["omniauth.auth"].info.email
+      session[:uid] = request.env["omniauth.auth"].uid
+      session[:provider] = provider.to_s
+      redirect_to registration_signup_index_path
     end
   end
 
