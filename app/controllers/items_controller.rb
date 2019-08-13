@@ -22,8 +22,6 @@ class ItemsController < ApplicationController
 
   def search
     @search_items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order("id ASC")
-    logger.debug "**********"
     logger.debug @search_items[0].inspect
-    logger.debug "**********"
   end
 end
