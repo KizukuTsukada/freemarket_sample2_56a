@@ -79,6 +79,7 @@ gem 'font-awesome-rails'
 gem 'active_hash'
 gem 'seed-fu', '~> 2.3'
 gem 'ancestry'
+gem 'ransack'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
