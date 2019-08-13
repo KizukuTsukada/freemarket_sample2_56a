@@ -3,10 +3,10 @@ class Item < ApplicationRecord
   has_many :photos
   accepts_nested_attributes_for :photos
 
-  belongs_to :brand
-  accepts_nested_attributes_for :brand
+  belongs_to :brand, optional: true
+  # accepts_nested_attributes_for :brand, optional: true
   
-  belongs_to :categorie
+  belongs_to :categorie, optional: true
 
   # itemsテーブルのsaler_idとbuyer_idをusersテーブルと紐ずけ
   belongs_to :saler, class_name: "User"
@@ -24,3 +24,5 @@ class Item < ApplicationRecord
     Item.order('created_at desc, id desc').where('created_at >= ? and id > ?', created_at, id).reverse.first
   end 
 end
+
+# とりあえずoptional: trueしてる
