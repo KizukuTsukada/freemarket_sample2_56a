@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(version: 2019_08_13_073826) do
     t.string "name"
     t.integer "price", null: false
     t.string "size"
-    t.integer "status", null: false
-    t.integer "pay_way"
-    t.integer "deliver_way"
-    t.integer "deliver_data"
-    t.integer "deliver_fee"
+    t.string "status", null: false
+    t.string "pay_way"
+    t.string "deliver_way"
+    t.string "deliver_data"
+    t.string "deliver_fee"
     t.integer "saler_id"
     t.integer "buyer_id"
     t.text "detail"
