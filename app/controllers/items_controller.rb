@@ -4,17 +4,13 @@ class ItemsController < ApplicationController
   end
   
   def create
-    @item = Item.new
+    @item = Item.new(item_params)
     # @parents = Categorie.where(ancestry: nil)
     @item.photos.build
 
-    if @item.save && new_image_params[:images][0] != ""
-      new_image_params[:images].each do |image|
-        @item.item_images.create(image: image, item_id: @item.id)
-      end
+    if @item.save
       redirect_to root_path
     else
-      @item.item_images.build
       render :new
     end
   end
