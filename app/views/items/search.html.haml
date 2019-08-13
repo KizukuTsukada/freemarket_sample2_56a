@@ -1,4 +1,10 @@
-%ul.items
-  - @search_items.each do |item|
-    %li
-      #{item.name}
+%body
+  .default-container
+  = render partial: 'home/header'
+
+  %id.items
+    - @search_items.each do |item|
+      %id
+        #{item.name}
+       
+        
