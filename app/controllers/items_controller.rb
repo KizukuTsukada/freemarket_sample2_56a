@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
-    # @parents = Categorie.where(ancestry: nil)
     @item.photos.build
 
     if @item.save
@@ -17,7 +16,6 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    # @parents = Categorie.where(ancestry: nil)
     @item.photos.build
   end
   
