@@ -7,7 +7,8 @@
         %section.mypage-user-icon
           %figure
             = link_to image_tag("discover.svg"), mypage_path
-          %h2.bold ユーザーネーム
+          %h2.bold
+            = current_user.nickname
           .mypage-number
             %div 評価 2&nbsp; &nbsp;出品数 2
         %section.mypage-tab-container-notification-todo
