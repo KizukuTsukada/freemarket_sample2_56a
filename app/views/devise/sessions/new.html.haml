@@ -18,12 +18,20 @@
         
         -# facebook, google
         .login-form-inner
-          %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
-            = fa_icon 'facebook-square', class: 'icon icon-facebook'
-            Facebookでログインする
-          %button#google-login.btn-default.btn-sns.btn-sns-google
-            = image_tag "google-logo.svg", class: 'icon'
-            Googleでログインする
+          - if Rails.env.development?
+            =link_to user_facebook_omniauth_authorize_path, class: "facebook-login btn-default btn-sns btn-sns-facebook", method: :post do
+              =fa_icon "facebook", class: "icon icon-facebook"
+              Facebookでログイン
+            =link_to user_google_oauth2_omniauth_authorize_path, class: "google-login btn-default btn-sns btn-sns-google", method: :post do
+              = image_tag "google-logo.svg", class: 'icon'
+              Googleでログイン
+          - else
+            %button#facebook-login.btn-default.btn-sns.btn-sns-facebook
+              = fa_icon 'facebook-square', class: 'icon icon-facebook'
+              Facebookでログインする
+            %button#google-login.btn-default.btn-sns.btn-sns-google
+              = image_tag "google-logo.svg", class: 'icon'
+              Googleでログインする
 
         -# メールフォーム、ログインボタン
         .login-form-inner2
@@ -35,8 +43,6 @@
             .emptybox-login
               = f.submit "ログイン", class: "btn-default btn-red text-default__submit"
             %p.forget-password-message パスワードをお忘れの方
-
-
 
     %footer.single-footer
       %ul.clearfix
