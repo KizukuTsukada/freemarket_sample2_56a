@@ -3,15 +3,15 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  if Rails.env.development?
-    config.omniauth :google_oauth2,
-    Rails.application.credentials.development[:google_client_id],
-    Rails.application.credentials.development[:google_client_secret]
+#   if Rails.env.development?
+#     config.omniauth :google_oauth2,
+#     Rails.application.credentials.development[:google_client_id],
+#     Rails.application.credentials.development[:google_client_secret]
 
-    config.omniauth :facebook,
-    Rails.application.credentials.development[:facebook_client_id],
-    Rails.application.credentials.development[:facebook_client_secret]
-end
+#     config.omniauth :facebook,
+#     Rails.application.credentials.development[:facebook_client_id],
+#     Rails.application.credentials.development[:facebook_client_secret]
+# end
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
