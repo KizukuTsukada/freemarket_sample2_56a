@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   belongs_to :buyer, class_name: "User"
 
   validates :name, presence: true, length: { maximum: 40 }
-  validates :dedail, presence: true, length: { maximum: 1000 }
+  validates :detail, presence: true, length: { maximum: 1000 }
   validates :price, presence: true, inclusion: { in: (300..9999999) }
 
   def previous

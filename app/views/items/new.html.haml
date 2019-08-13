@@ -38,23 +38,23 @@
                   %label
                     商品の説明
                     %span.form-require 必須
-                  = f.text_area :detail, class: 'textarea-default', placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                  = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
               .sell-form__content.clearfix
                 %h3.sell-form__content__head
                   商品の詳細
                 .sell-form__content__box
-                  .sell-form__content__group__name
-                    %label
-                      カテゴリー
-                      %span.form-require 必須
-                    %div
-                      .select-wrap
-                        %i.icon-arrow-bottom
-                        %select.select-default
-                          %option{value: ""} ---
-                          %option{value: "1"} レディース
-                          %option{value: "2"} メンズ
-                          %option{value: "3"} 本・CD
+                  -# .sell-form__content__group__name
+                  -#   %label
+                  -#     カテゴリー
+                  -#     %span.form-require 必須
+                  -#   %div
+                  -#     .select-wrap
+                  -#       %i.icon-arrow-bottom
+                  -#       %select.select-default
+                  -#         %option{value: ""} ---
+                  -#         %option{value: "1"} レディース
+                  -#         %option{value: "2"} メンズ
+                  -#         %option{value: "3"} 本・CD
     
                   .sell-form__content__group__name
                     %label
@@ -63,7 +63,7 @@
                         必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :condition, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"}, class:"select-default"
+                      = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"}, class:"select-default"
 
               .sell-form__content.clearfix
                 %h3.sell-form__content__head 配送について
@@ -75,7 +75,7 @@
                       %span.form-require 必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :condition, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]] ,{prompt: "---"}, class:"select-default"
+                      = f.select :deliver_fee, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]] ,{prompt: "---"}, class:"select-default"
                   .sell-form__content__group__name
                     %label
                       発送元の地域
@@ -90,7 +90,7 @@
                       %span.form-require 必須
                     .select-wrap
                       %i.icon-arrow-bottom
-                      = f.select :condition, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
+                      = f.select :deliver_data, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
 
               .sell-form__content.clearfix
                 %h3.sell-form__content__head 販売価格(300〜9,999,999)

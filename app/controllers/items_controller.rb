@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
     @item.photos.build
 
     if @item.save
-      redirect_to root_path
+      redirect_to mypage_path
     else
       render :new
     end
@@ -34,7 +34,8 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params[:item].permit(:name, :price, :status, :pay_way, :deliver_way, :deliver_date, :deliver_fee, :detail, :categorie_id ).merge(saler_id: current_user.id)
+    params[:item].permit(:name, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail ).merge(saler_id: current_user.id,situation: "販売中")
+    # :categorie_idは後々
   end
 
   def new_image_params
