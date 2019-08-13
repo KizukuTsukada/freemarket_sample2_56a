@@ -13,7 +13,7 @@
   border-top: 1px solid #eee;
 }
 
-.sell-upload-box {
+.sell--upload--box {
   width: 620px;
   padding: 40px;
 }
@@ -91,7 +91,7 @@
   margin-left: 0;
 }
 
-.form-group {
+.sell-form__content__group__name {
   margin: 40px 0 0;
   label{
     font-weight: 600;
@@ -101,7 +101,7 @@
   }
 }
 
-.form-group:first-child {
+.sell-form__content__group__name:first-child {
   margin: 0;
 }
 
@@ -117,7 +117,7 @@
   font-size: 14px;
 }
 
-.input-default {
+.sell-form__content__group__input {
   height: 48px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -127,7 +127,7 @@
   padding: 0 16px;
 }
 
-.form-group .input-default {
+.sell-form__content__group__name .sell-form__content__group__input {
   width: 588px;
   margin: 8px 0 0;
 }
@@ -144,7 +144,7 @@
   padding: 0 16px;
 }
 
-.input-default2 {
+.sell-form__content__group__input2 {
   height: 27px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -154,11 +154,11 @@
   font-size: 16px;
 }
 
-.form-group label+.textarea-default {
+.sell-form__content__group__name label+.textarea-default {
   margin: 8px 0 0;
 }
 
-.sell-content {
+.sell-form__content {
   padding: 40px;
   border-top: 1px solid #eee;
   a{
@@ -166,14 +166,14 @@
   }
 }
 
-.sell-sub-head {
+.sell-form__content__head {
   color: #888;
   font-size: 14px;
   float: left;
   font-weight: 800;
 }
 
-.sell-form-box {
+.sell-form__content__box {
   float: right;
   width: 400px;
   margin: 0;
@@ -206,7 +206,7 @@
   cursor: pointer;
 }
 
-.form-question {
+.sell-form__content__question {
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -225,7 +225,7 @@
   float: left;
 }
 
-.sell-price .form-group .l-left {
+.sell-price .sell-form__content__group__name .l-left {
   width: 44%;
   line-height: 48px;
 }
@@ -238,7 +238,7 @@
   display: flex;
 }
 
-.sell-price-input .input-default {
+.sell-price-input .sell-form__content__group__input {
   margin: 0;
   text-align: right;
 }
@@ -253,7 +253,7 @@
   border-top: 1px solid #ccc;
 }
 
-.sell-price .form-group .l-right {
+.sell-price .sell-form__content__group__name .l-right {
   width: 56%;
 }
 
@@ -295,6 +295,9 @@
   width: 45%;
   margin: 24px auto 0;
   color: #fff;
+  a{
+    color: white;
+  }
 }
 
 .btn-gray {
