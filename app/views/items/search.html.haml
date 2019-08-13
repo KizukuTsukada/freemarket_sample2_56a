@@ -1,11 +1,7 @@
 %body
   .default-container
-  = render partial: 'home/header'
-  %main
-    %section.owl-carousel.top-carousel
-      .owl-stage-outer
-        .owl-item.cloned
-          =image_tag "mainimage.png", class: 'imagestyle-mein'
+  
+   
   %id.items
     - @search_items.each do |item|
       %id
