@@ -37,8 +37,4 @@ class ItemsController < ApplicationController
     params[:item].permit(:name, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail ).merge(saler_id: current_user.id,situation: "販売中")
     # :categorie_idは後々
   end
-
-  def new_image_params
-    params[:new_photos].permit({photos: []})
-  end
 end
