@@ -23,7 +23,7 @@
                   .sell-form__upload-box__items-container
                     = image.label :image, for: "upload-image" do
                       .sell-form__upload-box__items-container__list
-                        = image.file_field :image          
+                        = image.file_field :image, id:"upload-image"                    
                       .sell-form__upload-box__items-container__area.have-item-0
                         %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
 
