@@ -1,2 +1,6 @@
+購入の意思を確認しました。
+%br/
+以下のボタンからカード情報を入力し、支払いをお済ませください。
+
 = form_tag(action: :pay, method: :post) do
   %script.payjp-button{"data-key" => "pk_test_d77392fe36225256e7ff799e", :src => "https://checkout.pay.jp", :type => "text/javascript"}
