@@ -29,6 +29,9 @@ class ItemsController < ApplicationController
   def update
   end
 
+  def purchase_confirmation
+  end
+
   def buy
   end
 
