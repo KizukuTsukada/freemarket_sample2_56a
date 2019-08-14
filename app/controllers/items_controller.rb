@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.build
-    @items = item.order("created_at DESC")
+    @items = item.order("created_at DESC").limit(4)
   end
   
   def edit
