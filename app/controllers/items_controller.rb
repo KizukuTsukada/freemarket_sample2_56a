@@ -32,14 +32,14 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @search_items = Item.where('name LIKE(?)', "%#{params[:keyword]}%").order("id ASC")
+    @search_items = Item.where('name LIKE(?)', "%#{params[:search]}%").order("id ASC")
     logger.debug @search_items[0].inspect
   end
 end
+
   private
-  
   def item_params
     params[:item].permit(:name, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail ).merge(saler_id: current_user.id,situation: "販売中")
     # :categorie_idは後々
   end
-end
+
