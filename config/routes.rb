@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   get "public/index", to: "public#index"
 
   # まだidがないので仮で作成
-  get "items/create", to: "items#create"
+
  # その他のルーティング
   resources :categories, only: [:index]
   resources :brands, only: [:index]

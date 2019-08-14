@@ -11,126 +11,125 @@
             %p 商品の情報を入力
           
           = form_with model:@item, class:"sell-form", id:"new_item" do |f|
-            %form.sell-form
-              .sell--upload--box
-                %h3.sell-upload-head
-                  %label 出品画像
+            
+            .sell-form__upload-box
+              %h3.sell-form__upload-box__head
+                %label 出品画像
+                %span.form-require 必須
+              %p 最大5枚までアップロードできます
+              = f.fields_for :photos, @item.photos do |image|
+                .sell-form__upload-box__dropbox.clearfix
+                  -# #preview
+                  .sell-form__upload-box__items-container
+                    = image.label :image, for: "upload-image" do
+                      .sell-form__upload-box__items-container__list
+                        = image.file_field :image,multiple: "multiple", id:"upload-image", 'data-image': 0                      
+                      .sell-form__upload-box__items-container__area.have-item-0
+                        %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
+
+            .sell-form__content
+              .sell-form__content__group__name
+                %label
+                  商品名
                   %span.form-require 必須
-                  %p 最大5枚までアップロードできます
-                  = f.fields_for :photos, @item.photos do |image|
-                    .sell-dropbox-container.clearfix.state-image-number-10
-                      .sell-upload-items-container
-                        .sell-upload-items.have-item-0
-                          %ul
-                      .sell-upload-drop-box.have-item-0
-                        = f.file_field :image, class: "sell-upload-drop-file" do
-                          %pre.visible-pc クリックしてファイルをアップロード
-                          %i.icon-camera
-                          = f.file_field :image, class: 'hidden'
-              .sell-form__content
+                = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 40文字まで）"
+              .sell-form__content__group__name
+                %label
+                  商品の説明
+                  %span.form-require 必須
+                = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            .sell-form__content.clearfix
+              %h3.sell-form__content__head
+                商品の詳細
+              .sell-form__content__box
+                -# .sell-form__content__group__name
+                -#   %label
+                -#     カテゴリー
+                -#     %span.form-require 必須
+                -#   %div
+                -#     .select-wrap
+                -#       %i.icon-arrow-bottom
+                -#       %select.select-default
+                -#         %option{value: ""} ---
+                -#         %option{value: "1"} レディース
+                -#         %option{value: "2"} メンズ
+                -#         %option{value: "3"} 本・CD
+  
                 .sell-form__content__group__name
                   %label
-                    商品名
-                    %span.form-require 必須
-                  %div
-                  = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 40文字まで）"
+                    商品の状態
+                    %span.form-require
+                      必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"}, class:"select-default"
+
+            .sell-form__content.clearfix
+              %h3.sell-form__content__head 配送について
+              %a.sell-form__content__question ?
+              .sell-form__content__box
                 .sell-form__content__group__name
                   %label
-                    商品の説明
+                    配送料の負担
                     %span.form-require 必須
-                  = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
-              .sell-form__content.clearfix
-                %h3.sell-form__content__head
-                  商品の詳細
-                .sell-form__content__box
-                  -# .sell-form__content__group__name
-                  -#   %label
-                  -#     カテゴリー
-                  -#     %span.form-require 必須
-                  -#   %div
-                  -#     .select-wrap
-                  -#       %i.icon-arrow-bottom
-                  -#       %select.select-default
-                  -#         %option{value: ""} ---
-                  -#         %option{value: "1"} レディース
-                  -#         %option{value: "2"} メンズ
-                  -#         %option{value: "3"} 本・CD
-    
-                  .sell-form__content__group__name
-                    %label
-                      商品の状態
-                      %span.form-require
-                        必須
-                    .select-wrap
-                      %i.icon-arrow-bottom
-                      = f.select :status, [["新品、未使用", "新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れあり", "やや傷や汚れあり"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"]] ,{prompt: "---"}, class:"select-default"
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    = f.select :deliver_fee, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]] ,{prompt: "---"}, class:"select-default"
+                .sell-form__content__group__name
+                  %label
+                    発送元の地域
+                    %span.form-require 必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    = f.collection_select :prefectures, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
+                      
+                .sell-form__content__group__name
+                  %label
+                    発送までの日数
+                    %span.form-require 必須
+                  .select-wrap
+                    %i.icon-arrow-bottom
+                    = f.select :deliver_data, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
 
-              .sell-form__content.clearfix
-                %h3.sell-form__content__head 配送について
-                %a.sell-form__content__question ?
-                .sell-form__content__box
-                  .sell-form__content__group__name
-                    %label
-                      配送料の負担
-                      %span.form-require 必須
-                    .select-wrap
-                      %i.icon-arrow-bottom
-                      = f.select :deliver_fee, [["送料込み(出品者負担)", "送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"]] ,{prompt: "---"}, class:"select-default"
-                  .sell-form__content__group__name
-                    %label
-                      発送元の地域
-                      %span.form-require 必須
-                    .select-wrap
-                      %i.icon-arrow-bottom
-                      = f.collection_select :prefectures, Prefecture.all, :id, :name, {prompt: "---"}, {class: "select-default"}
-                        
-                  .sell-form__content__group__name
-                    %label
-                      発送までの日数
-                      %span.form-require 必須
-                    .select-wrap
-                      %i.icon-arrow-bottom
-                      = f.select :deliver_data, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
-
-              .sell-form__content.clearfix
-                %h3.sell-form__content__head 販売価格(300〜9,999,999)
-                %a.sell-form__content__question ?
-                .sell-form__content__box
-                  %ul.sell-price
-                    %li.sell-form__content__group__name
-                      .clearfix
-                        %label.l-left
-                          価格
-                          %span.form-require 必須
-                        .l-right.sell-price-input
-                          ¥
-                          %div
-                            = f.text_field :price, class: 'input-default2', placeholder: '例）300'
-                    %li.clearfix
-                      .l-left
-                        販売手数料 (10%)
-                      .l-right -
-                    %li.clearfix.bold
-                      .l-left 販売利益
-                      .l-right -
-              .sell-form__content.sell-btn-box
-                %div
-                  %p
-                    %a 禁止されている出品
-                    、
-                    %a  行為
-                    を必ずご確認ください
-                  %p
-                    またブランド品でシリアルナンバー等がある場合はご記載ください。
-                    %a 偽ブランドの販売
-                    は犯罪であり処罰される可能性があります。
-                  %p
-                    また、出品をもちまして
-                    %a 加盟店規約
-                    に同意したことになります。
-                = f.submit "出品する",class: "btn-default btn-red"
-                .btn-default.btn-gray
-                  = link_to "もどる", :back,class: ""
+            .sell-form__content.clearfix
+              %h3.sell-form__content__head 販売価格(300〜9,999,999)
+              %a.sell-form__content__question ?
+              .sell-form__content__box
+                %ul.sell-price
+                  %li.sell-form__content__group__name
+                    .clearfix
+                      %label.l-left
+                        価格
+                        %span.form-require 必須
+                      .l-right.sell-price-input
+                        ¥
+                        %div
+                          = f.text_field :price, class: 'input-default2', placeholder: '例）300'
+                  %li.clearfix
+                    .l-left
+                      販売手数料 (10%)
+                    .l-right -
+                  %li.clearfix.bold
+                    .l-left 販売利益
+                    .l-right -
+            .sell-form__content.sell-btn-box
+              %div
+                %p
+                  %a 禁止されている出品
+                  、
+                  %a  行為
+                  を必ずご確認ください
+                %p
+                  またブランド品でシリアルナンバー等がある場合はご記載ください。
+                  %a 偽ブランドの販売
+                  は犯罪であり処罰される可能性があります。
+                %p
+                  また、出品をもちまして
+                  %a 加盟店規約
+                  に同意したことになります。
+              = f.submit "出品する",class: "btn-default btn-red"
+              .btn-default.btn-gray
+                = link_to "もどる", :back,class: ""
                   
 
   %footer.single-footer

@@ -13,12 +13,12 @@
   border-top: 1px solid #eee;
 }
 
-.sell--upload--box {
+.sell-form__upload-box {
   width: 620px;
   padding: 40px;
 }
 
-.sell-upload-head{
+.sell-form__upload-box__head{
   font-size: 16px;
   p{
     margin: 8px 0 8px;
@@ -42,12 +42,12 @@
   vertical-align: top;
 }
 
-.sell-dropbox-container {
+.sell-form__upload-box__dropbox {
   display: inline;
   margin: 16px auto 0;
 }
 
-.sell-upload-drop-box pre {
+.sell-form__upload-box__items-container__area pre {
   position: absolute;
   top: 50%;
   left: 16px;
@@ -61,15 +61,15 @@
   word-wrap: break-word;
 }
 
-.sell-upload-items-container {
+.sell-form__upload-box__items-container {
   display: inline;
 }
 
-.sell-upload-items {
+.sell-form__upload-box__items-container__list {
   display: inline;
 }
 
-.sell-upload-drop-box {
+.sell-form__upload-box__items-container__area {
   position: relative;
   min-height: 162px;
   background: #f5f5f5;
@@ -86,7 +86,7 @@
   }
 }
 
-.sell-upload-drop-box.have-item-0 {
+.sell-form__upload-box__items-container__area.have-item-0 {
   width: 100%;
   margin-left: 0;
 }
