@@ -1,5 +1,7 @@
 class MypagesController < ApplicationController
 
+  before_action :set_category
+
   def index
   end
 
@@ -17,5 +19,11 @@ class MypagesController < ApplicationController
 
   def identification
   end
+
+  private
+
+  def set_category
+    @category = Category.all
+  end  
 
 end
