@@ -38,7 +38,7 @@ class ItemsController < ApplicationController
   def pay
     Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
     Payjp::Charge.create(
-      amount: 3500, # 決済する値段
+      amount: 3500, # 決済する値段 params[:price]
       card: params['payjp-token'],
       currency: 'jpy'
     )
