@@ -17,6 +17,7 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.build
+    @items = item.order("created_at DESC")
   end
   
   def edit
