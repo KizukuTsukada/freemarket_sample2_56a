@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   post "items/pay", to: "items#pay"
   resources :items do
     collection do
+      get 'purchase_confirmation'
       get 'buy'
     end
   end
