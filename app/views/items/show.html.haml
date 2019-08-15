@@ -78,18 +78,18 @@
       %p.item-description-inner
         【商品詳細】
         = @item.detail
-  - if current_user.id != @item.saler_id    
-    = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
-    .item-btn-float-area
-      %div{"data-client": "visible"}
-        購入画面に進む
-  - else
+  - if user_signed_in? && current_user.id == @item.saler_id
     .listing-item-change-box
       = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
       %p.text-center or
       .item-btn-float-area
         .btn-default.btn-red 出品を再開する
-        = link_to "商品を削除する", _path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
+        = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
+  - else
+    = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
+    .item-btn-float-area
+      %div{"data-client": "visible"}
+        購入画面に進む
 
   %section.items-box-container2.clearfix
     %h3.text-item-style2
