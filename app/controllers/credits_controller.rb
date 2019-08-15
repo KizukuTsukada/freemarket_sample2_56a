@@ -10,9 +10,9 @@ class CreditsController < ApplicationController
 
 
   def create #payjpとCreditのデータベース作成
-    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c' # シークレットキー。流出厳禁。みんな注意。あとでcredentials.ymlに移す。
+    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c' # シークレットキー。流出厳禁。あとでcredentials.ymlに移す。
     if params['payjp-token'].blank?
-      redirect_to registration_signup_index_path, id: current_user.id
+      redirect_to action:"new"
     else
       customer = Payjp::Charge.create(
       email: current_user.email,
@@ -21,9 +21,9 @@ class CreditsController < ApplicationController
       )
       @card = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to complete_signup_signup_index_path
+        redirect_to action: "show"
       else
-        redirect_to pay_way_signup_index_path
+        redirect_to action: "pay"
       end
     end
   end

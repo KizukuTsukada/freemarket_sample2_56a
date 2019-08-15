@@ -17,14 +17,14 @@ document.addEventListener(
             $("#card_number").removeAttr("name");
             $("#cvc").removeAttr("name");
             $("#exp_month").removeAttr("name");
-            $("#exp_year").removeAttr("name"); //データを自サーバにpostしないように削除
+            $("#exp_year").removeAttr("name"); 
             $("#card_token").append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
-            ); //取得したトークンを送信できる状態にします
-            // document.inputForm.submit();
-            alert("登録が完了しました"); //確認用
+            );
+            document.inputForm.submit();
+            alert("登録が完了しました"); //確認用。あとで消す。
           } else {
-            alert("カード情報が正しくありません。"); //確認用
+            alert("カード情報が正しくありません。"); //確認用。あとで消す。
           }
         });
       });
