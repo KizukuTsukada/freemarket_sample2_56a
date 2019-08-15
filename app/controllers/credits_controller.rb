@@ -9,7 +9,7 @@ class CreditsController < ApplicationController
   end
 
 
-  def create #payjpとCreditのデータベース作成
+  def pay #payjpとCreditのデータベース作成
     Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c' # シークレットキー。流出厳禁。あとでcredentials.ymlに移す。
     if params['payjp-token'].blank?
       redirect_to action:"new"

@@ -21,7 +21,8 @@ document.addEventListener(
             $("#card_token").append(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             );
-            document.inputForm.submit();
+            // document.inputForm.submit();
+            $("#new_user")[0].submit();
             alert("登録が完了しました"); //確認用。あとで消す。
           } else {
             alert("カード情報が正しくありません。"); //確認用。あとで消す。
