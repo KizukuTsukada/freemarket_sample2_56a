@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
 
-  before_action :set_category, only: [:index, :show]
-
   def index
   end
   
