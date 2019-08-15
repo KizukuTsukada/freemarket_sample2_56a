@@ -244,3 +244,24 @@ i[class^='icon-'], i[class*='icon-'] {
   margin-left: 180px;
   height: 280px;
 }
+
+// 出品者とログインユーザーが異なる場合
+.listing-item-change-box {
+  margin: 24px 0 24px 0;
+  background: #fff;
+  padding: 8px 16px 8px 16px;
+}
+
+.listing-item-change-box .btn-default {
+  margin: 16px 0;
+  color: #fff;
+}
+
+.text-center p{
+  font-size: 16px;
+}
+
+.btn-default .btn-gray{
+  background: #aaa;
+  border: 1px solid #aaa;
+}

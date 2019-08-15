@@ -31,6 +31,12 @@ class ItemsController < ApplicationController
   def update
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to mypage_path
+  end
+
   def purchase_confirmation
   end
 
