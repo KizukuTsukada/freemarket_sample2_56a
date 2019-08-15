@@ -7,7 +7,7 @@
   .login-header.visible-pc.with-shadow
   .item-box-container.l-single-container
     %h1.item-name
-      = @items.name
+      = @item.name
     .item-main-content.clearfix
       .item-photo
         .owl-carousel.owl-loaded.owl-drag
@@ -15,8 +15,7 @@
             .owl-stage{style: "left: 0px; width: 1800px;"}
               .owl-item.active{style: "width: 360px;"}
                 .owl-item-inner
-                  = image_tag @image
-                  -# %img.owl-lazy{alt: "", "data-src" => "/", src: "", :style => "opacity: 1;"}/
+                  = image_tag @image.to_s, class: "img-first"
               .owl-item{style: "width: 280px;"}
                 %img.owl-lazy{:alt => "商品名", "data-src" => "/"}/
           .owl-nav.disabled
@@ -40,29 +39,25 @@
           %tr
             %th 出品者
             %td
-              = link_to("Smile", {})
-              -# のちのちcurrent_user.nameを入れる
-                %div
-                  .item-user-ratings
-                    評価アイコン
+              = @user.nickname
           %tr
             %th カテゴリー
             %td
               = link_to("メンズ", {})
-              -# メンズorレディース一覧のurl入れる
               .item-detail-table-sub-category
                 %i.icon-arrow-right
                   = link_to("トップス", {})
-                  -# 該当カテゴリー一覧のurl入れる
           %tr
             %th 商品のサイズ
             %td S
           %tr
             %th 商品の状態
-            %td 目立った傷や汚れなし
+            %td
+              = @item.status
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td
+              = @item.deliver_fee
           %tr
             %th 配送の方法
             %td 未定
@@ -72,9 +67,11 @@
               福岡県
           %tr
             %th 発送日の目安
-            %td 2~3日で発送
+            %td
+              = @item.deliver_data
     .item-price-box.text-center
-      %span.item-price.bold ¥ 5,555
+      %span.item-price.bold
+        = @item.price
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
@@ -84,23 +81,11 @@
     .item-description.f14
       %p.item-description-inner
         【商品詳細】
-        items.detail
-        Bohemians YOKOO BEATLES S/S TEE 【MADE IN JAPAN】です。
-        MADE IN JAPAN
-        Bohemians × Tadanori Yokooのコラボアイテム
-        BEATLESオマージュです！
-        メンバーが持っている心臓がラメになっております！
-        【SIZE】
-        S
-        【採寸】
-        肩幅:約45.5cm
-        身幅:約50cm
-        着丈:約65cm
-        袖丈:約19cm
+        = @item.detail
 
   %section.items-box-container2.clearfix
     %h3.text-item-style2
-      =link_to "*****さんのその他の出品", class: 'text-item-style2'
+      =link_to "#{@user.nickname}さんのその他の出品", class: 'text-item-style2'
     .items-box-contenter
       .items-box-content.clearfix
         %section.items-box2
