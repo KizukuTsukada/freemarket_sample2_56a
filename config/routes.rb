@@ -60,13 +60,6 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
-  
-
-
-
- # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
-  get "public/index", to: "public#index"
-
 
  # その他のルーティング
   resources :categories, only: [:index]
