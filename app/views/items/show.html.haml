@@ -7,7 +7,7 @@
   .login-header.visible-pc.with-shadow
   .item-box-container.l-single-container
     %h1.item-name
-      アイテム名
+      = @items.name
     .item-main-content.clearfix
       .item-photo
         .owl-carousel.owl-loaded.owl-drag
@@ -15,7 +15,8 @@
             .owl-stage{style: "left: 0px; width: 1800px;"}
               .owl-item.active{style: "width: 360px;"}
                 .owl-item-inner
-                  %img.owl-lazy{alt: "商品名", "data-src" => "/", src: "", :style => "opacity: 1;"}/
+                  = image_tag @image
+                  -# %img.owl-lazy{alt: "", "data-src" => "/", src: "", :style => "opacity: 1;"}/
               .owl-item{style: "width: 280px;"}
                 %img.owl-lazy{:alt => "商品名", "data-src" => "/"}/
           .owl-nav.disabled
