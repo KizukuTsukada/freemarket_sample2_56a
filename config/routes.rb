@@ -53,14 +53,19 @@ Rails.application.routes.draw do
  # items
   # まだidがないので仮で作成
   get "items/create", to: "items#create"
-  post "items/pay", to: "items#pay"
   resources :items do
     collection do
       get 'purchase_confirmation'
-      get 'buy'
     end
   end
-  
+
+
+ # credits
+  resources :credits do
+    collection do
+      post 'pay'
+    end
+  end
 
 
 
