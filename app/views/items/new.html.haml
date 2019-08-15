@@ -19,11 +19,11 @@
               %p 最大5枚までアップロードできます
               = f.fields_for :photos, @item.photos do |image|
                 .sell-form__upload-box__dropbox.clearfix
-                  -# #preview
+                  #preview
                   .sell-form__upload-box__items-container
                     = image.label :image, for: "upload-image" do
                       .sell-form__upload-box__items-container__list
-                        = image.file_field :image, id:"upload-image"                    
+                        = image.file_field :image, id:"upload-image", class: 'hidden'                    
                       .sell-form__upload-box__items-container__area.have-item-0
                         %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
 
@@ -101,17 +101,17 @@
                       %label.l-left
                         価格
                         %span.form-require 必須
-                      .l-right.sell-price-input
+                      .l-right2.sell-price-input
                         ¥
                         %div
                           = f.text_field :price, class: 'input-default2', placeholder: '例）300'
                   %li.clearfix
                     .l-left
                       販売手数料 (10%)
-                    .l-right -
+                    .l-right2 -
                   %li.clearfix.bold
                     .l-left 販売利益
-                    .l-right -
+                    .l-right2 -
             .sell-form__content.sell-btn-box
               %div
                 %p
