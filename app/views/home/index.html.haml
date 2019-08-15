@@ -16,13 +16,7 @@
         .items-box-contenter
           .items-box-content.clearfix
             %section.items-box
-              =image_tag "ladies.png", class: 'itemstyle'
-            %section.items-box
-              =image_tag "ladies.png", class: 'itemstyle'
-            %section.items-box
-              =image_tag "ladies.png", class: 'itemstyle'
-            %section.items-box
-              =image_tag "ladies.png", class: 'itemstyle'
+            =link_to"", items_path, calss: "items-box-content.clearfix__link"
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
       %section.items-box-container.clearfix
@@ -38,6 +32,7 @@
               =image_tag "mens.png", class: 'itemstyle'
             %section.items-box
               =image_tag "mens.png", class: 'itemstyle'
+              =link_to"", items_path, calss: "items-box-content.clearfix__link"
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
     
