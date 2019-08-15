@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.photos.build
-    @items = item.order("created_at DESC").limit(4)
   end
   
   def edit
@@ -23,6 +22,7 @@ class ItemsController < ApplicationController
   
   def show
     @items = Item.where(id: params[:id])
+    # @items = item.order("created_at DESC").limit(4)
   end
   
   def update
