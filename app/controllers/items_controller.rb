@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = item.order("created_at DESC").limit(4)
   end
   
   def create
@@ -22,7 +23,6 @@ class ItemsController < ApplicationController
   
   def show
     @items = Item.where(id: params[:id])
-    # @items = item.order("created_at DESC").limit(4)
   end
   
   def update
@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
     # :categorie_idは後々
   end
 
-  # def new_photo_params
-  #   params[:photos].permit(:image)
-  # end
+  def new_photo_params
+    params[:photos].permit(:image)
+  end
 end

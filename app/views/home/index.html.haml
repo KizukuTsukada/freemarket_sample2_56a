@@ -15,8 +15,7 @@
           =link_to "レディース 新着アイテム", class: 'textstyle'
         .items-box-contenter
           .items-box-content.clearfix
-            %section.items-box
-            =link_to"", items_path, calss: "items-box-content.clearfix__link"
+            =link_to "/items/#{item.id}" do
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
       %section.items-box-container.clearfix
