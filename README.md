@@ -72,10 +72,8 @@
 ## creditテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_no|integer|null: false, unique: true|
-|validity_year|integer|null: false|
-|validity_month|integer|null: false|
-|security_no|integer|null: false|
+|card_id|string|null: false|
+|customer_id|string|null: false|
 |user_id|references|foreign_key: true|
 
 ### Association
