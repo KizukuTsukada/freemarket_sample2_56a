@@ -56,6 +56,7 @@ Rails.application.routes.draw do
   resources :items do
     collection do
       get 'purchase_confirmation'
+      get 'buy'
     end
   end
 
@@ -64,6 +65,7 @@ Rails.application.routes.draw do
   resources :credits do
     collection do
       post 'pay'
+      post 'show'
     end
   end
 
