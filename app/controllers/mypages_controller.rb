@@ -20,7 +20,6 @@ class MypagesController < ApplicationController
 
   def mylist
     @items = Item.where(saler_id: current_user.id)
-    # @items = @itemlint && buyer_id == null
   end
 
 end

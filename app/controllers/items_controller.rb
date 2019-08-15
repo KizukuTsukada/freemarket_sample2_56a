@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_item, only: [:show, :destroy]
   
   def index
   end
@@ -22,7 +23,6 @@ class ItemsController < ApplicationController
   end
   
   def show
-    @item = Item.find(params[:id])
     @items = Item.where(id: params[:id])
     @user = User.find(@item.saler_id)
     @image = @item.photos[0].image
@@ -32,7 +32,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to mypage_path
   end
@@ -57,5 +56,9 @@ class ItemsController < ApplicationController
   def item_params
     params[:item].permit(:name, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail, photos_attributes: [:image]).merge(saler_id: current_user.id,situation: "販売中")
     # :categorie_idは後々
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
