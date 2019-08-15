@@ -71,7 +71,7 @@
               = @item.deliver_data
     .item-price-box.text-center
       %span.item-price.bold
-        = @item.price
+        = "¥#{@item.price.to_s(:delimited)}"
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
