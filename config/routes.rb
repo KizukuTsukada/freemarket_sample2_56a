@@ -46,13 +46,10 @@ Rails.application.routes.draw do
       get 'logout'
       get 'pay_way'
       get 'identification'
+      get 'mylist'
     end
   end
 
-
- # items
-  # まだidがないので仮で作成
-  get "items/create", to: "items#create"
   post "items/pay", to: "items#pay"
   resources :items do
     collection do

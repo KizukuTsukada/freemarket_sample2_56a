@@ -76,7 +76,6 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-gem 'haml-rails'
 gem 'font-awesome-rails'
 gem 'active_hash'
 gem 'seed-fu', '~> 2.3'
@@ -88,3 +87,6 @@ gem 'pry-rails'
 gem 'rspec-rails'
 gem 'activerecord-session_store'
 gem 'payjp'
+gem 'mini_magick'
+gem 'carrierwave'
+gem 'haml-rails'
