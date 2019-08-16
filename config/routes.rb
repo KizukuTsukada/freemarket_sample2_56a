@@ -46,6 +46,7 @@ Rails.application.routes.draw do
       get 'logout'
       get 'pay_way'
       get 'identification'
+      get 'mylist'
     end
   end
 
@@ -53,6 +54,7 @@ Rails.application.routes.draw do
  # items
   # まだidがないので仮で作成
   get "items/create", to: "items#create"
+  post "items/pay", to: "items#pay"
   resources :items do
     collection do
       get 'purchase_confirmation'

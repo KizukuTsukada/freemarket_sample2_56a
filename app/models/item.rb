@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
   # 商品画像
-  has_many :photos
+  has_many :photos, dependent: :destroy
+
   accepts_nested_attributes_for :photos
 
   belongs_to :brand, optional: true
@@ -25,4 +26,4 @@ class Item < ApplicationRecord
   end 
 end
 
-# とりあえずoptional: trueしてる
+# 実装できないかもしれないのでとりあえずoptional: trueしてる。

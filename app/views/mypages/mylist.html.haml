@@ -1,0 +1,23 @@
+%body
+  .default-container
+    = render partial: 'home/header'
+
+    %main.l-container.clearfix
+
+      -# マイページ右側
+      .l-content
+        .listing--container
+          %h2 出品した商品
+          %ul.listing-tabs
+            %li.sell-list 出品中              
+            %li 取引中
+            %li 売却済み
+
+          .listing--container__mylist
+            - @items.each do |item|
+              .item-list
+                = link_to item.name ,item_path(item)
+                
+      = render partial: 'mypages/leftbox'
+
+    = render partial: 'home/footer'

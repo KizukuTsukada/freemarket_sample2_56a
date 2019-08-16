@@ -1,0 +1,40 @@
+.listing-container{
+  background: #fafafa;
+  font-size: 16px;
+  line-height: 72px;
+  h2{
+    margin-left: 10px;
+    font-weight: 900;
+  }
+}
+
+.listing-tabs{
+  border: 0;
+  background: #eee;
+  font-size: 0;
+  display: flex;
+  text-align: center;
+  li{
+    width: 33.3%;
+    font-size: 16px;
+    font-weight: 900;
+  }
+}
+
+.sell-list{
+  background: #fff;
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 72px;
+}
+
+.transaction-list{
+
+}
+
+.sold-list{
+
+}
