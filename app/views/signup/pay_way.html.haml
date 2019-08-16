@@ -36,7 +36,6 @@
 
             = form_for @user, url: pay_credits_path, method: :post, html: {name:"inputForm"} do |f|
               = hidden_field_tag :current_step, 'pay_way'
-              -# = form_tag(pay_credit_index_path, method: :post, id: 'charge-form', name: "inputForm") do
               .each-forms
                 %div
                   %label カード番号

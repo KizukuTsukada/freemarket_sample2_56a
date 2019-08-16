@@ -28,10 +28,6 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show] do
     # 新規登録
     collection do
-      # get 'sms_confirmation'
-      # get 'delivery_address'
-      # get 'pay_way'
-      # get 'complete_signup'
       get 'add_credit'
     end
   end

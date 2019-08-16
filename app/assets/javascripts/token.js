@@ -10,9 +10,9 @@ document.addEventListener(
           cvc: document.getElementById("cvc").value,
           exp_month: document.getElementById("exp_month").value,
           exp_year: document.getElementById("exp_year").value
-        }; //入力されたデータを取得します。
+        }; // 入力されたデータを取得。
         Payjp.createToken(card, (status, response) => {
-          if (status === 200) { //成功した場合
+          if (status === 200) { // 成功した場合
             $("#card_number").removeAttr("name");
             $("#cvc").removeAttr("name");
             $("#exp_month").removeAttr("name");
@@ -21,10 +21,9 @@ document.addEventListener(
               $('<input type="hidden" name="payjp-token">').val(response.id)
             );
             document.inputForm.submit();
-            // $("#new_user")[0].submit();
-            alert("登録が完了しました"); //確認用。あとで消す。
+            alert("登録が完了しました");
           } else {
-            alert("カード情報が正しくありません。"); //確認用。あとで消す。
+            alert("カード情報が正しくありません。");
           }
         });
       });
