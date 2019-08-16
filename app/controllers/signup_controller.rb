@@ -3,7 +3,7 @@ class SignupController < ApplicationController
   before_action :save_registration_to_session, only: :sms_confirmation
   before_action :save_sms_confirmation_to_session, only: :delivery_address
   before_action :save_delivery_address_to_session, only: :pay_way
-  before_action :save_pay_way_to_session, only: :create
+  # before_action :save_pay_way_to_session, only: :create
 
   def index
   end
@@ -20,7 +20,7 @@ class SignupController < ApplicationController
     @user = User.new(session[:user_params])
     @user.build_profile(session[:profile_attributes_after_registration])
     render '/signup/registration' unless @user.valid?
-  end
+  end 
 
 
   def sms_confirmation
