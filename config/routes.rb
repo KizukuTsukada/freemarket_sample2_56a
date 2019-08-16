@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   # まだidがないので仮で作成
   get "mypages/edit", to: "mypages#edit"
 
-  resources :mypages, only:[:index, :show] do
+  resources :mypages, only:[:index] do
     collection do
       get 'logout'
       get 'pay_way'
