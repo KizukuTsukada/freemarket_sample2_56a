@@ -56,22 +56,24 @@ class SignupController < ApplicationController
     @user.build_profile
     # @user.build_credit
   end
-  # # validation
-  # def save_pay_way_to_session
-  #   @user = User.new(session[:user_params])
-  #   @user.build_profile(session[:profile_attributes_after_delivery])
-  #   @user.build_credit(user_params[:credit_attributes])
-  #   render '/signup/pay_way' unless user_params[:credit_attributes][:card_no].present? && user_params[:credit_attributes][:validity_year].present? && user_params[:credit_attributes][:validity_month].present? && user_params[:credit_attributes][:security_no].present?
-  # end
+  # # # validation
+  # # def save_pay_way_to_session
+  # #   @user = User.new(session[:user_params])
+  # #   @user.build_profile(session[:profile_attributes_after_delivery])
+  # #   @user.build_credit(user_params[:credit_attributes])
+  # #   render '/signup/pay_way' unless user_params[:credit_attributes][:card_no].present? && user_params[:credit_attributes][:validity_year].present? && user_params[:credit_attributes][:validity_month].present? && user_params[:credit_attributes][:security_no].present?
+  # # end
 
 
 
 # save to DB
   def create
+    binding.pry
     @user = User.new(session[:user_params])
     @user.build_profile(session[:profile_attributes_after_delivery])
     # @user.build_credit(user_params[:credit_attributes])
     if @user.save
+      @card = Credit.new(user_id: @user.id, customer_id: customer.id, card_id: customer.default_card)
       session[:id] = @user.id
       redirect_to complete_signup_signup_index_path
     else
@@ -92,8 +94,6 @@ class SignupController < ApplicationController
       :email,
       :password, 
       :password_confirmation, 
-      :card_id,
-      :customer_id,
       profile_attributes: [:id, :family_name_kanji, :first_name_kanji, :family_name_kana, :first_name_kana, :birth_year, :birth_month, :birth_day, :postal_code, :prefectures, :city, :address1, :address2, :phone_number],
       # credit_attributes: [:id, :card_no, :validity_year, :validity_month, :security_no]
     )

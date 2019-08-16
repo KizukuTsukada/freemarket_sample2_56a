@@ -64,10 +64,10 @@ Rails.application.routes.draw do
 
 
  # credits
- resources :credit, only: [:new, :show] do
+  resources :credits, only: [:new, :show] do
     collection do
-      post 'pay', to: 'credit#pay'
-      post 'show', to: 'credit#show'
+      post 'pay', to: 'credits#pay'
+      post 'show', to: 'credits#show'
     end
   end
 
