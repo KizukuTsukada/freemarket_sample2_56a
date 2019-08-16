@@ -83,7 +83,7 @@
       = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
       %p.text-center or
       .item-btn-float-area
-        .btn-default.btn-red 出品を再開する
+        .btn-default.btn-gray 出品を一旦停止する
         = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
   - else
     = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
