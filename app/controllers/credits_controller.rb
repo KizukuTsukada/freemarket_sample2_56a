@@ -15,7 +15,7 @@ class CreditsController < ApplicationController
       redirect_to action:"new"
     else
       customer = Payjp::Charge.create(
-      email: current_user.email,
+      email: current_user.email, #セッションの中に入ってるの持ってきたりすんのかなあ？
       card: params['payjp-token'],
       metadata: {user_id: current_user.id}
       )
