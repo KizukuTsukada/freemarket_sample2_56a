@@ -34,9 +34,8 @@
         .l-single-inner.registration-form1
           .l-single-content
 
-            = form_for @user, url: signup_index_path, method: :post do |f|
+            = form_for @user, url: pay_credits_path, method: :post, html: {name:"inputForm"} do |f|
               = hidden_field_tag :current_step, 'pay_way'
-              -# = form_tag(pay_credit_index_path, method: :post, id: 'charge-form', name: "inputForm") do
               .each-forms
                 %div
                   %label カード番号
@@ -94,8 +93,8 @@
                 %p.security_no_detail
                   = fa_icon 'question-circle', class: 'icon icon-question-circle'
                   %a カードの裏面の番号とは？
-              .emptybox-payway
-              = submit_tag '次へ進む', url: "credit/show", method: :post, class: 'btn-default btn-red text-default__submit', id: "token_submit"
+              .emptybox-payway#card_token
+              = f.submit '次へ進む', class: 'btn-default btn-red text-default__submit', id: "token_submit"
 
 
 
