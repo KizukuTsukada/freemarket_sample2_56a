@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
   
   def index
   end
@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    @item.photos.build
   end
   
   def show
@@ -30,9 +31,16 @@ class ItemsController < ApplicationController
   end
   
   def update
+    if @item.update(item_params)
+      flash[:notice] = "商品を編集しました"
+    else
+      render 'items/edit'
+    end
   end
 
   def destroy
+    @item = Item.new
+    @item.photos.build
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to mypage_path
