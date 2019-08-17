@@ -1,6 +1,8 @@
 %body
   .default-container
     = render partial: 'home/header'
+    - breadcrumb :mypage
+    = render "mypages/breadcrumbs"
 
     %main.l-container.clearfix
       .l-content
