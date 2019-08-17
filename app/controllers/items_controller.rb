@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.photos.build
 
     if @item.save
       flash[:notice] = "商品を出品しました"
@@ -40,7 +39,6 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.new
-    @item.photos.build
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to mypage_path
