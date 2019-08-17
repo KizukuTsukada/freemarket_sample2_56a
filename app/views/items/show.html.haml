@@ -15,7 +15,7 @@
             .owl-stage{style: "left: 0px; width: 1800px;"}
               .owl-item.active{style: "width: 360px;"}
                 .owl-item-inner
-                  = image_tag @image.to_s, class: "img-first"
+                  = image_tag @item.image.to_s, class: "img-first"
               .owl-item{style: "width: 280px;"}
                 %img.owl-lazy{:alt => "商品名", "data-src" => "/"}/
           .owl-nav.disabled
@@ -83,7 +83,7 @@
       = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
       %p.text-center or
       .item-btn-float-area
-        .btn-default.btn-red 出品を再開する
+        .btn-default.btn-gray 出品を一旦停止する
         = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
   - else
     = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
