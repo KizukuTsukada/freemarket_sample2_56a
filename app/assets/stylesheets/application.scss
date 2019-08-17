@@ -4,6 +4,8 @@
 
 //全体に適応
 @import "to-all";
+@import "colors";
+@import "modules/flash";
 
 //ヘッダーとフッター
 @import "single-header-footer";
@@ -20,6 +22,7 @@
 @import "mypage-payway";
 @import "add_credit";
 @import "mypage-identification";
+@import "mylist.scss";
 
 //新規登録ページヘッダーとフッター
 @import "single-header-footer";
