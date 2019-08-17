@@ -90,4 +90,5 @@ gem 'payjp'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
+gem "gretel"
 gem 'haml-rails'
