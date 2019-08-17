@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   
   def index
   end
-  
+
   def create
     @item = Item.new(item_params)
     @item.photos.build
@@ -16,18 +16,18 @@ class ItemsController < ApplicationController
       render :new
     end
   end
-  
+
   def new
     @item = Item.new
   end
-  
+
   def edit
   end
-  
+
   def show
     @user = User.find(@item.saler_id)
   end
-  
+
   def update
     if @item.update(item_params)
       flash[:notice] = "商品を編集しました"
@@ -50,6 +50,15 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
+  end
+
+  def purchase
+    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    charge = Payjp::Charge.create(
+    :amount => @product.price,
+    :card => params['payjp-token'],
+    :currency => 'jpy',
+  )
   end
 
 
