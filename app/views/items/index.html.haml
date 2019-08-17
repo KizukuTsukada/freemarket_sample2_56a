@@ -15,7 +15,7 @@
           =link_to "レディース 新着アイテム", class: 'textstyle'
         .items-box-contenter
           .items-box-content.clearfix
-            = link_to image_tag("#{photos.image.url}", width: '213', heigth: '213', alt: "アイテム個別画像"), item_path(item.id)
+            = link_to image_tag("#{photos.image.url}", width: '213',  height: '213', alt: "アイテム個別画像"), item_path(item.id)
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
       %section.items-box-container.clearfix
