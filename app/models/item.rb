@@ -1,8 +1,12 @@
 class Item < ApplicationRecord
   # 商品画像
-  has_many :photos, dependent: :destroy
 
-  accepts_nested_attributes_for :photos
+  # photosテーブルを使用することになったら
+  # has_many :photos, dependent: :destroy
+  mount_uploader :image, ImagesUploader
+
+  # accepts_nested_attributes_for :photos
+  # 別テーブルに保存することになったら使う
 
   belongs_to :brand, optional: true
   # accepts_nested_attributes_for :brand, optional: true
