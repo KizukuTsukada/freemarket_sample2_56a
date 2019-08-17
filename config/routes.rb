@@ -55,6 +55,7 @@ Rails.application.routes.draw do
     collection do
       get 'purchase_confirmation'
       get 'buy'
+      post 'purchase'
     end
   end
 
