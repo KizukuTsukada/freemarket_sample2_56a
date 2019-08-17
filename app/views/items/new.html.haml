@@ -16,15 +16,14 @@
                 %label 出品画像
                 %span.form-require 必須
               %p 最大5枚までアップロードできます
-              = f.fields_for :photos, @item.photos do |image|
-                .sell-form__upload-box__dropbox.clearfix
-                  #preview
-                  .sell-form__upload-box__items-container
-                    = image.label :image, for: "upload-image" do
-                      .sell-form__upload-box__items-container__list
-                        = image.file_field :image, id:"upload-image", class: 'hidden'                    
-                      .sell-form__upload-box__items-container__area.have-item-0
-                        %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
+              .sell-form__upload-box__dropbox.clearfix
+                #preview
+                .sell-form__upload-box__items-container
+                  = image.label :image, for: "upload-image" do
+                    .sell-form__upload-box__items-container__list
+                      = image.file_field :image, id:"upload-image", class: 'hidden'                    
+                    .sell-form__upload-box__items-container__area.have-item-0
+                      %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
 
             .sell-form__content
               .sell-form__content__group__name

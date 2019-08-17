@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
-    @item.photos.build
   end
   
   def edit
