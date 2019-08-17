@@ -7,6 +7,8 @@ class ItemsController < ApplicationController
   
   def create
     @item = Item.new(item_params)
+    @item.photos.build
+
     if @item.save
       flash[:notice] = "商品を出品しました"
       redirect_to mypage_path
@@ -50,17 +52,6 @@ class ItemsController < ApplicationController
   def purchase_confirmation
   end
 
-  def buy
-  end
-
-  def pay
-    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
-    Payjp::Charge.create(
-      amount: 3500, # 決済する値段 params[:price]
-      card: params['payjp-token'],
-      currency: 'jpy'
-    )
-  end
 
   private
   

@@ -28,10 +28,6 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show] do
     # 新規登録
     collection do
-      # get 'sms_confirmation'
-      # get 'delivery_address'
-      # get 'pay_way'
-      # get 'complete_signup'
       get 'add_credit'
     end
   end
@@ -50,6 +46,10 @@ Rails.application.routes.draw do
     end
   end
 
+
+ # items
+  # まだidがないので仮で作成
+  get "items/create", to: "items#create"
   post "items/pay", to: "items#pay"
   resources :items do
     collection do
@@ -57,6 +57,21 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
+
+
+ # credits
+  resources :credits, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'credits#pay'
+      post 'show', to: 'credits#show'
+    end
+  end
+
+
+
+ # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
+  get "public/index", to: "public#index"
+
 
  # その他のルーティング
   resources :categories, only: [:index]
