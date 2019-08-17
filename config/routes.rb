@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   # まだidがないので仮で作成
   get "mypages/edit", to: "mypages#edit"
 
-  resources :mypages, only:[:index, :show] do
+  resources :mypages, only:[:index] do
     collection do
       get 'logout'
       get 'pay_way'
@@ -55,6 +55,7 @@ Rails.application.routes.draw do
     collection do
       get 'purchase_confirmation'
       get 'buy'
+      post 'purchase'
     end
   end
 
