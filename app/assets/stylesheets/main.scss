@@ -32,8 +32,8 @@
   font-weight: bold;
 }
 .items-box-content{
-  width: 92%;
-  margin: 0 auto;
+  width: 700px;
+  height: 330px;
 }
 .items-box-container{
   width: 700px;
@@ -41,9 +41,9 @@
   margin: 0 131px 0 131px;
 }
 .items-box{
-  margin: 0 0 20px 10px;
-  width: calc(25% - 20px);
-  display: inline-block;
+  margin: 0 0 0 20px;
+  width: 213px;
+  height: 330px;
 }
 .view-all{
   padding: 0 0 30px;
@@ -94,16 +94,17 @@
   .items-box-body{
     width: 181px;
     height: 78px;
-    padding: 16px;
+    padding-top: 16px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 16px;
   }
 
-  .items-box-name {
-    overflow: hidden;
-    position: relative;
-    font-weight: 400;
-    height: 3em;
-    line-height: 1.5;
-    word-break: break-word;
-    white-space: normal;
+  .items-box-photo{
+    width: 213px;
+    height: 7px;
+
+  .items-box-name{
   }
+
 }

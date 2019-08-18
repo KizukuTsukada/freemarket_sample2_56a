@@ -14,17 +14,17 @@
         %h3.text-center
           =link_to "レディース 新着アイテム", class: 'textstyle'
         .items-box-contenter
-          .items-box-content.clearfix
+          .items-box-content
             %section.items-box
-              %figure.items-box
-          - if @items
-            - @items.each do |item|
-              = image_tag("#{item.image.url}", width: '213',  height: '213',)
-              .items-box-body
-                %h3.items-box-name
-                  = item.name
-                .items-box-num
-                  = item.price
+              - if @items
+                - @items.each do |item|
+                  %figure.items-box-photo
+                    = image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
+                  .items-box-body
+                    %h3.items-box-name
+                      = item.name
+                    .items-box-num
+                      = item.price
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
       %section.items-box-container
