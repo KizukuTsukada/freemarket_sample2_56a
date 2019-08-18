@@ -25,18 +25,6 @@ describe Item do
       expect(item.errors[:status]).to.include("入力してください")
     end
 
-    it "pay_wayを選択しないと登録できない" do
-      item = new(:item, pay_way: nil)
-      item.valid?
-      expect(item.errors[:pay_way]).to.include("選択してください")
-    end
-
-    it "deliver_wayを選択しないと登録できない" do
-      item = new(:item, deliver_way: nil)
-      item.valid?
-      expect(item.errors[:deliver_way]).to.include("入力してください")
-    end
-
     it "deliver_dateを選択しないと登録できない" do
       item = new(:item, deliver_date: nil)
       item.valid?
@@ -130,18 +118,6 @@ describe Item do
         item = new(:item, status: nil)
         item.valid?
         expect(item.errors[:status]).to.include("入力してください")
-      end
-  
-      it "pay_wayを選択しないと登録できない" do
-        item = new(:item, pay_way: nil)
-        item.valid?
-        expect(item.errors[:pay_way]).to.include("選択してください")
-      end
-  
-      it "deliver_wayを選択しないと登録できない" do
-        item = new(:item, deliver_way: nil)
-        item.valid?
-        expect(item.errors[:deliver_way]).to.include("入力してください")
       end
   
       it "deliver_dateを選択しないと登録できない" do
