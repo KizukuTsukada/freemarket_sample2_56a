@@ -10,8 +10,8 @@
     %section.pickup-container
       %h2.pickup-head
         ピックアップカテゴリー
-      %section.items-box-container.clearfix
-        %h3.text-center.home
+      %section.items-box-container
+        %h3.text-center
           =link_to "レディース 新着アイテム", class: 'textstyle'
         .items-box-contenter
           .items-box-content.clearfix
@@ -27,7 +27,7 @@
                   = item.price
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
-      %section.items-box-container.clearfix
+      %section.items-box-container
         %h3.text-center.home
           =link_to " メンズ 新着アイテム", class: 'textstyle'
         .items-box-contenter
