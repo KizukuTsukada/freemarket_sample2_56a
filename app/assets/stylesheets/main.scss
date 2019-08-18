@@ -94,17 +94,28 @@
   .items-box-body{
     width: 181px;
     height: 78px;
-    padding-top: 16px;
-    padding-right: 16px;
-    padding-left: 16px;
-    padding-bottom: 16px;
+    padding: 16px;
   }
 
   .items-box-photo{
     width: 213px;
     height: 7px;
-
+    padding: 0 0 0 213px;
+  }
   .items-box-name{
+    width: 181px;
+    height: 48px;
+    position: relative;
+    overflow: hidden;
   }
 
+  .font-2{
+    font-size: 16px;
+  }
+
+  .item-box-num{
+    width: 181px;
+    height: 16px;
+    margin: 8px 0 0 0;
+  }
 }
