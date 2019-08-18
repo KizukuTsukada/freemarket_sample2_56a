@@ -10,7 +10,7 @@ class CreditsController < ApplicationController
 
 
   def pay # payjpとCreditのdb作成
-    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c' # シークレットキー。流出厳禁。あとでcredentials.ymlに移す。
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
     if params['payjp-token'].blank?
       redirect_to action:"new"
     else
@@ -36,7 +36,7 @@ class CreditsController < ApplicationController
 #     card = Credit.where(user_id: current_user.id).first
 #     if card.blank?
 #     else
-#       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+#       Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
 #       customer = Payjp::Customer.retrieve(card.customer_id)
 #       customer.delete
 #       card.delete
