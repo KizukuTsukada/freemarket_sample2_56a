@@ -54,24 +54,24 @@ describe Item do
       expect(item).to be_valid
     end
 
-    it "nameが15文字なら登録できる" do
-      item = new(:item, name: "あいうえおあいうえおあいうえお")
+    it "nameが40文字なら登録できる" do
+      item = new(:item, name: "a" * 40)
       expect(item).to be_valid
     end
 
-    it "nameが15文字なら登録できない" do
-      item = new(:item, name: "ああいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+    it "nameが40文字なら登録できない" do
+      item = new(:item, name: "a" * 41)
       item.valid?
-      expect(item.errors[:name]).to include("は15文字以内で入力してください")
+      expect(item.errors[:name]).to include("は40文字以内で入力してください")
     end
 
-    it "nameが100文字なら登録できる" do
-      item = new(:item, name: "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+    it "nameが1,000文字なら登録できる" do
+      item = new(:item, name: "a" * 1000)
       expect(item).to be_valid
     end
 
-    it "detailが100文字なら登録できない" do
-      item = new(:item, detail: "ああいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+    it "detailが1,001文字なら登録できない" do
+      item = new(:item, detail: "a" * 1001)
       item.valid?
       expect(item.errors[:detail]).to include("は100文字以内で入力してください")
     end
@@ -149,24 +149,24 @@ describe Item do
         expect(item).to be_valid
       end
   
-      it "nameが15文字なら登録できる" do
-        item = new(:item, name: "あいうえおあいうえおあいうえお")
+      it "nameが40文字なら登録できる" do
+        item = new(:item, name: "a" * 40)
         expect(item).to be_valid
       end
   
-      it "nameが15文字なら登録できない" do
-        item = new(:item, name: "ああいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+      it "nameが40文字なら登録できない" do
+        item = new(:item, name: "a" * 41)
         item.valid?
-        expect(item.errors[:name]).to include("は15文字以内で入力してください")
+        expect(item.errors[:name]).to include("は40文字以内で入力してください")
       end
   
-      it "nameが100文字なら登録できる" do
-        item = new(:item, name: "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+      it "nameが1,000文字なら登録できる" do
+        item = new(:item, name: "a" * 1000)
         expect(item).to be_valid
       end
   
-      it "detailが100文字なら登録できない" do
-        item = new(:item, detail: "ああいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお")
+      it "detailが1,001文字なら登録できない" do
+        item = new(:item, detail: "a" * 1001)
         item.valid?
         expect(item.errors[:detail]).to include("は100文字以内で入力してください")
       end
