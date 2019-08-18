@@ -50,12 +50,12 @@ Rails.application.routes.draw do
  # items
   # まだidがないので仮で作成
   get "items/create", to: "items#create"
-  post "items/pay", to: "items#pay"
   resources :items do
+    get :purchase_confirmation, on: :member
+    post :purchase, on: :member
     collection do
-      get 'purchase_confirmation'
-      get 'buy'
-      post 'purchase'
+      get "complete_purchase"
+      post "/pay", to: "items#pay"
     end
   end
 

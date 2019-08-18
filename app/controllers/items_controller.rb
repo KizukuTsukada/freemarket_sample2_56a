@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase_confirmation, :purchase]
+  
+  require 'payjp'
   
   def index
     @items =Item.all.order("created_at DESC").limit(4)
@@ -49,22 +51,38 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
+    @buyer = Profile.find_by(user_id: current_user.id)
+    @buyer_prefecture = Prefecture.find_by(id: @buyer.prefectures)
+
+    card = Credit.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to controller: "credit", action: "new"
+    else
+      Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @card_info = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def purchase
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    charge = Payjp::Charge.create(
-    :amount => @product.price,
-    :card => params['payjp-token'],
-    :currency => 'jpy',
+    card = Credit.where(user_id: current_user.id).first
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
+    Payjp::Charge.create(
+    amount: @item.price, 
+    customer: card.customer_id,
+    currency: 'jpy'
   )
+  redirect_to action: 'complete_purchase'
+  end
+
+  def complete_purchase
   end
 
 
   private
   
   def item_params
-    params.require(:item).permit(:name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "販売中")
+    params[:item].permit(:id, :name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
     # :categorie_idは後々
   end
 
@@ -75,4 +93,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end

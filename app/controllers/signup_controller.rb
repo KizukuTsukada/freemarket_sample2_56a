@@ -59,7 +59,6 @@ class SignupController < ApplicationController
 
 # # もう使わないけどセッションをまとめる時に思い出したいので残します。
 #   def create
-#     binding.pry
 #     @user = User.new(session[:user_params])
 #     @user.build_profile(session[:profile_attributes_after_delivery])
 #     if @user.save

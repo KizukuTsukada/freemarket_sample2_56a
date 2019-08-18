@@ -1,5 +1,6 @@
 %body
   = render partial: 'home/header'
+
   - breadcrumb :item
   = render "mypages/breadcrumbs"
           
@@ -88,10 +89,10 @@
         .btn-default.btn-gray 出品を一旦停止する
         = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
   - else
-    = link_to "購入画面に進む", purchase_confirmation_items_path, class: "item-buy-btn f18-24"
+    = link_to "購入画面に進む", purchase_confirmation_item_path, class: "item-buy-btn f18-24"
     .item-btn-float-area
       %div{"data-client": "visible"}
-        購入画面に進む
+
 
   %section.items-box-container2.clearfix
     %h3.text-item-style2
