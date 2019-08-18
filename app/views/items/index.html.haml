@@ -16,7 +16,15 @@
         .items-box-contenter
           .items-box-content.clearfix
             %section.items-box
-              =image_tag "photos.image.url", width: "213", height: "213"
+              %figure.items-box
+          - if @items
+            - @items.each do |item|
+              = image_tag("#{item.image.url}", width: '213',  height: '213',)
+              .items-box-body
+                %h3.items-box-name
+                  = item.name
+                .items-box-num
+                  = item.price
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
       %section.items-box-container.clearfix
