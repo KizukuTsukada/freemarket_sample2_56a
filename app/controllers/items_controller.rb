@@ -32,7 +32,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       flash[:notice] = "商品を編集しました"
-      redirect_to mypage_path
+      redirect_to item_path
     else
       render 'items/edit'
     end
@@ -71,6 +71,8 @@ class ItemsController < ApplicationController
     customer: card.customer_id,
     currency: 'jpy'
   )
+  @item.update(situation: "sold")
+  @item.update(buyer_id: current_user.id)
   redirect_to action: 'complete_purchase'
   end
 
