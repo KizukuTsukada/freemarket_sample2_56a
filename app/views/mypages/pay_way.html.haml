@@ -2,9 +2,10 @@
 %body
   .default-container
     = render partial: 'home/header'
+    - breadcrumb :pay_way
+    = render "mypages/breadcrumbs"
 
     %main.l-container.clearfix
-
       .l-content
         .l-chapter-container
           .l-chapter-head 支払い方法

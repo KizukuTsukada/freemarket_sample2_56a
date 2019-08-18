@@ -1,7 +1,8 @@
 %body
   .default-container
     = render partial: 'home/header'
-
+    - breadcrumb :logout
+    = render "mypages/breadcrumbs"
     %main.l-container.clearfix
 
       -# マイページ右側
