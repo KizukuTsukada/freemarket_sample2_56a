@@ -29,8 +29,8 @@ set :keep_releases, 5
 set :default_env, {
   rbenv_root: "/usr/local/rbenv",
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
-  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
-  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+  aws_access_key_id: Rails.application.credentials.aws_access_key_id,
+  aws_secret_access_key: Rails.application.credentials.aws_secret_access_key,
 }
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
