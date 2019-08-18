@@ -1,3 +1,4 @@
+
 crumb :root do
   link "メルカリ", root_path
 end
@@ -16,6 +17,12 @@ crumb :show do
   parent :mypage
   parent :list
 end
+
+crumb :edit do
+  link "プロフィール", mypages_edit_path
+  parent :mypage
+end
+
 
 crumb :pay_way do
   link "支払い方法", pay_way_mypages_path
