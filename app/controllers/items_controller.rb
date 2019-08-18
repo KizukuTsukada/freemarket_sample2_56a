@@ -2,6 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
+  require 'payjp'
+  
   def index
   end
 
@@ -55,10 +57,11 @@ class ItemsController < ApplicationController
   def purchase
     Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
     charge = Payjp::Charge.create(
-    :amount => @product.price,
-    :card => params['payjp-token'],
-    :currency => 'jpy',
-  )
+    amount: @item.price,
+    customer: @card.customer_id,
+    currency: 'jpy'
+    )
+     
   end
 
 
@@ -72,4 +75,5 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
 end
