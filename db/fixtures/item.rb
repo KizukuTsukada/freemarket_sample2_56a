@@ -33,7 +33,7 @@ Item.seed do |s|
   s.status = 0
   s.pay_way = 0
   s.deliver_way = 0
-  s.deliver_data = 0
+  s.deliver_date = 0
   s.deliver_fee = 0
   s.saler_id = 1
   s.buyer_id = 2
@@ -49,7 +49,7 @@ Item.seed do |s|
   s.status = 0
   s.pay_way = 0
   s.deliver_way = 0
-  s.deliver_data = 0
+  s.deliver_date = 0
   s.deliver_fee = 0
   s.saler_id = 2
   s.buyer_id = 3
@@ -65,7 +65,7 @@ Item.seed do |s|
   s.status = 0
   s.pay_way = 0
   s.deliver_way = 0
-  s.deliver_data = 0
+  s.deliver_date = 0
   s.deliver_fee = 0
   s.saler_id = 3
   s.buyer_id = ""

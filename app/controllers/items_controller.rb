@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
   def update
     if @item.update(item_params)
       flash[:notice] = "商品を編集しました"
-      redirect_to mypage_path
+      redirect_to item_path
     else
       render 'items/edit'
     end
@@ -72,6 +72,8 @@ class ItemsController < ApplicationController
     customer: card.customer_id,
     currency: 'jpy'
   )
+  @item.update(situation: "sold")
+  @item.update(buyer_id: current_user.id)
   redirect_to action: 'complete_purchase'
   end
 
@@ -82,7 +84,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params[:item].permit(:id, :name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
+    params[:item].permit(:id, :name, :image, :price, :status, :pay_way, :deliver_way, :deliver_date, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
     # :categorie_idは後々
   end
 
