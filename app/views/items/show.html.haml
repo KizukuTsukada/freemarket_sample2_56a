@@ -13,6 +13,8 @@
       = @item.name
     .item-main-content.clearfix
       .item-photo
+        - if @item.situation == "sold"
+          .sold-flag 
         .owl-carousel.owl-loaded.owl-drag
           .owl-stage-outer
             .owl-stage{style: "left: 0px; width: 1800px;"}
