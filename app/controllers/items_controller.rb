@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.photos.build
 
     if @item.save
       flash[:notice] = "商品を出品しました"
@@ -39,7 +38,6 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.new
-    @item.photos.build
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to mypage_path
@@ -65,7 +63,7 @@ class ItemsController < ApplicationController
   private
   
   def item_params
-    params[:item].permit(:name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "販売中")
+    params[:item].permit(:name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
     # :categorie_idは後々
   end
 
