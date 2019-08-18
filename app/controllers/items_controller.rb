@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase_confirmation, :purchase]
   
   require 'payjp'
   
@@ -50,7 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
-    @item = Item.find(params[:id])
     @buyer = Profile.find_by(user_id: current_user.id)
     @buyer_prefecture = Prefecture.find_by(id: @buyer.prefectures)
 
@@ -58,16 +57,15 @@ class ItemsController < ApplicationController
     if card.blank?
       redirect_to controller: "credit", action: "new"
     else
-      Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
+      Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @card_info = customer.cards.retrieve(card.card_id)
     end
   end
 
   def purchase
-    @item = Item.find(params[:id])
     card = Credit.where(user_id: current_user.id).first
-    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
+    Payjp.api_key = Rails.application.credentials.payjp[:payjp_secret_key]
     Payjp::Charge.create(
     amount: @item.price, 
     customer: card.customer_id,
