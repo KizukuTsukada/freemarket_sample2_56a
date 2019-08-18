@@ -30,12 +30,12 @@
                 %label
                   商品名
                   %span.form-require 必須
-                = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 40文字まで）"
+                = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 15文字まで）"
               .sell-form__content__group__name
                 %label
                   商品の説明
                   %span.form-require 必須
-                = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 100文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             .sell-form__content.clearfix
               %h3.sell-form__content__head
                 商品の詳細
