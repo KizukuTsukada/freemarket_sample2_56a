@@ -1,6 +1,7 @@
 class TradeController < ApplicationController
 
-  def show
-  end
+  require 'payjp'
+
+
   
 end

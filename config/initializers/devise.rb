@@ -12,6 +12,9 @@ Devise.setup do |config|
     Rails.application.credentials.development[:facebook_client_id],
     Rails.application.credentials.development[:facebook_client_secret]
   end
+
+  # Rails.application.credentials[:PAYJP_PRIVATE_KEY],
+  # Rails.application.credentials[:PAYJP_PUBLIC_KEY]
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.

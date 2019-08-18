@@ -50,23 +50,40 @@ class ItemsController < ApplicationController
   end
 
   def purchase_confirmation
+    @item = Item.find(params[:id])
+    @buyer = Profile.find_by(user_id: current_user.id)
+    @buyer_prefecture = Prefecture.find_by(id: @buyer.prefectures)
+
+    card = Credit.where(user_id: current_user.id).first
+    if card.blank?
+      redirect_to controller: "credit", action: "new"
+    else
+      Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      @card_info = customer.cards.retrieve(card.card_id)
+    end
   end
 
   def purchase
-    Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
-    charge = Payjp::Charge.create(
-    amount: @item.price,
-    customer: @card.customer_id,
+    @item = Item.find(params[:id])
+    card = Credit.where(user_id: current_user.id).first
+    Payjp.api_key = 'sk_test_1fc06ad12596877ef48d294c'
+    Payjp::Charge.create(
+    amount: @item.price, 
+    customer: card.customer_id,
     currency: 'jpy'
-    )
-     
+  )
+  redirect_to action: 'complete_purchase'
+  end
+
+  def complete_purchase
   end
 
 
   private
   
   def item_params
-    params[:item].permit(:name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
+    params[:item].permit(:id, :name, :image, :price, :status, :pay_way, :deliver_way, :deliver_data, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
     # :categorie_idは後々
   end
 
