@@ -18,12 +18,13 @@
             - if @items
               - @items.each do |item|
                 %figure.items-box-photo
-                  = image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
+                  = link_to image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
                 .items-box-body
                   %h3.items-box-name.font-2
                     = item.name
                   .item-box-num
                     .items-box-price.font-5
+                      ¥
                       = item.price
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
@@ -33,7 +34,16 @@
         .items-box-contenter
           .items-box-content.clearfix
             %section.items-box
-
+              - if @items
+                - @items.each do |item|
+                  %figure.items-box-photo
+                    = link_to image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
+                  .items-box-body
+                    %h3.items-box-name.font-2
+                      = item.name
+                    .item-box-num
+                      .items-box-price.font-5
+                        = item.price
           .view-all
             =link_to "全ての商品を見る","",class: 'allitem'
     
