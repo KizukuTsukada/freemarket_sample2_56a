@@ -8,43 +8,24 @@
         .owl-item.cloned
           =image_tag "mainimage.png", class: 'imagestyle-mein'
     %section.pickup-container
-      %h2.pickup-head
-        ピックアップカテゴリー
-      %section.items-box-container
-        %h3.text-center
-          =link_to "レディース 新着アイテム", class: 'textstyle'
-        .items-box-contenter
+      %h2.pickup-head ピックアップカテゴリー
+      %section.items-box-container.clearfix
+        %h3.text-center.home
+          =link_to "全ての新着アイテム", class: 'textstyle'
+        .items-box-content.clearfix
           %section.items-box
             - if @items
               - @items.each do |item|
                 %figure.items-box-photo
                   = link_to image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
                 .items-box-body
-                  %h3.items-box-name.font-2
+                  .items-box-name.font-2
                     = item.name
                   .item-box-num
                     .items-box-price.font-5
                       ¥
                       = item.price
-          .view-all
-            =link_to "全ての商品を見る","",class: 'allitem'
-      %section.items-box-container
-        %h3.text-center.home
-          =link_to " メンズ 新着アイテム", class: 'textstyle'
-        .items-box-contenter
-          .items-box-content.clearfix
-            %section.items-box
-              - if @items
-                - @items.each do |item|
-                  %figure.items-box-photo
-                    = link_to image_tag("#{item.image.url}", width: '213',  height: '213', alt: "個別アイテム")
-                  .items-box-body
-                    %h3.items-box-name.font-2
-                      = item.name
-                    .item-box-num
-                      .items-box-price.font-5
-                        = item.price
-          .view-all
-            =link_to "全ての商品を見る","",class: 'allitem'
+        .view-all
+          =link_to "全ての商品を見る","",class: 'allitem'
     
     = render partial: 'home/footer'
