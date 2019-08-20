@@ -62,13 +62,13 @@
               = f.fields_for :profile do |p|
                 .each-forms
                   %div
-                    = p.label :password, "お名前(全角)"
+                    = p.label :family_name_kanji, "お名前(全角)"
                     %span.form-must 必須
                   = p.text_field :family_name_kanji, class: "text-default half", placeholder: "例）山田"
                   = p.text_field :first_name_kanji, class: "text-default half", placeholder: "例）彩"
                 .each-forms
                   %div
-                    = p.label :password, "お名前カナ(全角)"
+                    = p.label :family_name_kana, "お名前カナ(全角)"
                     %span.form-must 必須
                   = p.text_field :family_name_kana, class: "text-default half", placeholder: "例）ヤマダ"
                   = p.text_field :first_name_kana, class: "text-default half", placeholder: "例）アヤ"
