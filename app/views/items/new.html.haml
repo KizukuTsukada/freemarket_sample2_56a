@@ -40,18 +40,14 @@
               %h3.sell-form__content__head
                 商品の詳細
               .sell-form__content__box
-                -# .sell-form__content__group__name
-                -#   %label
-                -#     カテゴリー
-                -#     %span.form-require 必須
-                -#   %div
-                -#     .select-wrap
-                -#       %i.icon-arrow-bottom
-                -#       %select.select-default
-                -#         %option{value: ""} ---
-                -#         %option{value: "1"} レディース
-                -#         %option{value: "2"} メンズ
-                -#         %option{value: "3"} 本・CD
+                .sell-form__content__group__name
+                  %label
+                    カテゴリー
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      %i.icon-arrow-bottom
+                      = f.collection_select :categories, Category.all, :id, :name, {prompt: "---"}, {class: "select-default"}
   
                 .sell-form__content__group__name
                   %label

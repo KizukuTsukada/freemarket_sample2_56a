@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   require 'payjp'
   
   def index
+    @items =Item.order("created_at DESC").limit(4)
   end
 
   def create
@@ -85,6 +86,10 @@ class ItemsController < ApplicationController
   def item_params
     params[:item].permit(:id, :name, :image, :price, :status, :pay_way, :deliver_way, :deliver_date, :deliver_fee, :detail).merge(saler_id: current_user.id,situation: "sale")
     # :categorie_idは後々
+  end
+
+  def new_photo_params
+    params[:photos].permit(:image)
   end
 
   def set_item

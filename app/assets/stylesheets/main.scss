@@ -6,7 +6,7 @@
 .text-center.home{
   text-align: center;
   font-size: 22px;
-  padding-top: 30px;
+  margin: 26px 11px;
   font-weight: bold;
 }
 .top-carousel{
@@ -25,31 +25,72 @@
   height: 100%;
 }
 .pickup-container{
-  padding: 20px 0 0 0;
+  padding: 40px 0;
   background: #f5f5f5;
 }
 .pickup-head{
-  font-size: 30px;
+  font-size: 28px;
   text-align: center;
   font-weight: bold;
+  height: 39px;
 }
 .items-box-content{
   width: 92%;
   margin: 0 auto;
 }
-.items-box-container{
-  width: 85%;
+.items-box-container.clearfix{
+  width: 900px;
   margin: 0 auto;
 }
 .items-box{
-  margin: 0 0 20px 10px;
-  width: calc(25% - 20px);
-  display: inline-block;
+  margin: 0 0 0 20px;
+  width: 213px;
+  position: relative;
+  display: flex;
+}
+
+.item-box{
+  margin-right: 15px;
+}
+
+.items-box-photo{
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.items-box-body{
+  padding: 16px;
+  height: 78px;
+  background: #fff;
+}
+.items-box-name{
+  overflow: hidden;
+  position: relative;
+  height: 3em;
+  line-height: 1.5;
+}
+
+.allitem{
+  margin-top: 30px;
+}
+
+.font-2{
+  font-size: 20px;
+  font-weight: 400;
+}
+.item-box-num{
+  margin: 8px 0 0;
+}
+.items-box-price{
+  font-size: 16px;
+}
+
+.font-5{
+  font-weight: 600;
 }
 .view-all{
-  padding: 0 0 30px;
+  padding: 40px 0 0 0;
   text-align: right;
-  width: 91%;
 }
 .footer-item{
   -moz-box-sizing: border-box;
