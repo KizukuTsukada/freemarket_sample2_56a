@@ -13,8 +13,11 @@
       = @item.name
     .item-main-content.clearfix
       .item-photo
-        - if @item.situation == "sold"
-          .sold-flag 
+        - if @item.situation == "sale"
+        - elsif @item.situation == "sold"
+          .sold-flag
+        - else
+          .stopselling-flag
         .owl-carousel.owl-loaded.owl-drag
           .owl-stage-outer
             .owl-stage{style: "left: 0px; width: 1800px;"}
@@ -97,7 +100,7 @@
   - elsif @item.situation == "sold"
     .item-buy-btn.f18-24 この商品は売り切れです
   - else
-    .item-buy-btn.f18-24 この商品は出品停止中です
+    .item-buy-btn.btn-gray この商品は出品停止中です
 
 
   %section.items-box-container2.clearfix
