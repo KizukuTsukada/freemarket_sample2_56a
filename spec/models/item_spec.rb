@@ -8,7 +8,7 @@ describe Item do
     end
 
     it "imageが空だと登録できない" do
-      item = new(:image, name: nil)
+      item = new(:item, image: nil)
       item.valid?
       expect(item.errors[:image]).to.include("ファイルを選択してください")
     end
@@ -103,7 +103,7 @@ describe Item do
       end
   
       it "imageが空だと登録できない" do
-        item = new(:image, name: nil)
+        item = new(:item, image: nil)
         item.valid?
         expect(item.errors[:image]).to.include("ファイルを選択してください")
       end
