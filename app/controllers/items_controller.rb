@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   require 'payjp'
   
   def index
-    @items =Item.all.order("created_at DESC").limit(4)
+    @items =Item.order("created_at DESC").limit(4)
   end
 
   def create
