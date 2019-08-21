@@ -1,7 +1,12 @@
 class Item < ApplicationRecord
   # 商品画像
-  has_many :photos
-  accepts_nested_attributes_for :photos
+
+  # photosテーブルを使用することになったら
+  has_many :photos, dependent: :destroy
+  mount_uploader :image, ImagesUploader
+
+  # accepts_nested_attributes_for :photos
+  # 別テーブルに保存することになったら使う
 
   belongs_to :brand, optional: true
   # accepts_nested_attributes_for :brand, optional: true
@@ -14,7 +19,7 @@ class Item < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :detail, presence: true, length: { maximum: 1000 }
-  validates :price, presence: true, inclusion: { in: (300..9999999) }
+  validates :price, presence: true, inclusion: { in: (300..999999) }
 
   def previous
     Item.order('created_at desc, id desc').where('created_at <= ? and id < ?', created_at, id).first
@@ -25,4 +30,4 @@ class Item < ApplicationRecord
   end 
 end
 
-# とりあえずoptional: trueしてる
+# 実装できないかもしれないのでとりあえずoptional: trueしてる。

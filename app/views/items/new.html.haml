@@ -11,49 +11,43 @@
             %p 商品の情報を入力
           
           = form_with model:@item, class:"sell-form", id:"new_item" do |f|
-            
             .sell-form__upload-box
               %h3.sell-form__upload-box__head
                 %label 出品画像
                 %span.form-require 必須
               %p 最大5枚までアップロードできます
-              = f.fields_for :photos, @item.photos do |image|
-                .sell-form__upload-box__dropbox.clearfix
-                  #preview
-                  .sell-form__upload-box__items-container
-                    = image.label :image, for: "upload-image" do
-                      .sell-form__upload-box__items-container__list
-                        = image.file_field :image, id:"upload-image", class: 'hidden'                    
-                      .sell-form__upload-box__items-container__area.have-item-0
-                        %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
+              .sell-form__upload-box__dropbox.clearfix
+                #preview
+                .sell-form__upload-box__items-container
+                  = f.label :image, for: "upload-image" do
+                    .sell-form__upload-box__items-container__list
+                      = f.file_field :image, id:"upload-image", class: 'hidden'                    
+                    .sell-form__upload-box__items-container__area.have-item-0
+                      %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
 
             .sell-form__content
               .sell-form__content__group__name
                 %label
                   商品名
                   %span.form-require 必須
-                = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 40文字まで）"
+                = f.text_field :name, class: "sell-form__content__group__input", placeholder: "商品名（必須 15文字まで）"
               .sell-form__content__group__name
                 %label
                   商品の説明
                   %span.form-require 必須
-                = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                = f.text_area :detail, class: "textarea-default", placeholder: "商品の説明（必須 100文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             .sell-form__content.clearfix
               %h3.sell-form__content__head
                 商品の詳細
               .sell-form__content__box
-                -# .sell-form__content__group__name
-                -#   %label
-                -#     カテゴリー
-                -#     %span.form-require 必須
-                -#   %div
-                -#     .select-wrap
-                -#       %i.icon-arrow-bottom
-                -#       %select.select-default
-                -#         %option{value: ""} ---
-                -#         %option{value: "1"} レディース
-                -#         %option{value: "2"} メンズ
-                -#         %option{value: "3"} 本・CD
+                .sell-form__content__group__name
+                  %label
+                    カテゴリー
+                    %span.form-require 必須
+                  %div
+                    .select-wrap
+                      %i.icon-arrow-bottom
+                      = f.collection_select :categories, Category.all, :id, :name, {prompt: "---"}, {class: "select-default"}
   
                 .sell-form__content__group__name
                   %label
@@ -89,7 +83,7 @@
                     %span.form-require 必須
                   .select-wrap
                     %i.icon-arrow-bottom
-                    = f.select :deliver_data, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
+                    = f.select :deliver_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
 
             .sell-form__content.clearfix
               %h3.sell-form__content__head 販売価格(300〜9,999,999)

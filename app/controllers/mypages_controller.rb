@@ -17,4 +17,9 @@ class MypagesController < ApplicationController
 
   def identification
   end
+
+  def mylist
+    @items = Item.where(saler_id: current_user.id)
+  end
+
 end

@@ -1,12 +1,14 @@
 %body
   .default-container
     = render partial: 'home/header'
+    - breadcrumb :mypage
+    = render "mypages/breadcrumbs"
 
     %main.l-container.clearfix
       .l-content
         %section.mypage-user-icon
           %figure
-            = link_to image_tag("discover.svg"), mypage_path
+            = link_to image_tag("takei.png"), mypage_path
           %h2.bold
             = current_user.nickname
           .mypage-number

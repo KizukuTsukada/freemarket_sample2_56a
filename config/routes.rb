@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root "home#index"
+  root "items#index"
 
 
  # deviseのカスタマイズコントローラ用ルーティン。新規登録時にしよう。
@@ -28,10 +28,6 @@ Rails.application.routes.draw do
   resources :users, only:[:index, :show] do
     # 新規登録
     collection do
-      # get 'sms_confirmation'
-      # get 'delivery_address'
-      # get 'pay_way'
-      # get 'complete_signup'
       get 'add_credit'
     end
   end
@@ -41,11 +37,12 @@ Rails.application.routes.draw do
   # まだidがないので仮で作成
   get "mypages/edit", to: "mypages#edit"
 
-  resources :mypages, only:[:index, :show] do
+  resources :mypages, only:[:index] do
     collection do
       get 'logout'
       get 'pay_way'
       get 'identification'
+      get 'mylist'
     end
   end
 
@@ -53,13 +50,29 @@ Rails.application.routes.draw do
  # items
   # まだidがないので仮で作成
   get "items/create", to: "items#create"
-  post "items/pay", to: "items#pay"
   resources :items do
+    get :purchase_confirmation, on: :member
+    post :purchase, on: :member
     collection do
-      get 'purchase_confirmation'
-      get 'buy'
+      get "complete_purchase"
+      post "/pay", to: "items#pay"
     end
   end
+
+
+ # credits
+  resources :credits, only: [:new, :show] do
+    collection do
+      post 'pay', to: 'credits#pay'
+      post 'show', to: 'credits#show'
+    end
+  end
+
+
+
+ # public/indexは後々ログイン時のルートに設定する。ログイン機能実装後に実装する。
+  get "public/index", to: "public#index"
+
 
  # その他のルーティング
   resources :categories, only: [:index]

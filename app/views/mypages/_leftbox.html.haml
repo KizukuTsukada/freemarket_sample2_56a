@@ -20,7 +20,7 @@
         %i.angle-right
           = fa_icon 'angle-right'            
       %li
-        %a.mypage-nav-list-item 出品した商品 - 出品中
+        = link_to "出品した商品 - 出品中", mylist_mypages_path, class: "mypage-nav-list-item"
         %i.angle-right
           = fa_icon 'angle-right'            
       %li
@@ -70,13 +70,13 @@
     %ul.mypage-nav-list
       %li
         -# プロフィールページ作ったらパス変更
-        = link_to "プロフィール", mypage_path, class: "mypage-nav-list-item"
+        = link_to "プロフィール", mypages_edit_path, class: "mypage-nav-list-item"
       %li
         %a.mypage-nav-list-item 発送元・お届け先住所変更
         %i.angle-right
           = fa_icon 'angle-right'    
       %li
-        %a.mypage-nav-list-item 支払い方法
+        = link_to "支払い方法", pay_way_mypages_path, class: "mypage-nav-list-item" 
         %i.angle-right
           = fa_icon 'angle-right'           
       %li

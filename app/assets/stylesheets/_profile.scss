@@ -1,55 +1,90 @@
-.l-content {
-  float: right;
+.notification {
+  .notice {
+    background: orange;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .alert {
+    background: orange;
+    color: white;
+    text-align: center;
+  }
+}
+
+.l-contentp{
   width: 700px;
+  height: 568px;
+  float: right;
 }
-.l-chapter-container:first-child {
+
+.l-chapter-contain{
   margin: 0;
-}
-.l-chapter-container {
   background: #fff;
+  width: 700px;
+  height: 620px;
 }
-.l-chapter-head {
+
+.l-chapter-header{
   font-size: 24px;
   padding: 8px 24px;
   border-bottom: 1px solid #f5f5f5;
   text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
 }
 
-.setting-profile-icon {
+.form-seet{
+  width: 700px;
+  height: 518px;
+}
+
+.setting-profile{
   padding: 72px 16px 24px;
   background-image: image-url("mypage-back.jpg");
   text-align: center;
   font-size: 0;
-  background-repeat: no-repeat;
-  // background: url(/images/mypage-back.jpg);
-  // 本番環境で適用されなかった場合にこちらの記述をしよう
   background-size: cover;
+  height: 100px;
 }
-.setting-profile-icon figure {
-  display: inline-block;
-  overflow: hidden;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  vertical-align: middle;
-}
-.setting-profile-icon .input-default {
-  width: 220px;
-  margin: 0 0 0 8px;
-  vertical-align: middle;
-}
-.setting-profile-content {
+
+.setting-profile-content{
   padding: 40px 16px;
+  height: 282px;
 }
-.btn-defaulte.btn-red {
+
+.textarea-default1{
+  min-height: 216px;
   display: block;
   width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  cursor: pointer;
-  text-align: center;
-  margin-top: 16px;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
 }
-.textarea-default {
-  margin: 20px 1px 1px 40px;
+
+.btn-aka{
+  margin: 16px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100%;
+  line-height: 48px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.l-side1{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+
+.l-container.clearfixs{
+  margin: 40px auto 0;
+  width: 1020px;
+  height: 1252px;
+  padding: 0 0 40px 0;
 }

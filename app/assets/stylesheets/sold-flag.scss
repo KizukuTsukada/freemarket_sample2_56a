@@ -1,0 +1,64 @@
+
+//売り切れ時
+.sold-flag{
+  width:50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.sold-flag:before{
+  content: "";
+  top: -65px;
+  left: -105px;
+  border-left: 100px solid #ea352d;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  transform: rotate(225deg);
+  position: absolute;
+  z-index: 100;
+}
+
+.sold-flag:after{
+  content: "SOLD";
+  font-size: 30px;
+  display: block;
+  top: 34px;
+  color: #fff;
+  left: -85px;
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 101;
+}
+
+
+//出品停止時
+.stopselling-flag{
+  width:50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.stopselling-flag:before{
+  content: "";
+  top: -65px;
+  left: -105px;
+  border-left: 100px solid #aaa;
+  border-top: 100px solid transparent;
+  border-bottom: 100px solid transparent;
+  transform: rotate(225deg);
+  position: absolute;
+  z-index: 100;
+}
+
+.stopselling-flag:after{
+  content: "出品停止中";
+  font-size: 25px;
+  display: block;
+  top: 43px;
+  color: #fff;
+  left: -95px;
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 101;
+}
+
