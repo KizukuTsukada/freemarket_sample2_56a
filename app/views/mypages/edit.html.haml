@@ -3,23 +3,20 @@
     = render partial: 'home/header'
     - breadcrumb :edit
     = render "mypages/breadcrumbs"
-    %main.l-container.clearfix
+    %main.l-container.clearfixs
 
-      .l-content
-        %section.l-chapter-container
-          %h2.l-chapter-head プロフィール
-          %form
-            %div.setting-profile-icon
+      .l-contentp
+        %section.l-chapter-contain
+          .l-chapter-header プロフィール
+          .form-seet
+            .setting-profile
               %figure
-                %img
-                = link_to image_tag("footer-logo.svg"), mypages_path 
-              %input.input-default
-            .settinng-profile-content
-            %textarea.textarea-default こんにちは。ご覧いただきありがとうございます!可愛いものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪
-            %button.btn-defaulte.btn-red 変更する
-              
-
-      .l-side
+                = link_to image_tag("takei.png", size:'60'), mypage_path
+              %input.input-default3
+            .setting-profile-content
+              %textarea.textarea-default1
+              %button.btn-aka 変更する
+      .l-side1
         %nav.mypage-nav
           %ul.mypage-nav-list
             %li

@@ -12,3 +12,79 @@
     text-align: center;
   }
 }
+
+.l-contentp{
+  width: 700px;
+  height: 568px;
+  float: right;
+}
+
+.l-chapter-contain{
+  margin: 0;
+  background: #fff;
+  width: 700px;
+  height: 620px;
+}
+
+.l-chapter-header{
+  font-size: 24px;
+  padding: 8px 24px;
+  border-bottom: 1px solid #f5f5f5;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.form-seet{
+  width: 700px;
+  height: 518px;
+}
+
+.setting-profile{
+  padding: 72px 16px 24px;
+  background-image: image-url("mypage-back.jpg");
+  text-align: center;
+  font-size: 0;
+  background-size: cover;
+  height: 100px;
+}
+
+.setting-profile-content{
+  padding: 40px 16px;
+  height: 282px;
+}
+
+.textarea-default1{
+  min-height: 216px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.btn-aka{
+  margin: 16px 0 0;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  width: 100%;
+  line-height: 48px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.l-side1{
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+}
+
+.l-container.clearfixs{
+  margin: 40px auto 0;
+  width: 1020px;
+  height: 1252px;
+  padding: 0 0 40px 0;
+}
