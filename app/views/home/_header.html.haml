@@ -14,6 +14,7 @@
           %ul.pc-header-nav
             %li
               %h2
+                -# = render "home/category"
                 =link_to "","", class: 'pc-header-nav-root list-parent'
                 %i.icon-list
                   = fa_icon 'list', class: 'main-icon'
