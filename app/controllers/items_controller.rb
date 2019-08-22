@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase_confirmation, :purchase]
+  before_action :set_category
   
   require 'payjp'
   
   def index
     @items =Item.order("created_at DESC").limit(4)
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def create
@@ -95,5 +97,9 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
+
+  def set_category
+    @category = Category.all
+  end  
 
 end
