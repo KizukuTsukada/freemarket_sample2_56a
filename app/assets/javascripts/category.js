@@ -1,7 +1,6 @@
 $(document).ready(function(){
   $('.pc-header-nav h2').hover(function(){
     $(this).addClass('active');
-    console.log(this)
     var children = $('.active').children('.header-category-list');
     children.show();
   },function(){
