@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase_confirmation, :purchase]
-  before_action :set_category
+  before_action :set_categories, only: [:index, :new]
   
   require 'payjp'
   
@@ -97,8 +97,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def set_category
-    @category = Category.all
-  end  
+  def set_categories
+    @categories = Category.all
+  end
 
 end
