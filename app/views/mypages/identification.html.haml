@@ -20,32 +20,33 @@
             .mypage-identification-forms
               .each-forms.identification
                 %p.identify-sub お名前
-                %p.identify-detail 塚塩嶋 建子
+                %p.identify-detail 
+                  = @user.family_name_kanji
+                  = @user.first_name_kanji
               .each-group.identification
                 %p.identify-sub お名前カナ
-                %p.identify-detail ツカシオジマ ケンコ
+                %p.identify-detail 
+                  = @user.family_name_kana
+                  = @user.first_name_kana
               .each-group.identification.last
                 %p.identify-sub 生年月日
-                %p.identify-detail 1990/1/16
+                %p.identify-detail 
+                  = @user.birth_year
+                  = @user.birth_month
+                  = @user.birth_day
               
               .each-forms
                 %div
-                  -# = form_for [@???] do |f|
                   %label 郵便番号
-                  -# = f.label :postal_code, "郵便番号"
                   %span.form-not-haveto 必須
-                %textarea{name: "postal_code", class: "text-default-prefecture", placeholder: "例）123-4567"} 
-                -# = f.text_field :postal_code, class: "text-default"
+                %textarea{name: "postal_code", class: "text-default", placeholder: "例）123-4567"} 
 
               .each-forms
-                -# = form_for [@???] do |f|
                 %label 都道府県
-                -# = f.label :prefectures, "都道府県"
                 %span.form-not-haveto 必須
                 %br/
                 .prefectures_wrap
                   .select-form-wrap
-                    -# = f.collection_select (:job_id, @jobs, :id, :prefectures, class: "text-default")
                     %i.icon-arrow-bottom
                     %select.select-default{name: "prefectures", class: "text-default"}
                       %option{value: ""} ---
@@ -99,30 +100,21 @@
 
               .each-forms
                 %div
-                  -# = form_for [@???] do |f|
                   %label 市区町村
-                  -# = f.label :city, "市区町村"
                   %span.form-not-haveto 必須
                 %textarea{name: "city", class: "text-default", placeholder: "例）横浜市緑区"}
-                -# = f.text_field :city, class: "text-default"
 
               .each-forms
                 %div
-                  -# = form_for [@???] do |f|
                   %label 番地
-                  -# = f.label :address1, "番地"
                   %span.form-not-haveto 必須
                 %textarea{name: "address1", class: "text-default", placeholder: "例）青山1-1-1"}
-                -# = f.text_field :address1, class: "text-default"
 
               .each-forms
                 %div
-                  -# = form_for [@???] do |f|
                   %label 建物名
-                  -# = f.label :address2, "建物名"
                   %span.form-not-haveto 任意
                 %textarea{name: "address2", class: "text-default", placeholder: "例）柳ビル103"}
-                -# = f.text_field :address2, class: "text-default"
               
               .emptybox-identification
               %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} 登録する

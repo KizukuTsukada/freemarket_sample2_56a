@@ -16,10 +16,10 @@ class MypagesController < ApplicationController
   end
 
   def identification
+    @user = Profile.find_by(user_id: current_user.id)
   end
 
   def mylist
     @items = Item.where(saler_id: current_user.id)
   end
-
 end
