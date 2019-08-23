@@ -12,7 +12,8 @@
           .l-single-inner.mypage-payway
             .mypage-payway-list 
               %p クレジットカード一覧
-              %button.btn-default.btn-red{:type => "submit", class: "text-default__submit"} クレジットカードを追加する
+              %button.btn-default.btn-red{type: "submit", class: "text-default__submit"} 
+                = link_to "クレジットカードを追加する", add_credit_users_path
             .emptybox-mypage-payway
             .mypage-payway-next-link
               %p 支払い方法について ＞
