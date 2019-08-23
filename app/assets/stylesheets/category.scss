@@ -16,11 +16,10 @@
   color: black
 }
 
-//親カテゴリー
+//親
 .parent-wrap{
   display: flex;
   padding: 0 16px;
-  line-height: 44px;
   height: 44px;
   cursor: pointer;
   background-color:white;
@@ -31,13 +30,14 @@
       background-color:red;
       color: white;
     }
-    h3.parent-category{
+    h4.parent-category{
       text-align: center;
+      padding: 15px 0 0 0;
     }
   }
 }
 
-//子カテゴリー
+//子
 .child-wrap{
   display: none;
   background-color:white;
@@ -52,25 +52,19 @@
     width:220px;
     height: 33px;
     line-height: 33px;
-    span{
-      font-size: 14px;
-      padding:8px 16px;
-      text-decoration: none;
-      color:black;
-    }
   }
 }
 
-
+//孫
 .grand-child-wrap{
   display: none;
   width:auto;
   position: absolute;
   top: 0;
   left:200px;
+  overflow: scroll;
   background: #fff;
   height: 630px;
-  overflow: scroll;
   cursor: pointer;
   .grand-child{
     width:220px;
