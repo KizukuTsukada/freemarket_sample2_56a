@@ -1,0 +1,74 @@
+.active{
+  display: block;
+}
+.ul {
+  list-style: none;
+}
+
+.header-category-list {
+  font-size: 14px;
+  z-index: 3000;
+  float: left;
+  position: absolute;
+  display: none;
+  height: 630px;
+  background-color:white;
+  color: black
+}
+
+//親
+.parent-wrap{
+  display: flex;
+  padding: 0 16px;
+  height: 44px;
+  cursor: pointer;
+  background-color:white;
+  .parent{
+    width: 200px;
+    display: flex;
+    &:hover{
+      background-color:red;
+      color: white;
+    }
+    h4.parent-category{
+      text-align: center;
+      padding: 15px 0 0 0;
+    }
+  }
+}
+
+//子
+.child-wrap{
+  display: none;
+  background-color:white;
+  width:auto;
+  position: absolute;
+  top: 0;
+  left:200px;
+  height: 630px;
+  color: black;
+  cursor: pointer;
+  .child{
+    width:220px;
+    height: 33px;
+    line-height: 33px;
+  }
+}
+
+//孫
+.grand-child-wrap{
+  display: none;
+  width:auto;
+  position: absolute;
+  top: 0;
+  left:200px;
+  overflow: scroll;
+  background: #fff;
+  height: 630px;
+  cursor: pointer;
+  .grand-child{
+    width:220px;
+    height: 33px;
+    line-height: 33px;
+  }
+} 
