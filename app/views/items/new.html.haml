@@ -86,7 +86,8 @@
                     = f.select :deliver_date, [["1~2日で発送", "1~2日で発送"], ["2~3日で発送", "2~3日で発送"], ["4~7日で発送", "4~7日で発送"]] ,{prompt: "---"}, class:"select-default"
 
             .sell-form__content.clearfix
-              %h3.sell-form__content__head 販売価格(300〜9,999,999)
+              %h3.sell-form__content__head
+                販売価格(300〜9,999,999)
               %a.sell-form__content__question ?
               .sell-form__content__box
                 %ul.sell-price
@@ -98,14 +99,17 @@
                       .l-right2.sell-price-input
                         ¥
                         %div
-                          = f.text_field :price, class: 'input-default2', placeholder: '例）300'
+                          = f.text_field :price, class: 'input-default2',maxlength: "6", id: "sell-price", placeholder: '例）300'
                   %li.clearfix
                     .l-left
                       販売手数料 (10%)
-                    .l-right2 -
+                    .l-right2#saler_fee
+                      \-
                   %li.clearfix.bold
                     .l-left 販売利益
-                    .l-right2 -
+                    .l-right2#saler_gain
+                      \-
+                      
             .sell-form__content.sell-btn-box
               %div
                 %p
