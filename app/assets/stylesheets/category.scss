@@ -52,6 +52,9 @@
     width:220px;
     height: 33px;
     line-height: 33px;
+    &:hover{
+      background-color: #eee;
+    }
   }
 }
 
@@ -70,5 +73,8 @@
     width:220px;
     height: 33px;
     line-height: 33px;
+    &:hover{
+      background-color: #eee;
+    }
   }
 } 
