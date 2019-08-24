@@ -1,17 +1,17 @@
--# .header-category-list
--#   - @categories.each do |parent| 
--#     - if parent[:ancestry] == nil
--#       %ul.parent-wrap
--#         %li.parent
--#           %h4.parent-category
--#             = parent[:name]
--#           %ul.child-wrap
--#             - parent.children.each do |child|
--#               %li.child
--#                 %h4
--#                   = child[:name]
--#                 %ul.grand-child-wrap
--#                   - child.children.each do |grandchild|
--#                     %li.grand-child
--#                       %h4
--#                       = grandchild[:name]
+.header-category-list
+  - @categories.each do |parent| 
+    - if parent[:ancestry] == nil
+      %ul.parent-wrap
+        %li.parent
+          %h4.parent-category
+            = parent[:name]
+          %ul.child-wrap
+            - parent.children.each do |child|
+              %li.child
+                %h4
+                  = child[:name]
+                %ul.grand-child-wrap
+                  - child.children.each do |grandchild|
+                    %li.grand-child
+                      %h4
+                      = grandchild[:name]
