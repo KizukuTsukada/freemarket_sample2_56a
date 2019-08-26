@@ -5,8 +5,9 @@ $(document).on('turbolinks:load', function() {
 
       file = e.target.files[0]
       reader = new FileReader(),
-      $preview = $("#img_field");
+      $preview = $("#preview");
 
+      var img = '<div class="img_view"><img alt="" class="img"><p><a href="#" class="img_del">削除する</a></p></div>';
       reader.onload = (function(file) {
         return function(e) {
           $preview.empty();
@@ -20,5 +21,8 @@ $(document).on('turbolinks:load', function() {
         };
       })(file);
       reader.readAsDataURL(file);
+      $(document).on("click", "#preview", function () {
+        $(this).parent().remove();
+      });
   });
 });

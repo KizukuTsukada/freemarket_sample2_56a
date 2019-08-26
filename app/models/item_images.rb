@@ -1,1 +1,0 @@
-belongs_to :item, optional: true

@@ -1,7 +1,4 @@
 class Item < ApplicationRecord
-  # 商品画像
-  has_many :images, dependent: :delete_all
-  accepts_nested_attributes_for :images
 
   # photosテーブルを使用することになったら
   has_many :photos, dependent: :destroy
