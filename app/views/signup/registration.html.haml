@@ -48,12 +48,12 @@
                 %div
                   = f.label :password, "パスワード"
                   %span.form-must 必須
-                = f.text_field :password, class: "text-default", placeholder: "7文字以上"
+                = f.password_field :password, class: "text-default", placeholder: "7文字以上"
               .each-forms
                 %div
                   = f.label :password, "パスワード(確認)"
                   %span.form-must 必須
-                = f.text_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
+                = f.password_field :password_confirmation, class: "text-default", placeholder: "7文字以上"
               .each-forms
                 %h3.text-left.l-chapter-sub-head 本人確認
                 %p.l-single-text 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
