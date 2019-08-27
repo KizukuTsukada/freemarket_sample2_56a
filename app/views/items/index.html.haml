@@ -18,7 +18,7 @@
               - @items.each do |item|
                 .item-box              
                   %figure.items-box-photo
-                    = link_to image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム")
+                    = link_to image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム"), /items/show_path
                   .items-box-body
                     .items-box-name.font-2
                       = item.name
