@@ -10,7 +10,7 @@
           %h2.l-single-head
             %p 商品の情報を入力
           
-          = form_with model:@item, class:"sell-form", id:"new_item" do |f|
+          = form_with model:@item, class:"sell-form", id:"new_item", local: true do |f|
             .sell-form__upload-box
               %h3.sell-form__upload-box__head
                 %label 出品画像
@@ -24,6 +24,7 @@
                       = f.file_field :image, id:"upload-image", class: 'hidden'                    
                     .sell-form__upload-box__items-container__area.have-item-0
                       %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
+                      .remove_btn 削除
 
                       
             .sell-form__content
