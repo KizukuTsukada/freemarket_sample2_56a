@@ -16,9 +16,9 @@
           %section.items-box
             - if @items
               - @items.each do |item|
-                .item-box              
+                .item-box
                   %figure.items-box-photo
-                    = link_to image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム"), /items/show_path
+                    = link_to image_tag("#{item.image.url}", width: '213',  height: '220', alt: "個別アイテム"), item_path(item)
                   .items-box-body
                     .items-box-name.font-2
                       = item.name
