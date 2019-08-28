@@ -38,12 +38,12 @@
                 %div
                   = f.label :nickname, "ニックネーム"
                   %span.form-must 必須
-                = f.text_field :nickname, class: "text-default", placeholder: "例）メルカリ太郎"
+                = f.text_field :nickname, class: "text-default", placeholder: "例）メルカリ太郎",value: session[:nickname]
               .each-forms
                 %div
                   = f.label :email, "メールアドレス"
                   %span.form-must 必須
-                = f.text_field :email, class: "text-default", placeholder: "PC・携帯どちらでも可"
+                = f.text_field :email, class: "text-default", placeholder: "PC・携帯どちらでも可",value: session[:email]
               .each-forms
                 %div
                   = f.label :password, "パスワード"
