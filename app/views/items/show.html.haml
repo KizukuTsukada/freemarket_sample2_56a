@@ -86,7 +86,6 @@
       %p.item-description-inner
         【商品詳細】
         = @item.detail
-  - if @item.buyer = nil?
     - if user_signed_in? && current_user.id == @item.saler_id
       .listing-item-change-box
         = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
