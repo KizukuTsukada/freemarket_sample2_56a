@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.new
+    @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to mypage_path
