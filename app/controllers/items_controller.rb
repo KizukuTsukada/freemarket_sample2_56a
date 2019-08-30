@@ -1,12 +1,16 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item, only: [:show, :edit, :update, :destroy, :purchase_confirmation, :purchase]
-  before_action :set_categories, only: [:index, :new, :show]
+  before_action :set_categories, only: [:index, :new, :show, :list]
   
   require 'payjp'
   
   def index
     @items =Item.order("created_at DESC").limit(4)
+  end
+
+  def list
+    @items =Item.order("created_at DESC")
   end
 
   def create

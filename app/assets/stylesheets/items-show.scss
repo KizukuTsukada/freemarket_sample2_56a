@@ -270,3 +270,8 @@ i[class^='icon-'], i[class*='icon-'] {
   background: #aaa;
   border: 1px solid #aaa;
 }
+
+#items-boxies{
+  flex-wrap: wrap;
+  display: flex;
+}

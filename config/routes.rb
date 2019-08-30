@@ -46,9 +46,6 @@ Rails.application.routes.draw do
     end
   end
 
-
- # items
-  # まだidがないので仮で作成
   get "items/create", to: "items#create"
   resources :items do
     get :purchase_confirmation, on: :member
@@ -56,6 +53,7 @@ Rails.application.routes.draw do
     collection do
       get "complete_purchase"
       post "/pay", to: "items#pay"
+      get "/list", to: "items#list"
     end
   end
 

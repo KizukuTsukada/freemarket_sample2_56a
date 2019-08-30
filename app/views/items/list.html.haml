@@ -13,7 +13,7 @@
         %h3.text-center.home
           =link_to "全ての新着アイテム", class: 'textstyle'
         .items-box-content.clearfix
-          %section.items-box
+          %section.items-box#items-boxies
             - if @items
               - @items.each do |item|
                 .item-box
@@ -25,8 +25,5 @@
                     .item-box-num
                       .items-box-price.font-5
                         ¥
-                        = item.price
-        .view-all
-          =link_to "全ての商品を見る", list_items_path, class: 'allitem'
-    
+                        = item.price    
     = render partial: 'home/footer'

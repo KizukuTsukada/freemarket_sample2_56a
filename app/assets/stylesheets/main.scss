@@ -39,18 +39,18 @@
   margin: 0 auto;
 }
 .items-box-container.clearfix{
-  width: 900px;
+  width: 920px;
   margin: 0 auto;
 }
 .items-box{
   margin: 0 0 0 20px;
-  width: 213px;
   position: relative;
   display: flex;
 }
 
 .item-box{
   margin-right: 15px;
+  width: 210px;
 }
 
 .items-box-photo{
@@ -62,6 +62,7 @@
   padding: 16px;
   height: 78px;
   background: #fff;
+  margin-bottom: 30px;
 }
 .items-box-name{
   overflow: hidden;
