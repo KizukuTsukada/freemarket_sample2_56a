@@ -86,21 +86,22 @@
       %p.item-description-inner
         【商品詳細】
         = @item.detail
-  - if user_signed_in? && current_user.id == @item.saler_id
-    .listing-item-change-box
-      = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
-      %p.text-center or
+    - if user_signed_in? && current_user.id == @item.saler_id
+      .listing-item-change-box
+        = link_to "商品の編集", edit_item_path, class: "btn-default btn-red"
+        %p.text-center or
+        .item-btn-float-area
+          .btn-default.btn-gray 出品を一旦停止する
+    
+          = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
+    - elsif @item.situation == "sale"
+      = link_to "購入画面に進む", purchase_confirmation_item_path, class: "item-buy-btn f18-24"
       .item-btn-float-area
-        .btn-default.btn-gray 出品を一旦停止する
-        = link_to "商品を削除する",  item_path, method: :delete,class: "btn-default btn-gray", data: { confirm: '削除しますか？' }
-  - elsif @item.situation == "sale"
-    = link_to "購入画面に進む", purchase_confirmation_item_path, class: "item-buy-btn f18-24"
-    .item-btn-float-area
-      %div{"data-client": "visible"}
-  - elsif @item.situation == "sold"
-    .item-buy-btn.f18-24 この商品は売り切れです
-  - else
-    .item-buy-btn.btn-gray この商品は出品停止中です
+        %div{"data-client": "visible"}
+    - elsif @item.situation == "sold"
+      .item-buy-btn.f18-24 この商品は売り切れです
+    - else
+      .item-buy-btn.btn-gray この商品は出品停止中です
 
 
   %section.items-box-container2.clearfix

@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def add_credit
+    @categories = Category.all
   end
   
 end
