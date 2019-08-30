@@ -22,6 +22,3 @@ $(document).on('turbolinks:load', function() {
       reader.readAsDataURL(file);
     });
   });
-    $(".remove_btn").on("click", function() {
-      $(this).parent().remove();
-    });
