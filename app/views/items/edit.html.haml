@@ -15,7 +15,7 @@
               %h3.sell-form__upload-box__head
                 %label 出品画像
                 %span.form-require 必須
-              %p 最大5枚までアップロードできます
+              %p 最大1枚までアップロードできます
               .sell-form__upload-box__dropbox.clearfix
                 #preview
                 .sell-form__upload-box__items-container
@@ -24,6 +24,7 @@
                       = f.file_field :image, id:"upload-image", class: 'hidden'                    
                     .sell-form__upload-box__items-container__area.have-item-0
                       %pre.sell-form__upload-box__items-container__area__choice クリックしてファイルをアップロード
+                      .remove_btn 削除
                       
             .sell-form__content
               .sell-form__content__group__name

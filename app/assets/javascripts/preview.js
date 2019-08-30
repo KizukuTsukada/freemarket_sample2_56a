@@ -1,23 +1,31 @@
-$(function(){
-  $('#preview').change(function(e){
-    //ファイルオブジェクトを取得する
-    var file = e.target.files[0];
-    var reader = new FileReader();
- 
-    //画像でない場合は処理終了
-    if(file.type.indexOf("image") < 0){
-      alert("画像ファイルを指定してください。");
-      return false;
-    }
- 
-    //アップロードした画像を設定する
-    reader.onload = (function(file){
-      return function(e){
-        $("#img1").attr("src", e.target.result);
-        $("#img1").attr("title", file.name);
-      };
-    })(file);
-    reader.readAsDataURL(file);
- 
+$(document).on('turbolinks:load', function() {
+  $fileField = $('#upload-image')
+
+  $($fileField).on('change', $fileField, function(e) {
+
+      file = e.target.files[0]
+      reader = new FileReader(),
+      $preview = $(".sell-form__upload-box__items-container__area.have-item-0");
+
+      reader.onload = (function(file) {
+        return function(e) {
+          $preview.empty();
+          $preview.append($('<img>').attr({
+            src: e.target.result,
+            width: "50%",
+            height: "200px",
+            class: "preview-image",
+            title: file.name
+          }));
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    });
   });
-});
+
+  $(function() {
+  
+    $(".remove_btn").on("click", function() {
+      $(".hidden").empty();
+    });
+  });
