@@ -5,7 +5,7 @@ $(document).on('turbolinks:load', function() {
 
       file = e.target.files[0]
       reader = new FileReader(),
-      $preview = $("#preview");
+      $preview = $(".sell-form__upload-box__items-container__area.have-item-0");
 
       reader.onload = (function(file) {
         return function(e) {
