@@ -9,9 +9,10 @@
         %section.l-chapter-contain
           .l-chapter-header プロフィール
           .form-seet
+          = form_with model:current_user.id, class:"form-seet", id:"user_id" do |f|
             .setting-profile
               %figure
-                = link_to image_tag("mercari_profile.png", size:'60'), mypage_path
+                = f.label :image, for: "upload-image" do
               %input.input-default3
             .setting-profile-content
               %textarea.textarea-default1

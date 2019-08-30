@@ -9,8 +9,6 @@
         .sell-container-inner
           %h2.l-single-head
             %p 商品の情報を入力
-          
-          = form_with model:@item, class:"sell-form", id:"new_item" do |f|
             .sell-form__upload-box
               %h3.sell-form__upload-box__head
                 %label 出品画像
@@ -19,7 +17,6 @@
               .sell-form__upload-box__dropbox.clearfix
                 #preview
                 .sell-form__upload-box__items-container
-                  = f.label :image, for: "upload-image" do
                     .sell-form__upload-box__items-container__list
                       = f.file_field :image, id:"upload-image", class: 'hidden'                    
                     .sell-form__upload-box__items-container__area.have-item-0
