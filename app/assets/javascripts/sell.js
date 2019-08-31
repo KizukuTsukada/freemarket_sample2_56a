@@ -1,4 +1,4 @@
-$(window).on('load', function(){
+$(document).on('turbolinks:load', function(){
   $('#sell-price').on('keyup', function(){
     var price = $(this).val();
     var saler_fee = Math.floor(price * 0.1)
