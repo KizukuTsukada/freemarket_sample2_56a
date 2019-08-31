@@ -18,7 +18,11 @@
           .listing--container__mylist
             - @items.each do |item|
               .item-list
-                = link_to item.name ,item_path(item)
+                %figure.item-list__photo
+                  = link_to image_tag("#{item.image.url}", width: '48',  height: '48'), item_path(item)
+                = link_to item.name  ,item_path(item),class: "item-list__name"
+                %i.angle-right2
+                  = fa_icon 'angle-right'
                 
       = render partial: 'mypages/leftbox'
 
