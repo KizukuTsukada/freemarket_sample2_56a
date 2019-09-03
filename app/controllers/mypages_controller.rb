@@ -22,7 +22,7 @@ class MypagesController < ApplicationController
   end
 
   def mylist
-    @items = Item.where(saler_id: current_user.id)
+    @items = Item.where(saler_id: current_user.id).order(created_at: "DESC")
   end
 
   def set_categories
